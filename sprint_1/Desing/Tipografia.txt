@@ -1,0 +1,7 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap%27);
+</style>
+
+<h6>Color principal #570AB8, en contraste con fondo blanco</h6>
+
+#570AB8

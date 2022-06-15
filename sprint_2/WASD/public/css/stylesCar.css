@@ -1,0 +1,314 @@
+/*General*/
+* {
+    margin: 3px;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+/*Tipografia*/
+Body {
+    font-family: 'Roboto', sans-serif;
+}
+
+header{
+    width: 100%;
+    height: 25%;
+    
+}
+
+nav{
+    display: flex;
+    justify-content: end;
+    
+}
+
+
+#logo{
+    width: 100px;
+    height: 100px;
+    text-align: left;
+    margin-right: 162px;
+}
+
+/* Carrito de compras*/
+
+h1{
+    font-size: 20px;
+    color: #570ab8;
+    font-weight: bold;
+}
+.panelcar{
+    height: 100%;
+    background-color: white;
+    border: solid 2px rgba(87, 10, 184,0.70);
+    box-sizing: border-box;
+    border-radius: 3%;
+}
+
+.productCar{
+    margin: 8px 3px 8px 3px;
+    height: 50px;
+    background-color: white;
+    border-bottom: solid 1px rgba(87, 10, 184,0.70);
+    border-top: solid 1px rgba(87, 10, 184,0.70);
+    box-sizing: border-box;
+}
+
+.productCar .product{
+    font-size: 16px;
+    width: 70%;
+    display: inline-block;
+}
+
+.productCar .precio{
+    display: flex;
+    font-size: 13px;
+    flex-direction: row-reverse;
+    display: inline-block;
+    box-sizing: border-box;
+}
+
+.info{
+    right:40px;
+    margin-top: 10px;
+    height: 200px;
+    box-sizing: border-box;
+}
+
+.precioTotal{
+    margin: 5px 45px 5px 45px;
+    height: 100px;
+    background-color: rgb(255, 255, 255);
+    border: solid 2px rgba(87, 10, 184,0.70);
+    border-radius: 10px;
+    box-sizing: border-box;
+    
+}
+
+.button{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    padding: 30px;
+}
+.reset{
+    background-color: white;
+    padding: 15px;
+    border: 0px;
+    color: rgba(87, 10, 184,0.70);
+    border: solid 1px rgba(87, 10, 184,0.70);
+    border-radius: 20px;
+}
+.submit{
+    padding: 15px;
+    border: 0px;
+    background-color: rgba(87, 10, 184,0.90);
+    border: solid 1px black;
+    border-radius: 20px;
+    border-width: 0px;
+}
+
+/*Footer*/
+.footerEncavezado{
+    text-align: center;
+    text-decoration: none;
+    position: relative;
+    margin: 1px;
+    border: 1px;
+    padding-bottom: 1px;
+}
+.footerEncavezado::after,.footerEncavezado::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 5px;
+    background-color: #570AB8;
+    
+}
+.footerEncavezado::after{
+    top:3.6em;
+    right: 0px;
+}
+.footerEncavezado::before{
+top:-0em;
+left: 0px;
+
+}
+
+.footerWasd{
+    color: #570AB8;
+    font-size: 50px;
+    font-weight: 1000;
+    text-decoration: none;
+
+}
+#footerLogo{
+    width:30%;
+    cursor: pointer;
+}
+.footerEnlaces{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+	flex-wrap: wrap;
+}
+.fa-brands{
+    background-color:#570AB8;
+    color: white;
+    font: weight 700;;
+}
+#footerContacto{
+    cursor: pointer;
+    padding: 5px;
+    background-color: #570AB8;
+    box-sizing: border-box;
+    border-radius: 5px;
+    margin: 10% 10% 10% 10%;
+    color: white;
+    background-image: url('')
+}
+#footerTelefono{
+    color:white;
+    cursor: pointer;
+    padding: 5px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    text-decoration: none;
+}
+.fa-solid{
+    padding-top:1%;
+    color:white;
+    background-color: #570AB8;
+} 
+.divTel{
+    cursor: pointer;
+    padding: 5px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    margin: 10% 10% 10% 10%;
+    background-color: #570AB8;
+    
+}
+#footerFacebook{
+    cursor: pointer;
+    padding: 5px;
+    background-color: #570AB8;
+    box-sizing: border-box;
+    border-radius: 5px;
+    margin: 10% 10% 10% 10%;
+}
+#footerTwitter{
+    cursor: pointer;
+    padding: 5px;
+    background-color: #570AB8;
+    box-sizing: border-box;
+    border-radius: 5px;
+    margin: 10% 10% 10% 10%;
+}
+#footerSteam{
+    cursor: pointer;
+    padding: 5px;
+    background-color: #570AB8;
+    box-sizing: border-box;
+    border-radius: 5px;
+    margin: 10% 10% 10% 10%;
+}
+#footerDiscor{
+    cursor: pointer;
+    padding: 5px;
+    background-color: #570AB8;
+    box-sizing: border-box;
+    border-radius: 5px;
+    margin: 10% 10% 10% 10%;
+}
+@media (min-width: 821px) {
+    h1{
+        font-size: 30px;
+        color: #570ab8;
+        font-weight: bold;
+        position: relative;
+        top: 118px;
+        left: 270px;
+    }
+
+    .contenedor{
+        display: flex;
+        justify-content: center;
+        position: relative;
+        top:125px
+    }
+
+    .panelcar{
+        width: 50%;
+        background-color: white;
+        border: solid 2px rgba(87, 10, 184,0.70);
+        box-sizing: border-box;
+        border-radius: 3%;
+        display: inline-block;
+        top: 60px;
+    }
+    
+    .productCar{
+        margin: 8px 3px 8px 3px;
+        height: 50px;
+        background-color: white;
+        border-bottom: solid 1px rgba(87, 10, 184,0.70);
+        border-top: solid 1px rgba(87, 10, 184,0.70);
+        box-sizing: border-box;
+    }
+    
+    .productCar .product{
+        font-size: 16px;
+        width: 50%;
+        display: inline-block;
+    }
+    
+    .productCar .precio{
+        display: flex;
+        font-size: 13px;
+        display: inline-block;
+        padding-left: 20%;
+    }
+    
+    .info{
+        width: 25%;
+        height: 300px;
+        box-sizing: border-box;
+        display: inline-block;
+        margin-top: 70px;
+    }
+    
+    .precioTotal{
+        background-color: rgb(255, 255, 255);
+        border: solid 2px rgba(87, 10, 184,0.70);
+        border-radius: 10px;
+        box-sizing: border-box;
+        justify-content: center;
+        height: 150px;
+    }
+    
+    .button{
+        display: flex;
+        justify-content: center;
+        padding: 20px;
+    }
+    .reset{
+        background-color: white;
+        padding: 15px;
+        border: 0px;
+        color: rgba(87, 10, 184,0.70);
+        border: solid 1px rgba(87, 10, 184,0.70);
+        border-radius: 20px;
+    }
+    .submit{
+        padding: 15px;
+        border: 0px;
+        background-color: rgba(87, 10, 184,0.90);
+        border: solid 1px black;
+        border-radius: 20px;
+    }
+
+    
+}
