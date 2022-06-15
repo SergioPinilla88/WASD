@@ -12,10 +12,19 @@ app.use(express.static(publicPath));
 app.get('/', (req, res) => {
     res.sendFile(__dirname + "/views/home.html");
 });
+app.get('/car', (req, res) => {
+    res.sendFile(__dirname + "/views/car.html");
+});
+app.get('/producto', (req, res) => {
+    res.sendFile(__dirname + "/views/productDetail.html");
+});
+app.get('/registro', (req, res) => {
+    res.sendFile(__dirname + "/views/registro.html");
+});
 //Levantar servidor
 app.listen(puerto, () => {
     console.log("Servidor corriendo desde puerto " + puerto);
 });
 
-//Burguer Menu
+
 
