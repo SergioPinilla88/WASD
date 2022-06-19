@@ -1,0 +1,269 @@
+* {
+     box-sizing: border-box ;
+    
+}
+
+/*Tipografia*/
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 300;
+}
+/*-----------------------------------------------------------main-----------------------------------------------------------------------*/
+main{
+    display: flex;
+    justify-content: center;
+}
+
+.cajaLogin{
+    
+    position: relative;
+    margin: 1% solid black;
+    border: black 3px solid;
+    
+}
+#imgUsuario{
+    display: flex;
+    justify-content: center;
+    width: 10%;
+
+}
+.cajaImgUsuario{
+    padding: 25vw;
+    background-attachment: scroll;
+    background-size: 180%;
+    border-radius: 50vw;
+    background-image: url('/public/images/login/spiderman-miles-morales.webp');
+}
+#IniciarSecion{
+    text-align: center;
+}
+#password{
+    color: white;
+}
+.cajaUser{
+    text-align: left;
+    display: block;
+    padding: 5%;
+}
+.cajaPasswor{
+    padding: 5%;
+}
+.cajaIniciar{
+    background-color: yellowgreen;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.fa-solid{
+    color: yellow;
+}
+
+/*-----------------------------------------------------------footer---------------------------------------------------------------------*/
+/* footer{
+    background-color: black;
+} */
+.footerEncavezado{
+    text-align: center;
+    text-decoration: none;
+    position: relative;
+    margin: 1px;
+    border: 1px;
+    padding-bottom: 1px;
+}
+.footerEncavezado::after,.footerEncavezado::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 5px;
+    background-color: #570AB8;
+    
+}
+.footerEncavezado::after{
+    top:3.6em;
+    right: 0px;
+}
+.footerEncavezado::before{
+top:-0em;
+left: 0px;
+
+}
+
+.footerWasd{
+    color: #570AB8;
+    font-size: 50px;
+    font-weight: 1000;
+    text-decoration: none;
+
+}
+#footerLogo{
+    width:30%;
+    cursor: pointer;
+}
+.footerEnlaces{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+	flex-wrap: wrap;
+}
+.fa-brands{
+    background-color:#570AB8;
+    color: white;
+    font: weight 700;;
+}
+#footerContacto{
+    cursor: pointer;
+    padding: 5px;
+    background-color: #570AB8;
+    box-sizing: border-box;
+    border-radius: 5px;
+    margin: 10% 10% 10% 10%;
+    color: white;
+    background-image: url('')
+}
+#footerTelefono{
+    color:white;
+    cursor: pointer;
+    padding: 5px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    text-decoration: none;
+}
+.fa-solid{
+    padding-top:1%;
+    color:white;
+    background-color: #570AB8;
+} 
+.divTel{
+    cursor: pointer;
+    padding: 5px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    margin: 10% 10% 10% 10%;
+    background-color: #570AB8;
+    
+}
+#footerFacebook{
+    cursor: pointer;
+    padding: 5px;
+    background-color: #570AB8;
+    box-sizing: border-box;
+    border-radius: 5px;
+    margin: 10% 10% 10% 10%;
+}
+#footerTwitter{
+    cursor: pointer;
+    padding: 5px;
+    background-color: #570AB8;
+    box-sizing: border-box;
+    border-radius: 5px;
+    margin: 10% 10% 10% 10%;
+}
+#footerSteam{
+    cursor: pointer;
+    padding: 5px;
+    background-color: #570AB8;
+    box-sizing: border-box;
+    border-radius: 5px;
+    margin: 10% 10% 10% 10%;
+}
+#footerDiscor{
+    cursor: pointer;
+    padding: 5px;
+    background-color: #570AB8;
+    box-sizing: border-box;
+    border-radius: 5px;
+    margin: 10% 10% 10% 10%;
+}
+/*-------------------------------------------------------------------------------------------media------------------------------------------------------------------------------------*/
+/* @media(min-width:360px){
+    
+    #footerLogo{
+    width:30%;
+    cursor: pointer;
+    padding:2px ;
+    background-color: rgb(44, 14, 238);
+    }
+    
+} */
+ @media(min-width:720px){
+    .cajaIniciar {
+        background-color: rgb(61, 63, 57);
+        text-align: center;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    .footerPie{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction:column;
+        margin: 1%;
+        justify-content:space-between;
+    }
+    #footerLogo{
+        width:20%;
+        cursor: pointer;
+        padding:2px;
+    }
+     .footerEnlaces{
+        display: flex;
+        flex-wrap: nowrap; 
+        flex-direction: row;
+        justify-content: space-around; 
+    } 
+    #footerContacto{
+        cursor: pointer;
+        padding: 5px;
+        background-color: #570AB8;
+        box-sizing: border-box;
+        border-radius: 5px;
+        color: white;
+        margin: 1%;
+    }
+    #footerTelefono{
+        display: none;
+    }
+    .divTel{
+        cursor: pointer;
+        padding: 5px;
+        background-color: #570AB8;
+        box-sizing: border-box;
+        border-radius: 5px;
+        margin: 1%;
+        
+    } 
+    #footerFacebook{
+        cursor: pointer;
+        padding: 5px;
+        background-color: #570AB8;
+        box-sizing: border-box;
+        border-radius: 5px;
+        margin: 1%;
+    }
+    #footerTwitter{
+        cursor: pointer;
+        padding: 5px;
+        background-color: #570AB8;
+        box-sizing: border-box;
+        border-radius: 5px;
+        margin: 1%;
+    }
+    #footerSteam{     
+        cursor: pointer;
+        padding: 5px;
+        background-color: #570AB8;
+        box-sizing: border-box;
+        border-radius: 5px;
+        margin: 1%;
+    }
+    #footerDiscor{     
+        cursor: pointer;
+        padding: 5px;
+        background-color: #570AB8;
+        border-radius: 5px;
+        margin:1px;
+        align-items: center;
+    
+    }
+} 

@@ -12,12 +12,13 @@
     <script src="https://kit.fontawesome.com/80607bb3d5.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/css/stylesRegistro.css">
     <link rel="stylesheet" href="/css/stylesHome.css">
+    <link rel="stylesheet" href="/css/stylesLogin.css">
 </head>
 <body>
     <header>
         <nav class="nav">
             <div class="nav_contenedor">
-                <a href="/"><img src="/images/Logo.png" alt="Logo" class="img_logo"></a>
+                <img src="/images/Logo.png" alt="Logo" class="img_logo">
                 <h1 class="nav_logo">WASD TECHNOLOGY</h1>
                 <label for="menu" class="nav_label">
                     <i class="fas fa-bars fa-2x" style="color: white"></i>
@@ -53,25 +54,25 @@
             <label class="textos" for="">
                 Contraseña:
                 <br>
-                <input type="password" name="password" id="pass" required max="6">
+                <input type="password" name="password" id="pass" required maxlength="8">
             </label>
         <br>
             <label  class="textos"for="">
                 Confirma tu Contraseña:
                 <br>
-                <input type="password" name="password" id="pass" required pattern="[0-9]{5}">
+                <input type="password" name="password" id="pass" required maxlength="8">
             </label>
         <br>
             <label  class="textos"for="">
                 Nombre de Usuario:
                 <br>
-                <input type="text" name="user" id="user" required pattern="[0-9]{5}">
+                <input type="text" name="user" id="user" required minlength="6">
             </label>
         <br>
             <label  class="textos"for="">
                 Telefono:
                 <br>
-                <input type="tel" name="telefono" id="tel" required pattern="[0-9]{3}">
+                <input type="tel" name="telefono" id="tel" required max="10">
             </label>
         <br>
             <div class="terminos">
@@ -92,5 +93,26 @@
             <button type="submit">Enviar</button>
         </div>
     </form>
+    <footer>
+        <div>
+            <div class="footerEncavezado" >
+                <A class="footerWasd" href="/WASD/views/home.ht">WASD</A>
+            </div>
+            <div class="footerPie">
+                <div class="footerEnlaces">
+                <img id="footerLogo" src="../public/images/WASD Logo.png" alt="logo">
+
+                   <div id="footerContacto"> <a href="Contacto"><i  class="fa-solid fa-envelope" ></i> <a href="Contacto" id="footerTelefono">Contacto</a></div></a>
+
+                    <div class="divTel">    <a href="telefono"> <i class="fa-solid fa-phone"></i> </a>   <a href="telefono" id="footerTelefono">Telefono</a></div>
+                    
+                   <div id="footerFacebook"><a href="https://www.facebook.com" ></a> <i href="https://www.facebook.com" class="fa-brands fa-facebook"></i><a href="https://www.facebook.com" id="footerTelefono"> Facebook</a></div></a>
+                   <div id="footerTwitter"> <a href="https://twitter.com"></a> <i class="fa-brands fa-twitter"></i> <a href="https://twitter.com" id="footerTelefono"> Twitter</a></div></a>
+                   <div id="footerSteam">   <a href="https://store.steampowered.com"></a> <i class="fa-brands fa-steam"></i>   <a href="https://store.steampowered.com" id="footerTelefono"> Steam</a></div></a>
+                   <div id="footerDiscor">  <a href="https://discord.com/channels/967398240465076304/977699998189887488"></a> <i class="fa-brands fa-discord"></i> <a href="https://discord.com/channels/967398240465076304/977699998189887488" id="footerTelefono"> Discor</a></div></a>
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
