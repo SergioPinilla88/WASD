@@ -12,6 +12,7 @@ body {
 main{
     display: flex;
     justify-content: center;
+    padding-top:5px ;
 }
 
 .cajaLogin{
@@ -32,37 +33,55 @@ main{
     background-attachment: scroll;
     background-size: 180%;
     border-radius: 50vw;
-    background-image: url('/public/images/login/spiderman-miles-morales.webp');
+    background-image: url('/images/login/spiderman-miles-morales.webp');
 }
-#IniciarSecion{
-    text-align: center;
+#fa-solid01{
+    color: white;
+    background-color: #570AB8;
+    padding: 3px;
+    border-radius: 5px;
+}
+#fa-solido01{
+    color:white;
+    background-color: #570AB8;
+    padding: 3px;
+    border-radius: 5px;
+}
+
+#IniciarUser{
+    display: none;
 }
 #password{
     color: white;
 }
 .cajaUser{
+    display:flex;
+    flex-wrap:wrap;
     text-align: left;
     display: block;
-    padding: 5%;
+    padding: 1px;
+    margin-bottom: 5px;
+}
+#IniciarSecion{
+    text-align: center;
+    border-top: solid 5px #570AB8 ;
+    border-bottom: solid 5px #570AB8 ;
 }
 .cajaPasswor{
-    padding: 5%;
+    display:flex;
+    flex-wrap:wrap;
+    padding: 1px;
+    margin-top: 5px;
 }
 .cajaIniciar{
-    background-color: yellowgreen;
     text-align: center;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
 }
-.fa-solid{
-    color: yellow;
-}
 
 /*-----------------------------------------------------------footer---------------------------------------------------------------------*/
-/* footer{
-    background-color: black;
-} */
+
 .footerEncavezado{
     text-align: center;
     text-decoration: none;
@@ -86,7 +105,6 @@ main{
 .footerEncavezado::before{
 top:-0em;
 left: 0px;
-
 }
 
 .footerWasd{
@@ -94,17 +112,22 @@ left: 0px;
     font-size: 50px;
     font-weight: 1000;
     text-decoration: none;
-
+}
+.footerPie{
+    align-items: flex-start;
+    display: flex;
 }
 #footerLogo{
     width:30%;
     cursor: pointer;
+    min-width:60px;
+    border: #570AB8 1 px solid;
+    align-self: flex-start;
+    max-width: 120px;
 }
 .footerEnlaces{
     display: flex;
-    flex-direction: column;
-    align-items: center;
-	flex-wrap: wrap;
+    flex-wrap: wrap;
 }
 .fa-brands{
     background-color:#570AB8;
@@ -117,7 +140,7 @@ left: 0px;
     background-color: #570AB8;
     box-sizing: border-box;
     border-radius: 5px;
-    margin: 10% 10% 10% 10%;
+    margin: 5px;
     color: white;
     background-image: url('')
 }
@@ -139,9 +162,9 @@ left: 0px;
     padding: 5px;
     box-sizing: border-box;
     border-radius: 5px;
-    margin: 10% 10% 10% 10%;
+    margin: 5px;
     background-color: #570AB8;
-    
+    align-items:none;
 }
 #footerFacebook{
     cursor: pointer;
@@ -149,7 +172,8 @@ left: 0px;
     background-color: #570AB8;
     box-sizing: border-box;
     border-radius: 5px;
-    margin: 10% 10% 10% 10%;
+    margin: 5px;
+    align-items:flex-start;
 }
 #footerTwitter{
     cursor: pointer;
@@ -157,7 +181,8 @@ left: 0px;
     background-color: #570AB8;
     box-sizing: border-box;
     border-radius: 5px;
-    margin: 10% 10% 10% 10%;
+    margin: 5px;
+    align-items:flex-start;
 }
 #footerSteam{
     cursor: pointer;
@@ -165,7 +190,8 @@ left: 0px;
     background-color: #570AB8;
     box-sizing: border-box;
     border-radius: 5px;
-    margin: 10% 10% 10% 10%;
+    margin: 5px;
+    align-items:flex-start;
 }
 #footerDiscor{
     cursor: pointer;
@@ -173,97 +199,57 @@ left: 0px;
     background-color: #570AB8;
     box-sizing: border-box;
     border-radius: 5px;
-    margin: 10% 10% 10% 10%;
+    margin: 5px;
+    align-items:flex-start;
 }
 /*-------------------------------------------------------------------------------------------media------------------------------------------------------------------------------------*/
-/* @media(min-width:360px){
-    
-    #footerLogo{
-    width:30%;
-    cursor: pointer;
-    padding:2px ;
-    background-color: rgb(44, 14, 238);
-    }
+/* @media(min-width:360px){ 
     
 } */
  @media(min-width:720px){
     .cajaIniciar {
-        background-color: rgb(61, 63, 57);
         text-align: center;
         display: flex;
         flex-wrap: wrap;
         justify-content: space-around;
     }
+    #IniciarUser{
+        color: black;
+        display: contents;
+        font-size: 19px;
+        font-weight:1000;
+        background-color: #570AB8;
+        border:black 3px solid;
+    }
+    #footerLogo{
+        max-width:120px;
+        align-self:flex-start;
+    }
     .footerPie{
         display: flex;
         flex-wrap: wrap;
-        flex-direction:column;
         margin: 1%;
-        justify-content:space-between;
-    }
-    #footerLogo{
-        width:20%;
-        cursor: pointer;
-        padding:2px;
     }
      .footerEnlaces{
         display: flex;
-        flex-wrap: nowrap; 
-        flex-direction: row;
-        justify-content: space-around; 
+        justify-content: center; 
     } 
-    #footerContacto{
-        cursor: pointer;
-        padding: 5px;
-        background-color: #570AB8;
-        box-sizing: border-box;
-        border-radius: 5px;
+    #fa-solid{
         color: white;
-        margin: 1%;
+        background-color: #570AB8;
+        padding: 3px;
+        border-radius: 5px;
     }
-    #footerTelefono{
+    #fa-solido{
+        color:white;
+        background-color: #570AB8;
+        padding: 3px;
+        border-radius: 5px;
+    }
+    #fa-solid01{
         display: none;
     }
-    .divTel{
-        cursor: pointer;
-        padding: 5px;
-        background-color: #570AB8;
-        box-sizing: border-box;
-        border-radius: 5px;
-        margin: 1%;
-        
-    } 
-    #footerFacebook{
-        cursor: pointer;
-        padding: 5px;
-        background-color: #570AB8;
-        box-sizing: border-box;
-        border-radius: 5px;
-        margin: 1%;
-    }
-    #footerTwitter{
-        cursor: pointer;
-        padding: 5px;
-        background-color: #570AB8;
-        box-sizing: border-box;
-        border-radius: 5px;
-        margin: 1%;
-    }
-    #footerSteam{     
-        cursor: pointer;
-        padding: 5px;
-        background-color: #570AB8;
-        box-sizing: border-box;
-        border-radius: 5px;
-        margin: 1%;
-    }
-    #footerDiscor{     
-        cursor: pointer;
-        padding: 5px;
-        background-color: #570AB8;
-        border-radius: 5px;
-        margin:1px;
-        align-items: center;
-    
+    #fa-solido01{
+        display: none;
     }
 } 

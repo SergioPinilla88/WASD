@@ -1,8 +1,8 @@
 const express = require('express');
 const app = express();
-const path = require('path')
+const path = require('path');
 const puerto = 3030;
-const publicPath = path.resolve(__dirname, './public')
+const publicPath = path.resolve(__dirname, './public');
 
 //configuraciones
 app.use(express.static(publicPath));
