@@ -22,7 +22,7 @@
     flex-wrap: wrap;
     flex-direction:row;
     justify-items: center;
-    justify-content: space-between;
+    justify-content: center;
     align-content: stretch;
     margin-left: 2%;
         margin-right: 2%;
@@ -80,6 +80,7 @@
     flex-direction:column;
     justify-content:center;
     align-items: center;
+    margin: 0.3cm;
     
            
 
@@ -97,13 +98,16 @@
         flex-direction: column;
         width: 25vw;
         min-width: 300px;
-        margin-left: 3cm;
-        align-content:space-around;
+        padding: 0.5cm;
+        align-content:center;
         justify-content: center;
+        text-align:justify;
         
 
 
    }
+
+   
 
    .descripcion{
 
@@ -115,6 +119,7 @@
     margin-left: 1cm;
     justify-content:center;
     align-content:stretch;
+    text-align: center;
 
 
 }
@@ -138,8 +143,12 @@
         width:80%;
         height: 70%;
         padding:5%;
+        object-fit: contain;
+        
 
    }
+
+   
 
    .carruselImg{
 
@@ -238,7 +247,7 @@
 
         width:70%;
         height: 0.8cm;
-        font-size:40%;
+        font-size:60%;
         justify-content: center;
         color:#570AB8
     
@@ -249,7 +258,7 @@
 
         width:70%;
         height: 0.8cm;
-        font-size:80%;
+        font-size:100%;
         justify-content: center;
         color:#570AB8
     }
@@ -258,7 +267,7 @@
 
         width:70%;
         height: 0.6cm;
-        font-size:40%;
+        font-size:60%;
         text-align: center;
         color:#570AB8;
 
@@ -277,6 +286,7 @@
         font-weight: bolder;
         align-content: center;
         justify-content: center;
+        text-align: left;
         color:#570AB8;
     }
 
@@ -318,7 +328,7 @@
         font-weight:lighter;
         align-content: center;
         justify-content: center;
-        
+        text-align:right;
     }
     
     
@@ -334,6 +344,20 @@
 
         object-fit: cover;
         width: 100%;
+
+    }
+
+    .mainFooter{
+
+        
+        display: flex;
+            flex-direction:column;
+            width: 90vw;
+            background-color: white;
+            justify-content:space-around;
+            font-family: 'Roboto', sans-serif;
+            margin: 5vw;
+
 
     }
 
