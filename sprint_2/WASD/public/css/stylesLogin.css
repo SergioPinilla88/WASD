@@ -1,6 +1,6 @@
 * {
-     box-sizing: border-box ;
-    
+    box-sizing: border-box;
+
 }
 
 /*Tipografia*/
@@ -8,72 +8,81 @@ body {
     font-family: 'Roboto', sans-serif;
     font-size: 300;
 }
+
 /*-----------------------------------------------------------main-----------------------------------------------------------------------*/
-main{
+main {
     display: flex;
     justify-content: center;
-    padding-top:5px ;
+    padding-top: 5px;
 }
 
-.cajaLogin{
-    
+.cajaLogin {
+
     position: relative;
     margin: 1% solid black;
     border: black 3px solid;
-    
+
 }
-#imgUsuario{
+
+#imgUsuario {
     display: flex;
     justify-content: center;
     width: 10%;
-
 }
-.cajaImgUsuario{
+
+.cajaImgUsuario {
     padding: 25vw;
     background-attachment: scroll;
     background-size: 180%;
     border-radius: 50vw;
     background-image: url('/images/login/spiderman-miles-morales.webp');
 }
-#fa-solid01{
+
+#fa-solid01 {
     color: white;
-    background-color: #570AB8;
-    padding: 3px;
-    border-radius: 5px;
-}
-#fa-solido01{
-    color:white;
     background-color: #570AB8;
     padding: 3px;
     border-radius: 5px;
 }
 
-#IniciarUser{
+#fa-solido01 {
+    color: white;
+    background-color: #570AB8;
+    padding: 3px;
+    border-radius: 5px;
+}
+
+#IniciarUser {
     display: none;
 }
-#password{
+
+#password {
     color: white;
 }
-.cajaUser{
-    display:flex;
-    flex-wrap:wrap;
+
+.cajaUser {
+    display: flex;
+    flex-wrap: wrap;
     text-align: left;
     display: block;
     padding: 1px;
     margin-bottom: 5px;
 }
-#IniciarSecion{
+
+#IniciarSecion {
     text-align: center;
-    border-top: solid 5px #570AB8 ;
-    border-bottom: solid 5px #570AB8 ;
+    border-top: solid 5px #570AB8;
+    border-bottom: solid 5px #570AB8;
 }
-.cajaPasswor{
-    display:flex;
-    flex-wrap:wrap;
+
+.cajaPasswor {
+    display: flex;
+    flex-wrap: wrap;
     padding: 1px;
     margin-top: 5px;
 }
-.cajaIniciar{
+
+.cajaIniciar {
     text-align: center;
     display: flex;
     flex-wrap: wrap;
@@ -82,7 +91,7 @@ main{
 
 /*-----------------------------------------------------------footer---------------------------------------------------------------------*/
 
-.footerEncavezado{
+.footerEncabezado {
     text-align: center;
     text-decoration: none;
     position: relative;
@@ -90,51 +99,61 @@ main{
     border: 1px;
     padding-bottom: 1px;
 }
-.footerEncavezado::after,.footerEncavezado::before{
+
+.footerEncabezado::after,
+.footerEncavezado::before {
     content: '';
     position: absolute;
     width: 100%;
     height: 5px;
     background-color: #570AB8;
-    
-}
-.footerEncavezado::after{
-    top:3.6em;
-    right: 0px;
-}
-.footerEncavezado::before{
-top:-0em;
-left: 0px;
+
 }
 
-.footerWasd{
+.footerEncabezado::after {
+    top: 3.6em;
+    right: 0px;
+}
+
+.footerEncabezado::before {
+    top: -0em;
+    left: 0px;
+}
+
+.footerWasd {
     color: #570AB8;
     font-size: 50px;
     font-weight: 1000;
     text-decoration: none;
 }
-.footerPie{
+
+.footerPie {
     align-items: flex-start;
     display: flex;
 }
-#footerLogo{
-    width:30%;
+
+#footerLogo {
+    width: 30%;
     cursor: pointer;
-    min-width:60px;
+    min-width: 60px;
     border: #570AB8 1 px solid;
     align-self: flex-start;
     max-width: 120px;
 }
-.footerEnlaces{
+
+.footerEnlaces {
     display: flex;
     flex-wrap: wrap;
 }
-.fa-brands{
-    background-color:#570AB8;
+
+.fa-brands {
+    background-color: #570AB8;
     color: white;
-    font: weight 700;;
+    font: weight 700;
+    ;
 }
-#footerContacto{
+
+#footerContacto {
     cursor: pointer;
     padding: 5px;
     background-color: #570AB8;
@@ -144,112 +163,98 @@ left: 0px;
     color: white;
     background-image: url('')
 }
-#footerTelefono{
-    color:white;
+
+#footerTelefono {
+    color: white;
     cursor: pointer;
     padding: 5px;
     box-sizing: border-box;
     border-radius: 5px;
     text-decoration: none;
 }
-.fa-solid{
-    padding-top:1%;
-    color:white;
+
+.fa-solid {
+    padding-top: 1%;
+    color: white;
     background-color: #570AB8;
-} 
-.divTel{
+}
+
+.divTel {
     cursor: pointer;
     padding: 5px;
     box-sizing: border-box;
     border-radius: 5px;
     margin: 5px;
     background-color: #570AB8;
-    align-items:none;
+    align-items: none;
 }
-#footerFacebook{
+
+#footerDiscor,
+#footerSteam,
+#footerTwitter,
+#footerFacebook {
     cursor: pointer;
     padding: 5px;
     background-color: #570AB8;
     box-sizing: border-box;
     border-radius: 5px;
     margin: 5px;
-    align-items:flex-start;
+    align-items: flex-start;
 }
-#footerTwitter{
-    cursor: pointer;
-    padding: 5px;
-    background-color: #570AB8;
-    box-sizing: border-box;
-    border-radius: 5px;
-    margin: 5px;
-    align-items:flex-start;
-}
-#footerSteam{
-    cursor: pointer;
-    padding: 5px;
-    background-color: #570AB8;
-    box-sizing: border-box;
-    border-radius: 5px;
-    margin: 5px;
-    align-items:flex-start;
-}
-#footerDiscor{
-    cursor: pointer;
-    padding: 5px;
-    background-color: #570AB8;
-    box-sizing: border-box;
-    border-radius: 5px;
-    margin: 5px;
-    align-items:flex-start;
-}
+
 /*-------------------------------------------------------------------------------------------media------------------------------------------------------------------------------------*/
 /* @media(min-width:360px){ 
     
 } */
- @media(min-width:720px){
+@media(min-width:720px) {
     .cajaIniciar {
         text-align: center;
         display: flex;
         flex-wrap: wrap;
         justify-content: space-around;
     }
-    #IniciarUser{
+
+    #IniciarUser {
         color: black;
         display: contents;
         font-size: 19px;
-        font-weight:1000;
+        font-weight: 1000;
         background-color: #570AB8;
-        border:black 3px solid;
+        border: black 3px solid;
     }
-    #footerLogo{
-        max-width:120px;
-        align-self:flex-start;
+
+    #footerLogo {
+        max-width: 120px;
+        align-self: flex-start;
     }
-    .footerPie{
+
+    .footerPie {
         display: flex;
         flex-wrap: wrap;
         margin: 1%;
     }
-     .footerEnlaces{
+
+    .footerEnlaces {
         display: flex;
-        justify-content: center; 
-    } 
-    #fa-solid{
+        justify-content: center;
+    }
+
+    #fa-solid {
         color: white;
         background-color: #570AB8;
         padding: 3px;
         border-radius: 5px;
     }
-    #fa-solido{
-        color:white;
+
+    #fa-solido {
+        color: white;
         background-color: #570AB8;
         padding: 3px;
         border-radius: 5px;
     }
-    #fa-solid01{
+
+    #fa-solid01, #fa-solido01 {
         display: none;
     }
-    #fa-solido01{
-        display: none;
-    }
-} 
+
+}
