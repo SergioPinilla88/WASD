@@ -14,6 +14,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" rel="stylesheet">
     <!--Titulo Pestaña-->
     <title>WASD</title>
 </head>
@@ -30,7 +32,7 @@
                 <input type="checkbox" id="menu" class="nav_input">
                 <div class="nav_menu">
                     <a href="/car" class="nav_items">Tienda<i class="fas fa-shopping-cart"></i></a>
-                    <a href="login" class="nav_items">Login</a>
+                    <a href="/login" class="nav_items">Login</a>
                     <a href="/registro" class="nav_items">Registro</a>
                     <a href="/producto" class="nav_items">Productos</a>
                     <a href="buscar" class="nav_items"><i class="fas fa-search"></i></a>
@@ -112,20 +114,38 @@
     </main>
     <br>
     <footer>
-         <nav class="footer">
-             <div class="wasd">
-                 <h3>WASD</h3>
-             </div>
-                <div class="footer_contenedor">
-                    <div class="footer_item">
-                       <img src="/images/Logo.png" alt="Logo" class="footer_logo"> 
-                       <i class="fas fa-envelope"></i><a href="contacto" class="footer_items">Contacto</i></a>
-                       <i class="fas fa-phone"></i><a href="#" class="footer_items">Telefono</a>
-                       <i class="fab fa-twitter"></i><a href="#" class="footer_items">Twitter</a>
-                       <i class="fab fa-facebook"></i><a href="#" class="footer_items">Facebook</a>
-                       <i class="fab fa-instagram"></i><a href="#" class="footer_items">fa-instagram</a> 
-                    </div>         
-         </nav>
+        <div>
+            <div class="footerEncabezado">
+                <A class="footerWasd" href="/views/home.html">WASD</A>
+            </div>
+            <div class="footerPie">
+
+                <img id="footerLogo" src="/images/WASD Logo.png" alt="logo">
+                <div class="footerEnlaces">
+                    <div id="footerContacto"> <a href="Contacto"><i class="fa-solid fa-envelope"></i> <a href="Contacto"
+                                id="footerTelefono">Contacto</a></div></a>
+                    <div class="divTel"> <a href="telefono"> <i class="fa-solid fa-phone"></i> </a> <a href="telefono"
+                            id="footerTelefono">Telefono</a></div>
+                    <div id="footerFacebook"><a href="https://www.facebook.com"></a> <i href="https://www.facebook.com"
+                            class="fa-brands fa-facebook"></i><a href="https://www.facebook.com" id="footerTelefono">
+                            Facebook</a></div></a>
+                    <div id="footerTwitter"> <a href="https://twitter.com"></a> <i class="fa-brands fa-twitter"></i> <a
+                            href="https://twitter.com" id="footerTelefono"> Twitter</a></div></a>
+                    <div id="footerSteam"> <a href="https://store.steampowered.com"></a> <i
+                            class="fa-brands fa-steam"></i> <a href="https://store.steampowered.com"
+                            id="footerTelefono"> Steam</a></div></a>
+                    <div id="footerDiscor"> <a
+                            href="https://discord.com/channels/967398240465076304/977699998189887488"></a> <i
+                            class="fa-brands fa-discord"></i> <a
+                            href="https://discord.com/channels/967398240465076304/977699998189887488"
+                            id="footerTelefono"> Discor</a></div></a>
+                </div>
+            </div>
+        </div>
+        <div class="legales">
+            <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officia commodi provident, eos nemo sed eum
+                aut </p>
+        </div>
     </footer>
 </body>
 
