@@ -12,7 +12,7 @@ app.use(express.static(publicPath));
 app.get('/', (req, res) => {
     res.sendFile(__dirname + "/views/home.html");
 });
-app.get('/car', (req, res) => {
+app.get('/carrito_de_compras', (req, res) => {
     res.sendFile(__dirname + "/views/car.html");
 });
 app.get('/producto', (req, res) => {
