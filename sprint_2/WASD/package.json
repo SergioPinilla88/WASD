@@ -8,5 +8,12 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.18"
-  }
+  },
+  "name": "wasd",
+  "version": "1.0.0",
+  "main": "app.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
 }
