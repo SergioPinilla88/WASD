@@ -1,0 +1,298 @@
+/*General*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*Tipografia*/
+Body {
+    font-family: 'Roboto', sans-serif;
+}
+
+/*Estilos Header*/
+.nav {
+    height: 80px;
+    background: #570AB8;
+    color: white;
+}
+
+.nav_contenedor {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.nav_logo {
+    font-size: 1.5em;
+    font-weight: 900;
+}
+
+.nav_menu {
+    display: grid;
+    grid-auto-flow: column;
+    gap: 3em;
+
+}
+
+.nav_items {
+    color: white;
+    text-decoration: none;
+    --clippy: polygon(0 1%, 0 0, 0 100%, 0% 100%);
+}
+
+.nav_items::after {
+    content: "";
+    display: block;
+    background: white;
+    width: 90%;
+    height: 3px;
+    margin-top: 3px;
+    clip-path: var(--clippy);
+    transition: clip-path 0.6s;
+}
+
+.nav_items:hover::after {
+    --clippy: polygon(0 1%, 100% 0, 100% 100%, 0 100%);
+}
+
+.nav_label,
+.nav_input {
+    display: none;
+}
+
+h3 {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/*Main*/
+main {
+    width: 100%;
+    margin: 0 auto;
+}
+
+video {
+    width: 100%;
+    height: 350px;
+}
+
+.img_carrusel {
+    width: 100%;
+    height: 350px;
+}
+
+.clientes {
+    display: flex;
+    justify-content: space-between;
+}
+
+.clientes .opinion_cliente {
+    display: flex;
+    width: 46%;
+    height: 200px;
+    align-items: center;
+    justify-content: space-evenly;
+    border-radius: 5px;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, .6);
+}
+
+.clientes .opinion_cliente .face {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border: 3px solid #570AB8;
+    border-radius: 50%;
+    display: block;
+}
+
+.clientes .opinion_cliente>.opinion {
+    width: 60%;
+    color: #570AB8;
+}
+
+.clientes .opinion_cliente>.opinion p {
+    font-weight: 300;
+    padding-top: 5px;
+}
+
+/*Footer*/
+.footerEncabezado {
+    text-align: center;
+    text-decoration: none;
+    position: relative;
+    margin: 1px;
+    border: 1px;
+    padding-bottom: 1px;
+}
+
+.footerEncabezado::after,
+.footerEncabezado::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 5px;
+    background-color: #570AB8;
+
+}
+
+.footerEncabezado::after {
+    top: 3.6em;
+    right: 0px;
+}
+
+.footerEncabezado::before {
+    top: -0em;
+    left: 0px;
+}
+
+.footerWasd {
+    color: #570AB8;
+    font-size: 50px;
+    font-weight: 1000;
+    text-decoration: none;
+}
+
+.footerPie {
+    align-items: flex-start;
+    display: flex;
+}
+
+#footerLogo {
+    width: 30%;
+    cursor: pointer;
+    min-width: 60px;
+    border: #570AB8 1 px solid;
+    align-self: flex-start;
+    max-width: 120px;
+}
+
+.footerEnlaces {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.fa-brands {
+    background-color: #570AB8;
+    color: white;
+    font: weight 700;
+    ;
+}
+
+#footerContacto {
+    cursor: pointer;
+    padding: 5px;
+    background-color: #570AB8;
+    box-sizing: border-box;
+    border-radius: 5px;
+    margin: 5px;
+    color: white;
+    background-image: url('')
+}
+
+#footerTelefono {
+    color: white;
+    cursor: pointer;
+    padding: 5px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.fa-solid {
+    padding-top: 1%;
+    color: white;
+    background-color: #570AB8;
+}
+
+.divTel {
+    cursor: pointer;
+    padding: 5px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    margin: 5px;
+    background-color: #570AB8;
+    align-items: none;
+}
+
+#footerDiscor,
+#footerSteam,
+#footerTwitter,
+#footerFacebook {
+    cursor: pointer;
+    padding: 5px;
+    background-color: #570AB8;
+    box-sizing: border-box;
+    border-radius: 5px;
+    margin: 5px;
+    align-items: flex-start;
+}
+
+
+
+
+
+/*Media Queris*/
+/*Escritorio*/
+@media (min-width: 821px) {
+    .img_logo {
+        display: block;
+        width: 90px;
+        height: 90px;
+    }
+}
+
+/*Dispositivos Moviles*/
+@media (max-width: 820px) {
+
+    .img_logo {
+        display: none;
+    }
+
+    .nav_label {
+        display: block;
+        cursor: pointer;
+    }
+
+    .nav_menu {
+        position: fixed;
+        background: #570AB8;
+        top: 80px;
+        bottom: 0;
+        width: 100%;
+        left: 0;
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: column;
+        align-items: center;
+        clip-path: circle(0 at center);
+        /*con esta propiedad damos el efecto circulo del menu*/
+        transition: clip-path 1s ease-in-out;
+    }
+
+    .nav_input:checked+.nav_menu {
+        clip-path: circle(100% at center);
+    }
+
+    .clientes {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .clientes .opinion_cliente {
+        width: 90%;
+    }
+
+    .clientes .opinion_cliente:first-child {
+        margin-bottom: 30px;
+    }
+
+    .footer_items {
+        display: none;
+    }
+}

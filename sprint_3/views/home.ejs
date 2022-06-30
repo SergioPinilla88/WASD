@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--link de css-->
+    <link rel="stylesheet" href="/css/stylesHome.css">
+    <!--Favicon-->
+    <link rel="icon" href="/images/WASD Favicon.png">
+    <!--Tipografia-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <!--Titulo Pestaña-->
+    <title>WASD</title>
+</head>
+
+<body>
+    <header>
+        <nav class="nav">
+            <div class="nav_contenedor">
+                <a href="/"><img src="/images/Logo.png" alt="Logo" class="img_logo"></a>
+                <h1 class="nav_logo">WASD TECHNOLOGY</h1>
+                <label for="menu" class="nav_label">
+                    <i class="fas fa-bars fa-2x" style="color: white"></i>
+                </label>
+                <input type="checkbox" id="menu" class="nav_input">
+                <div class="nav_menu">
+                    <a href="/compra/carrito_de_compras" class="nav_items">Tienda<i class="fas fa-shopping-cart"></i></a>
+                    <a href="/usuario/login" class="nav_items">Login</a>
+                    <a href="/usuario/registro" class="nav_items">Registro</a>
+                    <a href="/producto" class="nav_items">Productos</a>
+                    <a href="buscar" class="nav_items"><i class="fas fa-search"></i></a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <video src="/images/videoMain.mp4" controls autoplay muted></video>
+        <br>
+        <section class="carrusel">
+            <h3>Destacados y recomendados</h3>
+            <div class="carrusel_contenedor">
+                <div class="carrusel_item">
+                    <img src="/images/carrusel1.jpg" alt="lol" class="img_carrusel">
+                    <h4>Juego 1</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem.</p>
+                </div>
+                <div class="carrusel_item">
+                    <img src="/images/carrusel3.jpg" alt="COD" class="img_carrusel">
+                    <h4>Juego 2</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem.</p>
+                </div>
+                <div class="carrusel_item">
+                    <img src="/images/carrusel2.jpg" alt="destiny2" class="img_carrusel">
+                    <h4>Juego 3</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem.</p>
+                </div>
+        </section>
+        <br>
+        <h3>Que opinan nuestros clientes</h3>
+        <section class="clientes">
+            <div class="opinion_cliente">
+                <img src="/images/face1.jpg" alt="face1" class="face">
+                <div class="opinion">
+                    <h4>Nombre</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Id animi provident accusamus ducimus
+                        iste molestias!</p>
+                </div>
+            </div>
+            <div class="opinion_cliente">
+                <img src="/images/face2.jpg" alt="face2" class="face">
+                <div class="opinion">
+                    <h4>Nombre</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Id animi provident accusamus ducimus
+                        iste molestias!</p>
+                </div>
+            </div>
+            <div class="opinion_cliente">
+                <img src="/images/face3.jpg" alt="face3" class="face">
+                <div class="opinion">
+                    <h4>Nombre</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Id animi provident accusamus ducimus
+                        iste molestias!</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="ofertas">
+            <h3>Ofertas</h3>
+            <div class="ofertas_contenedor">
+                <div class="oferta">
+                    <h4>Oferta 1</h4>
+                    <img src="/images/oferta1.jpg" alt="oferta1" class="oferta_img">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem.</p>
+                </div>
+                <div class="oferta">
+                    <h4>Oferta 2</h4>
+                    <img src="/images/oferta2.jpg" alt="oferta2" class="oferta_img">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem.</p>
+                </div>
+                <div class="oferta">
+                    <h4>Oferta 3</h4>
+                    <img src="/images/oferta3.jpg" alt="oferta3" class="oferta_img">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem.</p>
+                </div>
+        </section>
+    </main>
+    <br>
+    <footer>
+        <div>
+            <div class="footerEncabezado">
+                <A class="footerWasd" href="/views/home.html">WASD</A>
+            </div>
+            <div class="footerPie">
+
+                <img id="footerLogo" src="/images/WASD Logo.png" alt="logo">
+                <div class="footerEnlaces">
+                    <div id="footerContacto"> <a href="Contacto"><i class="fa-solid fa-envelope"></i> <a href="Contacto"
+                                id="footerTelefono">Contacto</a></div></a>
+                    <div class="divTel"> <a href="telefono"> <i class="fa-solid fa-phone"></i> </a> <a href="telefono"
+                            id="footerTelefono">Telefono</a></div>
+                    <div id="footerFacebook"><a href="https://www.facebook.com"></a> <i href="https://www.facebook.com"
+                            class="fa-brands fa-facebook"></i><a href="https://www.facebook.com" id="footerTelefono">
+                            Facebook</a></div></a>
+                    <div id="footerTwitter"> <a href="https://twitter.com"></a> <i class="fa-brands fa-twitter"></i> <a
+                            href="https://twitter.com" id="footerTelefono"> Twitter</a></div></a>
+                    <div id="footerSteam"> <a href="https://store.steampowered.com"></a> <i
+                            class="fa-brands fa-steam"></i> <a href="https://store.steampowered.com"
+                            id="footerTelefono"> Steam</a></div></a>
+                    <div id="footerDiscor"> <a
+                            href="https://discord.com/channels/967398240465076304/977699998189887488"></a> <i
+                            class="fa-brands fa-discord"></i> <a
+                            href="https://discord.com/channels/967398240465076304/977699998189887488"
+                            id="footerTelefono"> Discor</a></div></a>
+                </div>
+            </div>
+        </div>
+        <div class="legales">
+            <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officia commodi provident, eos nemo sed eum
+                aut </p>
+        </div>
+    </footer>
+</body>
+
+</html>
