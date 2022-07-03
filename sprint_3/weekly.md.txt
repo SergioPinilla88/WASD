@@ -1,0 +1,25 @@
+//26/06/2022
+Empezar a hacer:
+Hacer seguimiento del sprint_3 , revisar en que se puede avanzar y distribucion de tareas en el grupo.
+Mas de:
+Seguir haciendo:
+Menos de:
+Organizarnos mas con tiempo de entregas
+Deja de hacerlo:
+No revisar el proyecto antes de entregarlo.
+
+
+//3/07/2022
+Qué hizo ayer:
+Dejamos lista la aplicacion para que funcionara como MVC, mershear css , generamos rutas de usuario, producto y compra
+Se creo la primera version del formulario de administración del producto,
+Compromisos: Montar archivos head, header, footer en la carpeta partials,
+Si se encontró con algún impedimento: 
+Luego de revisar el 03/07/2022  se logro unificar el CSS sin problema, los archivos head, header y footer ya Juan los tiene listos pero no ha podido publicarlos por problemas con energia e internet. Quedamos todos pendientes de esta subida para proceder a incluir el uso de estos archivos en cada
+EJS
+Qué va a hacer hoy:
+Compromisos: Cada uno usa la clausula include en su correspondiente ejs para que se re use el codigo del head, header y footer, invocando y no copiando.
+
+
+
+  
