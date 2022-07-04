@@ -220,6 +220,14 @@ video {
     align-items: none;
 }
 
+.legales{
+
+    font-family: 'Roboto', sans-serif;
+    font-size: 50%;
+    font-weight: lighter;
+
+}
+
 #footerDiscor,
 #footerSteam,
 #footerTwitter,
@@ -326,8 +334,8 @@ display:flex;
 flex-wrap: wrap;
 flex-direction:row;
 justify-items: center;
-justify-content: space-between;
-align-content: stretch;
+justify-content: center;
+align-content: center;
 margin-left: 2%;
     margin-right: 2%;
 
@@ -406,7 +414,7 @@ display:flex;
 width: 25vw;
 min-width: 300px;
 flex-direction:column;
-margin-left: 1cm;
+margin-left: 0cm;
 justify-content:center;
 align-content:stretch;
 text-align: center;
@@ -618,7 +626,7 @@ padding: 5%;
     font-weight:lighter;
     align-content: center;
     justify-content: center;
-    text-align:right;
+    text-align:center;
 }
 
 
@@ -1180,6 +1188,7 @@ body{
     color: #570AB8;
     font-weight: 700;
 }
+
 form{
     min-width: 70vw;
     margin-left: 5px;
@@ -1188,7 +1197,10 @@ form{
 h2{
     margin: 5px;
 }
+
+
 .contenido{
+  
     display: flex;
     flex-direction: column;
     margin: 5px;
