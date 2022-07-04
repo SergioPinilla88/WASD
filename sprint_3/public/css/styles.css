@@ -1034,6 +1034,7 @@ main{
    border: 1px;
    padding-bottom: 1px;
    margin-top: 10px;
+   font-family: 'Roboto', sans-serif;
 }
 .footerEncavezado::after,.footerEncavezado::before{
    content: '';
@@ -1057,10 +1058,12 @@ left: 0px;
    font-size: 50px;
    font-weight: 1000;
    text-decoration: none;
+   /* font-family: 'Roboto', sans-serif; */
 }
 .footerPie{
    align-items: flex-start;
    display: flex;
+   font-family: 'Roboto', sans-serif;
 }
 #footerLogo{
    width:30%;
@@ -1145,6 +1148,7 @@ left: 0px;
        display: flex;
        flex-wrap: wrap;
        margin: 1%;
+       font-family: 'Roboto', sans-serif;
    }
     .footerEnlaces{
        display: flex;

@@ -18,4 +18,4 @@ app.use('/compra', rutasCompra);
 
 
 
-app.listen(3000, () => {console.log("Servidor levantado en puerto 3000")});
+app.listen(3000, () => {console.log('http://localhost:3000')});
