@@ -1252,9 +1252,6 @@ h2 {
     flex-direction: column;
     margin: 5px;
     padding: 10px;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
 }
 
 .contenido .textos input {
@@ -1263,32 +1260,7 @@ h2 {
     border-radius: 5px;
 }
 
-<<<<<<< HEAD
-.textos{
-
-    font-family: 'Roboto', sans-serif;
-    text-align: left;
-
-}
-
-.textosTitulo{
-
-    font-family: 'Roboto', sans-serif;
-    text-align: center;
-
-}
-
-
-
-.terminos{
-
-    font-family: 'Roboto', sans-serif;
-}
-
-.textos input:focus{
-=======
 .textos input:focus {
->>>>>>> 97a001faef406bf013905c41cf564fbe18d87131
     box-shadow: #570AB8;
     border: 3px solid #570AB8;
 }
@@ -1300,16 +1272,10 @@ h2 {
 .terminos label a {
     text-decoration: none;
 }
-<<<<<<< HEAD
-.boton{
-=======
 
 form .boton {
->>>>>>> 97a001faef406bf013905c41cf564fbe18d87131
     display: flex;
     justify-content: center;
-    align-items: center;
-    min-width: 60px;
     height: 5vh;
 }
 
@@ -1440,40 +1406,6 @@ form .boton {
     background-size: 400%;
     border-radius: 35px;
     transition: 1s;
-<<<<<<< HEAD
-   }
-   
-   .botonCargar:hover::before {
-    filter: blur(20px);
-   }
-   
-   .botonCargar:active {
-    background: linear-gradient(32deg,#570AB8,#f441a5,#ffeb3b,#03a9f4);
-   }
-
-@media (min-width: 821px) {
-    .contenido .textos input{
-        width: 30vw;
-        height: 4vh;
-        border-radius: 5px;
-     }
-    
-}
-@media (max-width: 820px) {
-    form{
-        width: 50vw;
-    }
-    .contenido .textos input{
-        width: 40vw;
-        height: 4vh;
-        border-radius: 5px;
-     }
-     button {
-        border-radius: 6px;
-        border: 2px solid #570AB8;
-    }
-}
-=======
 }
 
 .botonCargar:hover::before {
@@ -1486,4 +1418,3 @@ form .boton {
 
 
 
->>>>>>> 97a001faef406bf013905c41cf564fbe18d87131
