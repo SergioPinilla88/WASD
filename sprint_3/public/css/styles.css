@@ -1038,9 +1038,13 @@ main {
     border-bottom: solid 5px #570AB8;
 }
 
-.cajaPasswor {
+.userPass{
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+}
+.cajaPasswor {
     padding: 1px;
     margin: 5px;
 }
@@ -1057,7 +1061,7 @@ main {
     margin: 2px;
 }
 
-#botones {
+/*#botones {
     margin: 10px;
     background-color: #570AB8;
     color: white;
@@ -1066,7 +1070,7 @@ main {
 #botones:hover {
     background-color: white;
     color: #570AB8;
-}
+}*/
 
 /*-----------------------------------------------------------footer---------------------------------------------------------------------*/
 
@@ -1335,10 +1339,9 @@ form .boton {
     height: 5vh;
 }
 
-.reset, .submit {
+
+.cancelar, .comprar {
     width: 15vw;
-    border-radius: 5px;
-    border: 2px solid #570AB8;
     margin-bottom: 10px;
 }
 
@@ -1351,8 +1354,8 @@ form .boton {
     }
 
 
-    .reset,
-    .submit {
+    .cancelar,
+    .comprar {
         margin-right: 70%;
         width: 65px;
     }
@@ -1369,11 +1372,10 @@ form .boton {
         border-radius: 5px;
     }
 
-    .reset,
-    .submit {
+    .cancelar,
+    .comprar {
         border-radius: 6px;
         width: 10vw;
-        border: 2px solid #570AB8;
     }
 
 }
@@ -1414,10 +1416,7 @@ form .boton {
     
 }
 
-
-
-
-.botonCargar {
+button {
     margin-bottom: 20px;
     text-decoration: none;
     position: absolute;
@@ -1435,7 +1434,7 @@ form .boton {
     z-index: 1;
 }
 
-.botonCargar:hover {
+button:hover {
     animation: ani 8s linear infinite;
     border: none;
 }
@@ -1450,7 +1449,7 @@ form .boton {
     }
 }
 
-.botonCargar:before {
+button:before {
     content: '';
     position: absolute;
     top: -5px;
@@ -1464,13 +1463,18 @@ form .boton {
     transition: 1s;
 }
 
-.botonCargar:hover::before {
+button:hover::before {
     filter: blur(20px);
 }
 
-.botonCargar:active {
+button:active {
     background: linear-gradient(32deg, #570AB8, #af41f4, #ffeb3b, #03a9f4);
 }
+
+
+
+
+
 
 
 
