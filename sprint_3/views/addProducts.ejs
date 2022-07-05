@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('../partials/head.ejs') %>
+<body>
+    <header>
+        <%- include('../partials/header.ejs') %>
+    </header>
+    <h1 class="tiuloFproductos">Formulario para agregar Productos</h1>
+    <div class="formularioProductos">
+    <form action="" method="post">
+      <label for="name">Nombre</label>
+      <input type="text" name="nombre" id="nombre">
+      <label for="description">Descripcion</label>
+      <input type="text" name="descripcion" id="descripcion">
+      <label for="image">Imagen</label>
+      <input type="file" name="image" id="image">
+      <label for="category" name="category">Categoria</label>
+      <input type="text" name="category" id="category">
+      <label for="colors">Color</label>
+      <input type="color" name="colors" id="colors">
+      <label for="precio">Precio</label>
+      <input type="text" name="precio" id="precio">
+      <label for="cantidad">Cantidad</label>
+      <input type="text" name="cantidad" id="cantidad">
+      <button class="botonCargar"> Cargar Producto</button>
+    </form>
+    </div>
+    <footer>
+        <%- include('../partials/footer.ejs') %>
+    </footer>
+</body>
+</html>
