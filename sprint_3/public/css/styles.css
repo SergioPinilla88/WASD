@@ -371,6 +371,21 @@ video {
 
 }
 
+.encabezadoRecomendados {
+
+    display: flex;
+    width: 27vw;
+    min-width: 150px;
+    flex-direction: column;
+    justify-content: space-around;
+    align-content: space-around;
+
+
+
+}
+
+
+
 .encabezadoResenas {
 
     display: flex;
@@ -437,6 +452,16 @@ video {
 
 }
 
+.imagenProductoRec {
+
+    width: 100%;
+    height: 70%;
+    padding: 5%;
+    object-fit: contain;
+
+
+}
+
 .imagenProducto {
 
     width: 80%;
@@ -446,6 +471,8 @@ video {
 
 
 }
+
+
 
 
 
@@ -964,6 +991,19 @@ main {
     padding-top: 5px;
 }
 
+.productosRecomendados {
+
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-items: center;
+    justify-content: center;
+    align-content: center;
+    margin-left: 2%;
+    margin-right: 2%;
+
+}
+
 .productosEnOferta {
 
     display: flex;
@@ -986,19 +1026,18 @@ main {
 
 }
 
-#imgUsuario {
-    display: flex;
-    justify-content: center;
-    width: 10%;
 
-}
 
 .cajaImgUsuario {
-    padding: 25vw;
-    background-attachment: scroll;
-    background-size: 180%;
+    padding: 5vw;
     border-radius: 50vw;
-    background-image: url('/images/carrusel3.jpg');
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    width: 35%;
+    border-radius: 50vw;
+
+    
 }
 
 #fa-solid01 {
