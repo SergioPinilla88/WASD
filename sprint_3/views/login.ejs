@@ -6,12 +6,12 @@
         <%- include('../partials/header.ejs') %>
     </header>
     <!--------------------------------------------------------------login-------------------------------------------------------------------------------------------------------------->
-    <main>
+    <main> 
         <div class="cajaLogin">
-            <form action="/registro" method="POST">
+            <form id="formLogin"action="/registro" method="POST">
             
                 <div class="cajaImgUsuario">
-                    <img  id= "imgUsuario" src="/images/carrusel1.jpg">
+                    <!-- <div id= "imgUsuario"><img   src="/images/carrusel1.jpg"</div> -->
                 </div>
                 <!-------------------------------------------------iniciar secion--------------------------------------------------------------------------------------------------->
                 <div class="cajaIniciarSecion">
@@ -19,32 +19,32 @@
                 </div> 
                 <div class="userPass">
                  <!-------------------------------------------------Usuario--------------------------------------------------------------------------------------------------->
-                <div class="cajaUser">
-                    <div id="fa-solid01" class="fa-solid fa-user"></div>
-                    <label id="IniciarUser"   for="nombre"><div id="fa-solid" class="fa-solid fa-user"></div> Usuario</label>
-                    <input  type="text" name="nombre" id="nombre">
-                </div>
+                    <div class="cajaUser">
+                        <div id="fa-solid01" class="fa-solid fa-user"></div>
+                            <label id="IniciarUser"   for="nombre"><div id="fa-solid" class="fa-solid fa-user"></div> Usuario</label>
+                                <input  type="text" name="nombre" id="nombre">
+                    </div>
                  <!-------------------------------------------------Contraseña-------------------------------------------------------------------------------------------------->
                 <div class="cajaPasswor">
                     <div id="fa-solido01" class="fa-solid fa-lock"></div>
-                    <label  id="IniciarUser"   for="Clave"> <div id="fa-solido" class="fa-solid fa-lock"></div> Clave</label>
-                    <input  type="password" name="Clave" id="Clave">
+                        <label  id="IniciarUser"   for="Clave"> <div id="fa-solido" class="fa-solid fa-lock"></div> Clave</label>
+                            <input  type="password" name="Clave" id="Clave">
                 </div>
                 
-            </div>
+                </div>
                  <!-------------------------------------------------Botones--------------------------------------------------------------------------------------------------->
-                 <div class="cajaIniciar"> 
+                <div class="cajaIniciar"> 
                     <p>
-                    <button id="botones" type="submit">Iniciar Secion</button> 
-                </p>
-                <p>
-                     <button id="botones" type="reset">Borrar</button>   
-                </p>
-            </div>
+                        <button id="botonesLogin" type="submit">Iniciar Secion</button> 
+                    </p>
+                    <p>
+                         <button id="botonesLogin" type="reset">Borrar</button>   
+                    </p>
+                </div>
             </form>
 
         </div>
-    </main> 
+    </main>
     <!------------------------------------------------------------------------footer------------------------------------------------------------------------------------------------->
     <footer>
         <%- include('../partials/footer.ejs') %>
