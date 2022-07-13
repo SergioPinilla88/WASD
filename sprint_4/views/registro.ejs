@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('../partials/head.ejs') %>
+<body>
+    <header>
+        <%- include('../partials/header.ejs') %>
+    </header>
+    <form action="registro.html" method="POST">
+        <br>
+        <legend><h2 class = "textosTitulo">CREA TU CUENTA</h2></legend>
+        <br>
+        <div class="contenido">
+            <label class="textos" for="">
+                Correo Electronico:
+                <br>
+                <input type="email" name="email" id="email" required >
+            </label>
+        <br>
+            <label class="textos" for="">
+                Confirma tu Correo:
+                <br>
+                <input type="email" name="email" id="email" required>
+            </label>
+        <br>
+            <label class="textos" for="">
+                Contraseña:
+                <br>
+                <input type="password" name="password" id="pass" required maxlength="8">
+            </label>
+        <br>
+            <label  class="textos"for="">
+                Confirma tu Contraseña:
+                <br>
+                <input type="password" name="password" id="pass" required maxlength="8">
+            </label>
+        <br>
+            <label  class="textos"for="">
+                Nombre de Usuario:
+                <br>
+                <input type="text" name="user" id="user" required minlength="6">
+            </label>
+        <br>
+            <label  class="textos"for="">
+                Telefono:
+                <br>
+                <input type="tel" name="telefono" id="tel" required max="10">
+            </label>
+        <br>
+            <div class=" terminos">
+                <label for="cheack">
+                    <input type="radio" name="check" id="cheack"  required>
+                    Tengo 18 años o más y estoy de acuerdo con los <a href="#">Terminos</a>
+                </label>
+                <br><br>
+                <label for="">
+                    ¿quieres recibir nuestras ofertas en tu email?
+                    <input type="radio" name="answer" id="si"><label for="">Si</label>
+                    <input type="radio" name="answer" id="no"><label for="">No</label>
+                </label>
+            </div>
+        <br>
+        </div>
+        <div class="boton">
+            <button type="submit">Enviar</button>
+        </div>
+    </form>
+    <footer>
+        <%- include('../partials/footer.ejs') %>
+    </footer>
+</body>
+</html>

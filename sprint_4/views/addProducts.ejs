@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('../partials/head.ejs') %>
+<body >
+    <header>
+        <%- include('../partials/header.ejs') %>
+    </header>
+    <div class="addProducts">
+    <h1 class="tituloFproductos">Formulario para agregar Productos</h1>
+    <form action="/admin/addProduct" method="post" enctype="multipart/form-data">
+    <div>
+      <label for="name">Nombre</label>
+      <br>
+      <input type="text" name="nombre" id="name">
+    </div>
+    <div>
+      <label for="description">Descripcion</label>
+      <br>
+      <input type="text" name="descripcion" id="description">
+    </div>
+    <div>
+      <label for="image">Imagen</label>
+      <br>
+      <input type="file" name="image" id="image">
+    </div>
+    <div>
+      <label for="category" name="category">Categoria</label>
+      <br>
+      <input type="text" name="category" id="category">
+    </div>
+    <div>
+      <label for="colors">Color de Marco</label>
+      <br>
+      <input type="color" name="colors" id="colors">
+    </div>
+    <div>
+      <label for="price">Precio</label>
+      <br>
+      <input type="text" name="precio" id="price">
+    </div>
+    <div>
+      <label for="quantity">Cantidad</label>
+      <br>
+      <input type="text" name="cantidad" id="quantity">
+    </div>
+    <div>
+      <button class="botonCargar"> Cargar Producto</button>
+    </div>
+    </form>
+</div>
+    <footer>
+        <%- include('../partials/footer.ejs') %>
+    </footer>
+</body>
+</html>
