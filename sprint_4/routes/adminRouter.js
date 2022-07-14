@@ -4,7 +4,7 @@ const router = express.Router();
 const multer = require('multer');
 const path = require('path');
 
-const pathULImages = path.resolve(__dirname, "../public/images");
+const pathULImages = path.resolve(__dirname , "../public/images");
 
 const storage = multer.diskStorage({
 
@@ -16,7 +16,7 @@ const storage = multer.diskStorage({
 
         filename: function( req, file, cb){
 
-                cb(null, file.originalname);
+                cb(null, Date.now() + '-' + file.originalname);
 
         }
 

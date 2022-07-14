@@ -40,10 +40,12 @@ let productController = {
 
             } ;             
 
+
+            
             producto.id = productosArch[productosArch.length - 1].id + 1;
             producto.nombreProducto = request.body.nombre;
             producto.funcionalidades = request.body.descripcion;
-            producto.imagen = request.body.image;
+            producto.imagen = request.file.filename;
             producto.precio = request.body.precio;
             producto.unidadesDisp = request.body.cantidad;
 
