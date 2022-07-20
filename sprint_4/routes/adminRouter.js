@@ -26,6 +26,10 @@ const uploadFile = multer({storage: storage});
 
 router.get('/addProduct', productController.addProductView);
 router.post('/addProduct', uploadFile.single('image'), productController.addProduct);
+router.get('/products', productController.listaProductos);
+router.get('/editProduct/:id', productController.editaProductoView);
+router.put('/editProduct/:id', uploadFile.single('image'), productController.editaProducto);
+
 
 
 
