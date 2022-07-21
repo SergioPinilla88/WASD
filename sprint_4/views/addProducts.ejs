@@ -8,15 +8,36 @@
     <div class="addProducts">
     <h1 class="tituloFproductos">Formulario para agregar Productos</h1>
     <form action="/admin/addProduct" method="post" enctype="multipart/form-data">
+
     <div>
       <label for="name">Nombre</label>
       <br>
       <input type="text" name="nombre" id="name">
     </div>
     <div>
-      <label for="description">Descripcion</label>
+      <label for="descripcion">Descripcion</label>
       <br>
-      <input type="text" name="descripcion" id="description">
+      <input type="text" name="descripcion" id="descripcion">
+    </div>
+    <div>
+      <label for="fabricante">Fabricante</label>
+      <br>
+      <input type="text" name="fabricante" id="fabricante">
+    </div>
+    <div>
+      <label for="paisOrigen">Pais de Origen</label>
+      <br>
+      <input type="text" name="paisOrigen" id="paisOrigen">
+    </div>
+    <div>
+      <label for="modelo">Modelo</label>
+      <br>
+      <input type="text" name="modelo" id="modelo">
+    </div>
+    <div>
+      <label for="funcionalidad">Funcionalidad</label>
+      <br>
+      <input type="text" name="funcionalidad" id="funcionalidad">
     </div>
     <div>
       <label for="image">Imagen</label>
@@ -24,14 +45,19 @@
       <input type="file" name="image" id="image">
     </div>
     <div>
-      <label for="category" name="category">Categoria</label>
+      <label for="category" name="categoria">Categoria</label>
       <br>
-      <input type="text" name="category" id="category">
+      <input type="text" name="categoria" id="categoria">
     </div>
     <div>
-      <label for="colors">Color de Marco</label>
+      <label for="peso">Peso</label>
       <br>
-      <input type="color" name="colors" id="colors">
+      <input type="text" name="peso" id="peso">
+    </div>
+    <div>
+      <label for="calificacion">Calificación</label>
+      <br>
+      <input type="text" name="calificacion" id="calificacion">
     </div>
     <div>
       <label for="price">Precio</label>

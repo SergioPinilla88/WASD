@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('../partials/head.ejs') %>
+<body >
+    <header>
+        <%- include('../partials/header.ejs') %>
+    </header>
+    <div class="addProducts">
+    
+
+    <% if(locals.productos){ %>
+      <% productos.forEach(producto => { %>
+
+        <h1 class="tituloFproductos">Editar Producto: <%=producto.id%></h1>
+        <form action="/admin/editProduct/:id?_method=PUT" method="post" enctype="multipart/form-data">
+
+          <div>
+            <label for="id">Id</label>
+            <br>
+            <input type="text" name="id" id="id" value="<%=producto.id%>" readonly>
+          </div>  
+
+          <div>
+            <label for="name">Nombre</label>
+            <br>
+            <input type="text" name="nombre" id="name" value="<%=producto.nombreProducto%>">
+          </div>   
+
+
+          <div>
+            <label for="descripcion">Descripcion</label>
+            <br>
+            <input type="text" name="descripcion" id="descripcion"  value="<%=producto.descripcion%>">
+          </div>
+          <div>
+            <label for="fabricante">Fabricante</label>
+            <br>
+            <input type="text" name="fabricante" id="fabricante" value="<%=producto.fabricante%>">
+          </div>
+          <div>
+            <label for="paisOrigen">Pais de Origen</label>
+            <br>
+            <input type="text" name="paisOrigen" id="paisOrigen" value="<%=producto.paisOrigen%>">
+          </div>
+          <div>
+            <label for="modelo">Modelo</label>
+            <br>
+            <input type="text" name="modelo" id="modelo" value="<%=producto.modelo%>">
+          </div>
+          <div>
+             <label for="funcionalidad">Funcionalidad</label>
+             <br>
+             <input type="text" name="funcionalidad" id="funcionalidad" value="<%=producto.funcionalidades%>">
+          </div>
+          <div>
+            <label for="image">Imagen Actual</label>
+            <br>
+            <img class="imagenProductoListado" src="../../images/<%=producto.imagen%>">
+            <input type="file" name="image" id="image">
+          </div>
+          <div>
+            <label for="categoria" name="categoria">Categoria</label>
+            <br>
+            <input type="text" name="categoria" id="categoria" value="<%=producto.categoria%>">
+          </div>
+          <div>
+            <label for="peso">Peso</label>
+            <br>
+            <input type="text" name="peso" id="peso" value="<%=producto.peso%>">
+          </div>
+          <div>
+            <label for="calificacion">Calificación</label>
+            <br>
+            <input type="text" name="calificacion" id="calificacion" value="<%=producto.calificacion%>">
+         </div>
+         <div>
+            <label for="price">Precio</label>
+            <br>
+            <input type="text" name="precio" id="price" value="<%=producto.precio%>">
+        </div>
+        <div>
+            <label for="quantity">Cantidad</label>
+            <br>
+            <input type="text" name="cantidad" id="quantity" value="<%=producto.unidadesDisp%>">
+        </div>
+        <div>
+            <button class="botonCargar"> Editar Producto</button>
+        </div>
+    </form>
+
+    <% }) %>
+      <% } %>
+
+</div>
+    <footer>
+        <%- include('../partials/footer.ejs') %>
+    </footer>
+</body>
+</html>
