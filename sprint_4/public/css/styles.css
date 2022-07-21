@@ -586,6 +586,45 @@ video {
 
 }
 
+.seccionEliminar{
+
+    border-style: dotted;
+    border-width:0.8px;
+    border-color:#570AB8;
+    width: 14.28%;
+    padding: 0.4cm;
+    justify-items: center;
+    right: 0;
+    margin: 0cm;
+
+    
+    
+}
+
+.botonEliminar {
+
+
+
+    font-size: 80%;
+    width: 30px;
+    height: 30px;
+    align-self: center;
+    text-align: center;
+    border-radius: 50%;
+    padding-top: 0px;
+    padding-bottom: 2px;
+    padding-left: 2px;
+    padding-right: 2px;
+
+    background-color: #570AB8;
+    ;
+    color: white;
+    justify-content: center;
+    align-content: center;
+
+
+}
+
 .botonCarrito {
 
 
@@ -709,6 +748,24 @@ video {
     text-align: center;
     margin-top: 1cm;
     margin-bottom: 1cm;
+}
+
+.textoCampoEliminar{
+
+    display: none;
+}
+
+.formEliminar{
+
+    display:flex;
+    flex-direction: row;
+    margin:0px;
+    padding: 0px;
+    min-width: 0;
+    justify-content: center;
+    align-items: center;
+
+
 }
 
 

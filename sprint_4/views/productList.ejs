@@ -10,14 +10,25 @@
 
         <h2 class="tituloSec">Listado de Productos</h2>
 
+        
+        <a href="/admin/addProduct/"><button class="botonEliminar">+</button></a>
+
         <div class="listadoProductos">
+
             <% if(locals.productos){ %>
                 <% productos.forEach(producto => { %>
 
-                   <div class="detalleProdListado">
-                     <img class="imagenProductoListado" src="../images/<%=producto.imagen%>">
                     
-                        <div class="infoBaseProd">
+                        
+                    
+
+                    <div class="detalleProdListado">
+                      <img class="imagenProductoListado" src="../images/<%=producto.imagen%>">
+                    
+                                           
+                      <div class="infoBaseProd">
+
+                           
 
                             <div class="variableProd">
                                 <span class=" subtituloListado">
@@ -83,10 +94,31 @@
                                 </span>    
                             </div>
 
+                           
+                                <form action="/admin/deleteProduct/<%=producto.id%>?_method=DELETE" method="post" enctype="multipart/form-data" class="formEliminar variableProd">
+                                    
+                                                         
+                                        
+                                        <button class="botonEliminar"><i class="fas fa-eraser"></i></button>
+                                    
+                                                               
+                                </form>
+                            
+                            
+                            
+
+                            
+                                                     
+
 
                         </div>
+                        <div>
+                                                  
+                        </div>
+                         
                     </div>  
-                        
+
+                     
          
                     
                     

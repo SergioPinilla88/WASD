@@ -29,6 +29,7 @@ router.post('/addProduct', uploadFile.single('image'), productController.addProd
 router.get('/products', productController.listaProductos);
 router.get('/editProduct/:id', productController.editaProductoView);
 router.put('/editProduct/:id', uploadFile.single('image'), productController.editaProducto);
+router.delete('/deleteProduct/:id', productController.deleteProduct);
 
 
 

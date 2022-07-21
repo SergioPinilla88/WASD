@@ -109,12 +109,9 @@ let productController = {
 
             let leeArchivo = fs.readFileSync(pathData, 'utf-8');
             let productosArch = JSON.parse(leeArchivo);
-            request.params.id
             let productoFind = productosArch.find(producto => producto.id == request.body.id);
             let indice = productosArch.findIndex(producto => producto.id == request.body.id);
-            console.log(request.body.id);
-            console.log(indice);
-            console.log(productoFind);
+            
             
             productoFind.id = request.body.id; 
             productoFind.nombreProducto = request.body.nombre;
@@ -150,6 +147,29 @@ let productController = {
 
             
 
+        },
+        
+        deleteProduct: (request, response) =>{
+
+            
+            
+            
+            let leeArchivo = fs.readFileSync(pathData, 'utf-8');
+            let productosArch = JSON.parse(leeArchivo);
+            let productoNew = productosArch.filter(producto => producto.id != request.params.id);
+            console.log(productoNew);
+            let productoString = JSON.stringify(productoNew);
+            fs.writeFileSync(pathData, productoString);          
+           response.redirect('/admin/products');
+            /*let indice = productosArch.findIndex(producto => producto.id == request.params.id);
+            console.log(productoFind);
+            console.log(indice);
+            productosArch.slice(indice,1);*/
+            
+
+
+
+                
         }
 
 };
