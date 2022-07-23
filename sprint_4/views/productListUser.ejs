@@ -11,8 +11,6 @@
         <h2 class="tituloSec">Listado de Productos</h2>
 
         
-        <a href="/admin/addProduct/"><button class="botonEliminar">+</button></a>
-
         <div class="listadoProductos">
 
             <% if(locals.productos){ %>
@@ -31,9 +29,8 @@
                            
 
                             <div class="variableProd">
-                                
                                 <span class="subtituloListado">
-                                   <a href="/admin/editProduct/<%=producto.id%>">Editar producto <%=producto.id %></a>
+                                   <a href="/producto/<%=producto.id%>">Ver detalle</a>
                                 </span>    
                             </div>
                         
@@ -93,16 +90,7 @@
                             </div>
 
                            
-                                <form action="/admin/deleteProduct/<%=producto.id%>?_method=DELETE" method="post" enctype="multipart/form-data" class="formEliminar variableProd">
-                                    
-                                                         
                                         
-                                        <button class="botonEliminar"><i class="fas fa-eraser"></i></button>
-                                    
-                                                               
-                                </form>
-                            
-                            
                             
 
                             

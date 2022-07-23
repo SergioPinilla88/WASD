@@ -9,8 +9,22 @@ const pathData = path.resolve(__dirname, "../data/productos.json");
 let productController = {
 
         producto: (request, response) => { 
+
+            
+            let leeArchivo = fs.readFileSync(pathData, 'utf-8');
+            let productosArch = JSON.parse(leeArchivo);
+            let productoNew = productosArch.find(producto => producto.id == request.params.id);
+
+            if(productoNew){
+
+                response.render('productDetail', {product: productoNew});
+
+            }else{
+
+                response.send("No existe producto");
+            }
     
-            response.render('productDetail');
+           // response.render('productDetail');
             
         },
 
@@ -79,6 +93,17 @@ let productController = {
 
             response.render("productList", {productos: productosArch});
 
+
+        },
+
+        listaProductosUser: (request, response) => {
+
+            let leeArchivo = fs.readFileSync(pathData, 'utf-8');
+            let productosArch = JSON.parse(leeArchivo);
+
+
+
+            response.render("productListUser", {productos: productosArch});
 
         },
 

@@ -8,14 +8,23 @@
 
     <main>
 
+        <a href="/listadoProductos/"><button class="botonEliminar"><i class="fas fa-angle-double-left"></i></button></a>
         <h2 class="tituloSec">Detalle del producto</h2>
+
+       
+
+        <% if(locals.product){ %>
+
+        
+
+        
 
         <div class="todoProducto">
 
             <div class="encabezadoProducto">
 
                 
-                <img class="imagenProducto" src="images/ps5.jpg">
+                <img class="imagenProducto" src="/images/<%= product.imagen %>">
                 
                 
                 <ul class="carruselImg">
@@ -30,7 +39,7 @@
                     
                     <i class="fas fa-shopping-cart botonCarrito"></i>
                    
-                    <h3 class="precioProducto"> $ 000.000,00</h3>
+                    <h3 class="precioProducto"><%= product.precio %></h3>
                     
                 </div>
 
@@ -43,11 +52,13 @@
                         Calificación:
                     </span>
                     <span class="calificacion">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
+                    
+                        <% for(i= 0; i < product.calificacion; i++){ %>
+
+                                <i class="fas fa-star"></i>
+
+                        <% } %>
+                        
                     </span>    
                     </div>
 
@@ -56,7 +67,7 @@
                             Nombre del producto:
                         </span>
                         <span class="infoDetalle">
-                            Playstation 5
+                            <%= product.nombreProducto %>
                         </span>    
                     </div>
 
@@ -65,7 +76,7 @@
                             Unidades disponibles:
                         </span>
                         <span class="infoDetalle">
-                            50
+                            <%= product.unidadesDisp %>
                         </span>    
                     </div>
 
@@ -74,7 +85,7 @@
                             Fabricante:
                         </span>
                         <span class="infoDetalle">
-                            SONY
+                            <%= product.fabricante %>
                         </span>    
                     </div>
 
@@ -83,16 +94,7 @@
                             Pais de origen:
                         </span>
                         <span class="infoDetalle">
-                            Japón
-                        </span>    
-                    </div>
-
-                    <div>
-                        <span class=" subtitulo">
-                            Dimensiones:
-                        </span>
-                        <span class="infoDetalle">
-                           39 cm x 10.4 cm x 26 cm
+                            <%= product.paisOrigen %>
                         </span>    
                     </div>
 
@@ -101,7 +103,7 @@
                             Peso:
                         </span>
                         <span class="infoDetalle">
-                           4,5 Kg
+                            <%= product.peso %>
                         </span>    
                     </div>
 
@@ -110,7 +112,7 @@
                             Modelo:
                         </span>
                         <span class="infoDetalle">
-                           2021
+                            <%= product.modelo %>
                         </span>    
                     </div>
                         
@@ -121,16 +123,16 @@
             </div>
 
             <div class="descripcion">
-                <h3 class="subtituloMain">Funcionalidades</h3>
+                <h3 class="subtituloMain">Descripcion</h3>
                 <ul class="listaDesc"> 
-                <li><p class="infoDetalle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus ipsum ad, distinctio non praesentium illum quasi suscipit. In ipsam repudiandae molestias, deserunt, nihil eos esse officia illo tempora eius quo.</p></li>
-                <li><p class="infoDetalle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus ipsum ad, distinctio non praesentium illum quasi suscipit. In ipsam repudiandae molestias, deserunt, nihil eos esse officia illo tempora eius quo.</p></li>
-                <li><p class="infoDetalle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus ipsum ad, distinctio non praesentium illum quasi suscipit. In ipsam repudiandae molestias, deserunt, nihil eos esse officia illo tempora eius quo.</p></li>
+                <li><p class="infoDetalle"><%= product.descripcion %></p></li>               
                
                 </ul>
             </div>
 
         </div>
+
+        <% } %>
 
         <h2 class="tituloSec">Reseñas de este producto</h2>
 
@@ -212,7 +214,7 @@
             <div class="encabezadoProductoSec">
 
                 
-                <img class="imagenProducto" src="images/ps5.jpg">
+                <img class="imagenProducto" src="/images/ps5.jpg">
                 
 
                 <h4 class="nombreProdSec">Playstation 5</h4>                
@@ -227,7 +229,7 @@
 
             <div class="encabezadoProductoSec">
                 
-                <img class="imagenProducto" src="images/Control_PS5.jpg">
+                <img class="imagenProducto" src="/images/Control_PS5.jpg">
                 
 
                 <h4 class="nombreProdSec">Control PS5</h4>                
@@ -242,7 +244,7 @@
 
             <div class="encabezadoProductoSec">
                 
-                <img class="imagenProducto" src="images/farcry6_PS5.jpg">
+                <img class="imagenProducto" src="/images/farcry6_PS5.jpg">
                 
 
                 <h4 class="nombreProdSec">Far Cry 6 PS5</h4>                
@@ -257,7 +259,7 @@
 
             <div class="encabezadoProductoSec">
                 
-                <img class="imagenProducto" src="images/cameraHd_PS5.png">
+                <img class="imagenProducto" src="/images/cameraHd_PS5.png">
                 
 
                 <h4 class="nombreProdSec">Camara HD PS5</h4>                
