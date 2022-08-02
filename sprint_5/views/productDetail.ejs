@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('../partials/head.ejs') %>
+<body>
+    <header>
+        <%- include('../partials/header.ejs') %>
+    </header>
+
+    <main>
+
+        <a href="/listadoProductos/"><button class="botonEliminar"><i class="fas fa-angle-double-left"></i></button></a>
+        <h2 class="tituloSec">Detalle del producto</h2>
+
+       
+
+        <% if(locals.product){ %>
+
+        
+
+        
+
+        <div class="todoProducto">
+
+            <div class="encabezadoProducto">
+
+                
+                <img class="imagenProducto" src="/images/<%= product.imagen %>">
+                
+                
+                <ul class="carruselImg">
+                    <li><a href="url">1</a></li>
+                    <li><a href="url">2</a></li>
+                    <li><a href="url">3</a></li>
+                    <li><a href="url">4</a></li>
+
+                </ul>
+                
+                <div class="comboCarritoPrecio">    
+                    
+                    <i class="fas fa-shopping-cart botonCarrito"></i>
+                   
+                    <h3 class="precioProducto"><%= product.precio %></h3>
+                    
+                </div>
+
+            </div>
+
+           
+            <div class = "variablesProductos">
+                    <div>
+                    <span class=" subtitulo">
+                        Calificación:
+                    </span>
+                    <span class="calificacion">
+                    
+                        <% for(i= 0; i < product.calificacion; i++){ %>
+
+                                <i class="fas fa-star"></i>
+
+                        <% } %>
+                        
+                    </span>    
+                    </div>
+
+                    <div>
+                        <span class=" subtitulo">
+                            Nombre del producto:
+                        </span>
+                        <span class="infoDetalle">
+                            <%= product.nombreProducto %>
+                        </span>    
+                    </div>
+
+                    <div>
+                        <span class=" subtitulo">
+                            Unidades disponibles:
+                        </span>
+                        <span class="infoDetalle">
+                            <%= product.unidadesDisp %>
+                        </span>    
+                    </div>
+
+                    <div>
+                        <span class=" subtitulo">
+                            Fabricante:
+                        </span>
+                        <span class="infoDetalle">
+                            <%= product.fabricante %>
+                        </span>    
+                    </div>
+
+                    <div>
+                        <span class=" subtitulo">
+                            Pais de origen:
+                        </span>
+                        <span class="infoDetalle">
+                            <%= product.paisOrigen %>
+                        </span>    
+                    </div>
+
+                    <div>
+                        <span class=" subtitulo">
+                            Peso:
+                        </span>
+                        <span class="infoDetalle">
+                            <%= product.peso %>
+                        </span>    
+                    </div>
+
+                    <div>
+                        <span class=" subtitulo">
+                            Modelo:
+                        </span>
+                        <span class="infoDetalle">
+                            <%= product.modelo %>
+                        </span>    
+                    </div>
+                        
+
+
+                    
+                
+            </div>
+
+            <div class="descripcion">
+                <h3 class="subtituloMain">Descripcion</h3>
+                <ul class="listaDesc"> 
+                <li><p class="infoDetalle"><%= product.descripcion %></p></li>               
+               
+                </ul>
+            </div>
+
+        </div>
+
+        <% } %>
+
+        <h2 class="tituloSec">Reseñas de este producto</h2>
+
+
+        <div class="resenas">
+
+            
+            <div class="encabezadoResenas">
+
+                <div class="logoUSer">
+                     <i class="far fa-user"></i>
+                </div>
+                <h3 class="subtituloMain"> userX</h3>
+                <div class="calificacion">
+                         <i class="fas fa-star"></i>
+                         <i class="fas fa-star"></i>
+                         <i class="fas fa-star"></i>
+                         <i class="fas fa-star"></i>
+                         <i class="fas fa-star"></i>
+ 
+                 </div>
+                 <div>
+                 <p class="infoDetalle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum quas dolorem repellat sequi aspernatur fugit vel provident consequuntur cum pariatur quasi delectus, adipisci vitae nostrum dolores, voluptate quae veniam velit.</p>
+                </div>
+ 
+ 
+             </div>
+
+            <div class="encabezadoResenas">
+
+                <div class="logoUSer">
+                     <i class="far fa-user"></i>
+                </div>
+                <h3 class="subtituloMain"> userX</h3>
+                <div class="calificacion">
+                         <i class="fas fa-star"></i>
+                         <i class="fas fa-star"></i>
+                         <i class="fas fa-star"></i>
+                         <i class="fas fa-star"></i>
+                         <i class="fas fa-star"></i>
+ 
+                 </div>
+                 <div>
+                 <p class="infoDetalle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum quas dolorem repellat sequi aspernatur fugit vel provident consequuntur cum pariatur quasi delectus, adipisci vitae nostrum dolores, voluptate quae veniam velit.</p>
+                </div>
+ 
+ 
+             </div>
+
+             <div class="encabezadoResenas">
+
+                <div class="logoUSer">
+                     <i class="far fa-user"></i>
+                </div>
+                <h3 class="subtituloMain"> userX</h3>
+                <div class="calificacion">
+                         <i class="fas fa-star"></i>
+                         <i class="fas fa-star"></i>
+                         <i class="fas fa-star"></i>
+                         <i class="fas fa-star"></i>
+                         <i class="fas fa-star"></i>
+ 
+                 </div>
+                 <div>
+                 <p class="infoDetalle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum quas dolorem repellat sequi aspernatur fugit vel provident consequuntur cum pariatur quasi delectus, adipisci vitae nostrum dolores, voluptate quae veniam velit.</p>
+                </div>
+ 
+ 
+             </div>
+
+      
+
+        </div>
+
+        <h2 class="tituloSec">Productos relacionados</h2>
+
+        <div class = "productosRelacionados">
+
+            <div class="encabezadoProductoSec">
+
+                
+                <img class="imagenProducto" src="/images/ps5.jpg">
+                
+
+                <h4 class="nombreProdSec">Playstation 5</h4>                
+                               
+                <div class="comboCarritoPrecioSec">    
+                    
+                    <i class="fas fa-shopping-cart botonCarritoSec"></i>
+                    
+                    <h4 class="precioProductoSec"> $ 000.000,00</h4>
+                </div>
+            </div>
+
+            <div class="encabezadoProductoSec">
+                
+                <img class="imagenProducto" src="/images/Control_PS5.jpg">
+                
+
+                <h4 class="nombreProdSec">Control PS5</h4>                
+                               
+                <div class="comboCarritoPrecioSec">    
+                    
+                    <i class="fas fa-shopping-cart botonCarritoSec"></i>
+                    
+                    <h4 class="precioProductoSec"> $ 000.000,00</h4>
+                </div>
+            </div>
+
+            <div class="encabezadoProductoSec">
+                
+                <img class="imagenProducto" src="/images/farcry6_PS5.jpg">
+                
+
+                <h4 class="nombreProdSec">Far Cry 6 PS5</h4>                
+                               
+                <div class="comboCarritoPrecioSec">    
+                    
+                    <i class="fas fa-shopping-cart botonCarritoSec"></i>
+                    
+                    <h4 class="precioProductoSec"> $ 000.000,00</h4>
+                </div>
+            </div>
+
+            <div class="encabezadoProductoSec">
+                
+                <img class="imagenProducto" src="/images/cameraHd_PS5.png">
+                
+
+                <h4 class="nombreProdSec">Camara HD PS5</h4>                
+                               
+                <div class="comboCarritoPrecioSec">    
+                    
+                    <i class="fas fa-shopping-cart botonCarritoSec"></i>
+                    
+                    <h4 class="precioProductoSec"> $ 000.000,00</h4>
+                </div>
+            </div>
+
+            
+
+
+
+        </div>
+
+        
+       
+    
+    </main>
+    <footer>
+        <%- include('../partials/footer.ejs') %>
+    </footer>
+</body>
+</html>

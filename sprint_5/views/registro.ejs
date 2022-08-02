@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('../partials/head.ejs') %>
+<body>
+    <header>
+        <%- include('../partials/header.ejs') %>
+    </header>
+
+    
+  
+
+        
+
+    <form class="formRegistro" action="/usuario/registro" method="POST" enctype="multipart/form-data">
+
+                
+        <br>
+        <legend><h2 class = "textosTitulo">Crea tu cuenta</h2></legend>
+        <br>
+
+        <% if(locals && locals.errors){ %>
+
+                   
+                <p class="contenido textosAlerta"> Se encontraron errores</p>
+      
+        
+             
+    
+        <% } %>
+
+        
+
+        <div class="contenido">
+            <label class="textos" for="nombre">
+                Nombre:
+                <input type="text" name="nombre" id="nombre" required  value="<%= locals.old &&  old.nombre ? old.nombre : ''%>">
+                <% if(locals && locals.errors && errors.nombre){ %>
+                    <p class="textosAlerta"><%= errors.nombre.msg %></p>
+                <% } %>              
+                 
+            </label>
+        <br>
+            <label class="textos" for="apellido">
+                Apellido:
+                <input type="text" name="apellido" id="apellido" required value="<%= locals.old &&  old.apellido ? old.apellido : ''%>">
+                <% if(locals && locals.errors && errors.apellido){ %>
+                    <p class="textosAlerta"><%= errors.apellido.msg %></p>
+                <% } %>
+            </label>
+        <br>
+            <label class="textos" for="correo">
+                e-mail:
+                <input type="email" name="correo" id="correo" required value="<%= locals.old &&  old.correo ? old.correo : ''%>">
+                <% if(locals && locals.errors && errors.correo){ %>
+                    <p class="textosAlerta"><%= errors.correo.msg %></p>
+                <% } %>              
+            </label>
+        <br>
+            <label  class="textos"for="pwd">
+                Contraseña:
+                <input type="password" name="pwd" id="pwd" required value="<%= locals.old &&  old.pwd ? old.pwd : ''%>">
+                <% if(locals && locals.errors && errors.pwd){ %>
+                    <p class="textosAlerta"><%= errors.pwd.msg %></p>
+                <% } %>    
+            </label>
+        <br>
+
+            <label  class="textos"for="pwdConf">
+                Confirma Contraseña:
+                <input type="password" name="pwdConf" id="pwdConf" required value="<%= locals.old &&  old.pwdConf ? old.pwdConf : ''%>">
+                <% if(locals && locals.errors && errors.pwdConf){ %>
+                    <p class="textosAlerta"><%= errors.pwdConf.msg %></p>
+                <% } %>     
+            </label>
+        
+        <br>
+            <label  class="textos" for="avatar">
+                Avatar:
+                <input type="file" name="avatar" id="avatar">
+                
+            </label>
+        <br>
+        
+        
+        <button id="botonesLogin" type="submit">Enviar</button>
+        
+    </form>
+    <footer>
+        <%- include('../partials/footer.ejs') %>
+    </footer>
+</body>
+</html>

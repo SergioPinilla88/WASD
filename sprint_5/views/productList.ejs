@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('../partials/head.ejs') %>
+<body>
+    <header>
+        <%- include('../partials/header.ejs') %>
+    </header>
+
+    <main>
+
+        <h2 class="tituloSec">Listado de Productos</h2>
+
+        
+        <a href="/admin/addProduct/"><button class="botonEliminar">+</button></a>
+
+        <div class="listadoProductos">
+
+            <% if(locals.productos){ %>
+                <% productos.forEach(producto => { %>
+
+                    
+                        
+                    
+
+                    <div class="detalleProdListado">
+                      <img class="imagenProductoListado" src="../images/<%=producto.imagen%>">
+                    
+                                           
+                      <div class="infoBaseProd">
+
+                           
+
+                            <div class="variableProd">
+                                
+                                <span class="subtituloListado">
+                                   <a href="/admin/editProduct/<%=producto.id%>">Editar producto <%=producto.id %></a>
+                                </span>    
+                            </div>
+                        
+
+                            <div class="variableProd">
+                                <span class="subtituloListado">
+                                    Nombre del producto:
+                                </span>
+                                <span class="subtituloListado">
+                                    <%=producto.nombreProducto %>
+                                </span>    
+                            </div>
+    
+                            <div class="variableProd">
+                                <span class="subtituloListado">
+                                    Unidades disponibles:
+                                </span>
+                                <span class="subtituloListado">
+                                    <%=producto.unidadesDisp %>
+                             </span>    
+                            </div>
+    
+                            <div class="variableProd">
+                                <span class="subtituloListado">
+                                    Fabricante:
+                                </span>
+                                <span class="subtituloListado">
+                                    <%=producto.fabricante %>
+                                </span>    
+                            </div>
+    
+                            <div class="variableProd">
+                                <span class="subtituloListado">
+                                    Pais de origen:
+                                </span>
+                                <span class="subtituloListado">
+                                    <%=producto.paisOrigen %>
+                             </span>    
+                            </div>                     
+    
+                            <div class="variableProd">
+                                <span class="subtituloListado">
+                                    Peso:
+                                </span>
+                                <span class="subtituloListado">
+                                    <%=producto.peso %>
+                                </span>    
+                            </div>
+    
+                            <div class="variableProd">
+                                <span class="subtituloListado">
+                                    Modelo:
+                                </span>
+                                <span class="subtituloListado">
+                                    <%=producto.modelo %>
+                                </span>    
+                            </div>
+
+                           
+                                <form action="/admin/deleteProduct/<%=producto.id%>?_method=DELETE" method="post" enctype="multipart/form-data" class="formEliminar variableProd">
+                                    
+                                                         
+                                        
+                                        <button class="botonEliminar"><i class="fas fa-eraser"></i></button>
+                                    
+                                                               
+                                </form>
+                            
+                            
+                            
+
+                            
+                                                     
+
+
+                        </div>
+                        <div>
+                                                  
+                        </div>
+                         
+                    </div>  
+
+                     
+         
+                    
+                    
+            
+                <% }) %>
+            <% } %>
+        </div>
+      
+
+
+            
+       
+    
+    </main>
+    <footer>
+        <%- include('../partials/footer.ejs') %>
+    </footer>
+</body>
+</html>

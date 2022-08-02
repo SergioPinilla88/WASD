@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('../partials/head.ejs') %>
+<body>
+    <header>
+        <%- include('../partials/header.ejs') %>
+    </header>
+
+    <main>
+   
+        
+        <div class="perfilBody">
+
+
+
+
+        <h2 class="tituloSec"> Hola:  <%= locals.userToLog && userToLog.email ? userToLog.email : '' %></h2>
+
+        <div class="todoUsuario">
+
+            <div class="encabezadoUsuario">
+
+                
+                
+                <img class="imagenPerfil" src="../images/avatars/<%= locals.userToLog && userToLog.avatar ? userToLog.avatar : '' %>">
+                
+                <div class="seccionInferiorUsuario">
+                <a href="/usuario/logout/"><button class="botonEliminar"><i class="fas fa-sign-out-alt"></i></button></a>    
+                </div>                          
+                
+            </div>
+
+           
+            <div class = "variablesUser">
+                <div class="campoCliente">
+                    <span class=" subtitulo">
+                        Nombre:
+                    </span>
+                    <span class="infoDetalle">
+                        <%= locals.userToLog && userToLog.first_name ? userToLog.first_name : '' %>
+                    </span>    
+                </div>
+
+                <div>
+                    <span class=" subtitulo">
+                        Apellido:
+                    </span>
+                    <span class="infoDetalle">
+                        <%= locals.userToLog && userToLog.last_name ? userToLog.last_name : '' %>
+                    </span>    
+                </div>
+
+                <div>
+                    <span class=" subtitulo">
+                        email:
+                    </span>
+                    <span class="infoDetalle">
+                        <%= locals.userToLog && userToLog.email ? userToLog.email : '' %>
+                    </span>    
+                </div>
+
+                              
+        </div>
+
+          
+
+        </div>
+
+        </div>
+        
+
+            
+
+
+
+               
+        
+       
+       
+    
+    </main>
+    <footer>
+        <%- include('../partials/footer.ejs') %>
+    </footer>
+</body>
+</html>
