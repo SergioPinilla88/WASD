@@ -104,7 +104,7 @@ const userController = {
                     
                     } 
 
-                    if(request.file.filename){
+                    if(request.file){
 
                         nuevoUsuario.avatar = request.file.filename;
 
