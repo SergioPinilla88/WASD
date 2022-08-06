@@ -4,7 +4,7 @@ const router = express.Router();
 const upload = require('../middlewares/fileUpload');
 const guestMiddleware = require('../middlewares/guestMiddleware');
 const toLoginMiddleware = require('../middlewares/toLoginMiddleware');
-const validacionesRegistro = require('../middlewares/userRegisterVerif');
+const userRegisterVerif = require('../middlewares/userRegisterVerif')
 
 /*const { body } = require('express-validator');
 
@@ -28,7 +28,7 @@ router.post('/login', userController.loginProcess);
 router.get('/registro', guestMiddleware, userController.registroView);
 router.get('/perfil', toLoginMiddleware, userController.perfil);
 router.get('/logout', userController.logOut);
-router.post('/registro', upload.single('avatar'), validacionesRegistro,  userController.registro);
+router.post('/registro', upload.single('avatar'),userRegisterVerif ,  userController.registro);
 
 // upload.single('avatar')
 

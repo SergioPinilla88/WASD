@@ -74,16 +74,21 @@
             </label>
         
         <br>
-            <label  class="textos" for="avatar">
-                Avatar:
-                <input type="file" name="avatar" id="avatar">
-                
-            </label>
+        <label  class="textos" for="avatar">
+            Avatar:
+            <input type="file" 
+            name="avatar" 
+            id="avatar"
+            required value="<%= locals.old &&  old.avatar ? old.avatar : ''%>">
+            <% if( locals.errors && errors.avatar){ %>
+                <p class="textosAlerta"><%= errors.avatar.msg %></p>
+            <% } %> 
+        </label>
         <br>
         
         
         <button id="botonesLogin" type="submit">Enviar</button>
-        
+        <br>
     </form>
     <footer>
         <%- include('../partials/footer.ejs') %>
