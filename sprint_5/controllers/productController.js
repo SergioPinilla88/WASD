@@ -27,7 +27,7 @@ let productController = {
             let resultValidation = validationResult(request);
            // return response.send(resultValidation.mapped())
             if(resultValidation.errors.length > 0){
-                return response.render('addProducts', {erros:resultValidation.mapped()
+                return response.render('productDetail', {erros:resultValidation.mapped()
                 })
             }
 
