@@ -16,24 +16,16 @@
             <% if(locals.productos){ %>
                 <% productos.forEach(producto => { %>
 
-                    
-                        
-                    
-
                     <div class="detalleProdListado">
                       <img class="imagenProductoListado" src="../images/<%=producto.imagen%>">
-                    
-                                           
+                                        
                       <div class="infoBaseProd">
-
-                           
 
                             <div class="variableProd">
                                 <span class="subtituloListado">
                                    <a href="/producto/<%=producto.id%>">Ver detalle</a>
                                 </span>    
                             </div>
-                        
 
                             <div class="variableProd">
                                 <span class="subtituloListado">
@@ -89,26 +81,12 @@
                                 </span>    
                             </div>
 
-                           
-                                        
-                            
-
-                            
-                                                     
-
-
                         </div>
                         <div>
-                                                  
+                      
                         </div>
                          
-                    </div>  
-
-                     
-         
-                    
-                    
-            
+                    </div>   
                 <% }) %>
             <% } %>
         </div>

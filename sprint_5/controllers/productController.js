@@ -1,4 +1,5 @@
 const { privateDecrypt } = require('crypto');
+const { validationResult } = require('express-validator');
 const fs = require('fs');
 const path = require("path");
 
@@ -7,40 +8,32 @@ const pathData = path.resolve(__dirname, "../data/productos.json");
 
 
 let productController = {
-
-        producto: (request, response) => { 
-
-            
+        producto: (request, response) => {    
             let leeArchivo = fs.readFileSync(pathData, 'utf-8');
             let productosArch = JSON.parse(leeArchivo);
             let productoNew = productosArch.find(producto => producto.id == request.params.id);
 
             if(productoNew){
-
                 response.render('productDetail', {product: productoNew});
-
             }else{
-
                 response.send("No existe producto");
             }
-    
-           // response.render('productDetail');
-            
+           // response.render('productDetail');     
         },
-
         addProductView: (request, response) => { 
-    
-            response.render('addProducts');
-            
+            response.render('addProducts');      
         },
-
         addProduct: (request, response) => {
+            let resultValidation = validationResult(request);
+           // return response.send(resultValidation.mapped())
+            if(resultValidation.errors.length > 0){
+                return response.render('addProducts', {erros:resultValidation.mapped()
+                })
+            }
 
             let leeArchivo = fs.readFileSync(pathData, 'utf-8');
             let productosArch = JSON.parse(leeArchivo);
-
             let producto = {
-
                 id: 0,
                 nombreProducto: '',
                 descripcion: '',
@@ -54,11 +47,8 @@ let productController = {
                 peso: 0,
                 categoria: '',
                 calificacion: 0
-
             } ;             
-
-
-            
+  
             producto.id = productosArch[productosArch.length - 1].id + 1;
             producto.nombreProducto = request.body.nombre;
             producto.descripcion = request.body.descripcion;
@@ -72,7 +62,6 @@ let productController = {
             producto.modelo = request.body.modelo;
             producto.peso = request.body.peso;
             producto.categoria = request.body.categoria;
-
             productosArch.push(producto);
 
             let productoString = JSON.stringify(productosArch);
@@ -85,39 +74,23 @@ let productController = {
         },
 
         listaProductos: (request, response) => {
-
             let leeArchivo = fs.readFileSync(pathData, 'utf-8');
             let productosArch = JSON.parse(leeArchivo);
-
-
-
             response.render("productList", {productos: productosArch});
-
-
         },
 
         listaProductosUser: (request, response) => {
-
             let leeArchivo = fs.readFileSync(pathData, 'utf-8');
             let productosArch = JSON.parse(leeArchivo);
-
-
-
             response.render("productListUser", {productos: productosArch});
-
         },
 
         editaProductoView: (request, response) => {
-
             let leeArchivo = fs.readFileSync(pathData, 'utf-8');
-            let productosArch = JSON.parse(leeArchivo);
-            
-            let productosFilter = productosArch.filter(producto => producto.id == request.params.id);
-            
+            let productosArch = JSON.parse(leeArchivo);        
+            let productosFilter = productosArch.filter(producto => producto.id == request.params.id);          
            if(!productosFilter){
-
-                response.send("No existe el prod");
-
+                response.send("No existe el producto");
             }else{
 
                 response.render("editProduct",{productos: productosFilter});
@@ -125,9 +98,6 @@ let productController = {
             }
             console.log(productosFilter);
             
-
-            
-
         },
 
         editaProducto: (request, response) => {
@@ -136,8 +106,7 @@ let productController = {
             let productosArch = JSON.parse(leeArchivo);
             let productoFind = productosArch.find(producto => producto.id == request.body.id);
             let indice = productosArch.findIndex(producto => producto.id == request.body.id);
-            
-            
+                        
             productoFind.id = request.body.id; 
             productoFind.nombreProducto = request.body.nombre;
             productoFind.descripcion = request.body.descripcion;
@@ -156,29 +125,15 @@ let productController = {
             productoFind.peso = request.body.peso;
             productoFind.categoria = request.body.categoria;
 
-           
-
             productosArch[indice] = productoFind;
 
             let productoString = JSON.stringify(productosArch);
 
-            fs.writeFileSync(pathData, productoString);
-
-          
-           response.redirect('/admin/products');
-
-
-
-
-            
-
+            fs.writeFileSync(pathData, productoString);       
+           response.redirect('/admin/products');           
         },
         
-        deleteProduct: (request, response) =>{
-
-            
-            
-            
+        deleteProduct: (request, response) =>{          
             let leeArchivo = fs.readFileSync(pathData, 'utf-8');
             let productosArch = JSON.parse(leeArchivo);
             let productoNew = productosArch.filter(producto => producto.id != request.params.id);
@@ -190,13 +145,8 @@ let productController = {
             console.log(productoFind);
             console.log(indice);
             productosArch.slice(indice,1);*/
-            
-
-
-
                 
         }
 
 };
-
 module.exports = productController;

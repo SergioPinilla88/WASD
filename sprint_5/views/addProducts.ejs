@@ -12,67 +12,151 @@
     <div>
       <label for="name">Nombre</label>
       <br>
-      <input type="text" name="nombre" id="name">
+      <input type="text"
+       name="nombre" 
+       id="name"
+       required  value="<%= locals.old &&  old.nombre ? old.nombre : ''%>">
+       <% if(locals && locals.errors && errors.nombre){ %>
+           <p class="textosAlerta">
+            <%= errors.nombre.msg %></p>
+       <% } %>
     </div>
+
     <div>
       <label for="descripcion">Descripcion</label>
       <br>
-      <input type="text" name="descripcion" id="descripcion">
+      <input type="text" 
+      name="descripcion" 
+      id="descripcion"
+      required  value="<%= locals.old &&  old.descripcion ? old.descripcion : ''%>">
+      <% if(locals && locals.errors && errors.descripcion){ %>
+          <p class="textosAlerta"><%= errors.descripcion.msg %></p>
+      <% } %>
     </div>
+
     <div>
       <label for="fabricante">Fabricante</label>
       <br>
-      <input type="text" name="fabricante" id="fabricante">
+      <input type="text" 
+      name="fabricante" 
+      id="fabricante"
+      required  value="<%= locals.old &&  old.fabricante ? old.fabricante : ''%>">
+      <% if(locals && locals.errors && errors.fabricante){ %>
+          <p class="textosAlerta"><%= errors.fabricante.msg %></p>
+      <% } %>
     </div>
+
     <div>
       <label for="paisOrigen">Pais de Origen</label>
       <br>
-      <input type="text" name="paisOrigen" id="paisOrigen">
+      <input type="text" 
+      name="paisOrigen" 
+      id="paisOrigen"
+      required  value="<%= locals.old &&  old.paisOrigen ? old.paisOrigen : ''%>">
+      <% if(locals && locals.errors && errors.paisOrigen){ %>
+          <p class="textosAlerta"><%= errors.paisOrigen.msg %></p>
+      <% } %>
     </div>
+
     <div>
       <label for="modelo">Modelo</label>
       <br>
-      <input type="text" name="modelo" id="modelo">
+      <input type="text" 
+      name="modelo" 
+      id="modelo"
+      required  value="<%= locals.old &&  old.modelo ? old.modelo : ''%>">
+      <% if(locals && locals.errors && errors.modelo){ %>
+          <p class="textosAlerta"><%= errors.modelo.msg %></p>
+      <% } %>
     </div>
+
     <div>
       <label for="funcionalidad">Funcionalidad</label>
       <br>
-      <input type="text" name="funcionalidad" id="funcionalidad">
+      <input type="text" 
+      name="funcionalidad" 
+      id="funcionalidad" 
+      required  value="<%= locals.old &&  old.funcionalidad ? old.funcionalidad : ''%>">
+      <% if(locals && locals.errors && errors.funcionalidad){ %>
+          <p class="textosAlerta"><%= errors.funcionalidad.msg %></p>
+      <% } %>
     </div>
+
     <div>
       <label for="image">Imagen</label>
       <br>
-      <input type="file" name="image" id="image">
+      <input type="file" 
+      name="image" 
+      id="image"
+      required  value="<%= locals.old &&  old.image ? old.image : ''%>">
+      <% if(locals && locals.errors && errors.image){ %>
+          <p class="textosAlerta"><%= errors.image.msg %></p>
+      <% } %>
     </div>
+
     <div>
       <label for="category" name="categoria">Categoria</label>
       <br>
-      <input type="text" name="categoria" id="categoria">
+      <input type="text" 
+      name="categoria" 
+      id="categoria"
+      required  value="<%= locals.old &&  old.categoria ? old.categoria : ''%>">
+      <% if(locals && locals.errors && errors.categoria){ %>
+          <p class="textosAlerta"><%= errors.categoria.msg %></p>
+      <% } %>
     </div>
-    <div>
-      <label for="peso">Peso</label>
+
+     <div>
+      <label for="peso">Peso en gramos</label>
       <br>
-      <input type="text" name="peso" id="peso">
+      <input type="text" 
+      name="peso" 
+      id="peso"
+      required  value="<%= locals.old &&  old.peso ? old.peso : ''%>">
+      <% if(locals && locals.errors && errors.peso){ %>
+          <p class="textosAlerta"><%= errors.peso.msg %></p>
+      <% } %>
     </div>
     <div>
       <label for="calificacion">Calificación</label>
       <br>
-      <input type="text" name="calificacion" id="calificacion">
+      <input type="text" 
+      name="calificacion" 
+      id="calificacion"
+      required  value="<%= locals.old &&  old.calificacion ? old.calificacion : ''%>">
+      <% if(locals && locals.errors && errors.calificacion){ %>
+          <p class="textosAlerta"><%= errors.calificacion.msg %></p>
+      <% } %>
     </div>
+
     <div>
-      <label for="price">Precio</label>
+      <label for="price">Precio en Dolar</label>
       <br>
-      <input type="text" name="precio" id="price">
+      <input type="text" 
+      name="precio" 
+      id="price"
+      required  value="<%= locals.old &&  old.precio ? old.precio : ''%>">
+      <% if(locals && locals.errors && errors.precio){ %>
+          <p class="textosAlerta"><%= errors.precio.msg %></p>
+      <% } %>
     </div>
+
     <div>
-      <label for="quantity">Cantidad</label>
+      <label for="quantity">Cantidad (numeros)</label>
       <br>
-      <input type="text" name="cantidad" id="quantity">
+      <input type="text" 
+      name="cantidad" 
+      id="quantity"
+      required  value="<%= locals.old &&  old.cantidad ? old.cantidad : ''%>">
+      <% if(locals && locals.errors && errors.cantidad){ %>
+          <p class="textosAlerta"><%= errors.cantidad.msg %></p>
+      <% } %>
     </div>
     <div>
       <button class="botonCargar"> Cargar Producto</button>
     </div>
     </form>
+    <br>
 </div>
     <footer>
         <%- include('../partials/footer.ejs') %>
