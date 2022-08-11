@@ -7,6 +7,10 @@
     </header>
     <div class="addProducts">
     <h1 class="tituloFproductos">Formulario para agregar Productos</h1>
+    <% if(locals && locals.errors){ %>              
+      <p class="contenido textosAlerta"> Se encontraron errores</p>
+      
+    <% } %>
     <form action="/admin/addProduct" method="post" enctype="multipart/form-data">
 
     <div>

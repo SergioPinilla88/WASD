@@ -31,7 +31,13 @@
         
         <input type="password" name="pwd" id="pwd" required  value="<%= locals.old &&  old.pwd ? old.pwd : ''%>">
         <p class="textosAlertaLogin"><%= locals.errors && errors.pwd ? errors.pwd.msg : '' %></p>
-        <br>      
+        <br>  
+
+        <div>
+        <label for="recordarme">Recordarme:</label> 
+        <input type="checkbox" name="recordarme" id="recordarme">
+        </div>
+        <br> 
         <div>
         <button type="submit"> Enviar</button>       
         </div>    

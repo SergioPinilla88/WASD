@@ -25,9 +25,14 @@ let productController = {
         },
         addProduct: (request, response) => {
             let resultValidation = validationResult(request);
-           // return response.send(resultValidation.mapped())
+           
+            
+            
+
+          
             if(resultValidation.errors.length > 0){
-                return response.render('productDetail', {erros:resultValidation.mapped()
+
+                return response.render('addProducts', {errors:resultValidation.mapped(), old: request.body
                 })
             }
 
@@ -49,7 +54,7 @@ let productController = {
                 calificacion: 0
             } ;             
   
-            producto.id = productosArch[productosArch.length - 1].id + 1;
+            producto.id = Number(productosArch[productosArch.length - 1].id) + 1;
             producto.nombreProducto = request.body.nombre;
             producto.descripcion = request.body.descripcion;
             producto.funcionalidades = request.body.funcionalidad;
@@ -70,7 +75,7 @@ let productController = {
 
            //response.send(request.body.image);
            response.redirect('/admin/products');
-
+            
         },
 
         listaProductos: (request, response) => {
@@ -101,6 +106,27 @@ let productController = {
         },
 
         editaProducto: (request, response) => {
+
+            let resultValidation = validationResult(request);
+           
+             
+            if(resultValidation.errors.length > 0){
+
+                let leeArchivo = fs.readFileSync(pathData, 'utf-8');
+                let productosArch = JSON.parse(leeArchivo);        
+                let productosFilter = productosArch.filter(producto => producto.id == request.body.id);          
+                if(!productosFilter){
+                    response.send("No existe el producto");
+                }else{
+                    console.log(resultValidation.mapped());
+                    console.log(productosFilter);
+                    
+                    return response.render("editProduct",{productos: productosFilter, errors: resultValidation.mapped(), old: request.body});
+
+                 }
+
+                
+            }
 
             let leeArchivo = fs.readFileSync(pathData, 'utf-8');
             let productosArch = JSON.parse(leeArchivo);

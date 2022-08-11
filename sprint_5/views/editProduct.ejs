@@ -12,76 +12,129 @@
       <% productos.forEach(producto => { %>
 
         <h1 class="tituloFproductos">Editar Producto: <%=producto.id%></h1>
+        <% if(locals && locals.errors){ %>              
+          <p class="contenido textosAlerta"> Se encontraron errores</p>
+          
+        <% } %>
         <form action="/admin/editProduct/:id?_method=PUT" method="post" enctype="multipart/form-data">
 
           <div>
             <label for="id">Id</label>
             <br>
-            <input type="text" name="id" id="id" value="<%=producto.id%>" readonly>
+            <input type="text" name="id" id="id" value="<%=producto.id%>" readonly>  
           </div>  
 
           <div>
             <label for="name">Nombre</label>
             <br>
-            <input type="text" name="nombre" id="name" value="<%=producto.nombreProducto%>">
+            <input type="text" name="nombre" id="name" value="<%= locals.old &&  old.nombre ? old.nombre : producto.nombreProducto%>">   
+            <% if(locals && locals.errors && errors.nombre){ %>
+              <p class="textosAlerta">
+               <%= errors.nombre.msg %></p>
+            <% } %>
           </div>   
 
 
           <div>
             <label for="descripcion">Descripcion</label>
             <br>
-            <input type="text" name="descripcion" id="descripcion"  value="<%=producto.descripcion%>">
+            <input type="text" name="descripcion" id="descripcion"  value="<%= locals.old &&  old.descripcion ? old.descripcion : producto.descripcion%>">
+            <% if(locals && locals.errors && errors.descripcion){ %>
+              <p class="textosAlerta">
+               <%= errors.descripcion.msg %></p>
+            <% } %>
           </div>
           <div>
             <label for="fabricante">Fabricante</label>
             <br>
-            <input type="text" name="fabricante" id="fabricante" value="<%=producto.fabricante%>">
+            <input type="text" name="fabricante" id="fabricante" value="<%= locals.old &&  old.fabricante ? old.fabricante : producto.fabricante%>">
+            <% if(locals && locals.errors && errors.fabricante){ %>
+              <p class="textosAlerta">
+               <%= errors.fabricante.msg %></p>
+            <% } %>
+            
           </div>
           <div>
             <label for="paisOrigen">Pais de Origen</label>
             <br>
-            <input type="text" name="paisOrigen" id="paisOrigen" value="<%=producto.paisOrigen%>">
+            <input type="text" name="paisOrigen" id="paisOrigen" value="<%= locals.old &&  old.paisOrigen ? old.paisOrigen : producto.paisOrigen%>"
+            <% if(locals && locals.errors && errors.paisOrigen){ %>
+              <p class="textosAlerta">
+               <%= errors.paisOrigen.msg %></p>
+            <% } %>
           </div>
           <div>
             <label for="modelo">Modelo</label>
             <br>
-            <input type="text" name="modelo" id="modelo" value="<%=producto.modelo%>">
+            <input type="text" name="modelo" id="modelo" value="<%= locals.old &&  old.modelo ? old.modelo : producto.modelo%>">
+            <% if(locals && locals.errors && errors.modelo){ %>
+              <p class="textosAlerta">
+               <%= errors.modelo.msg %></p>
+            <% } %>
           </div>
           <div>
              <label for="funcionalidad">Funcionalidad</label>
              <br>
-             <input type="text" name="funcionalidad" id="funcionalidad" value="<%=producto.funcionalidades%>">
+             <input type="text" name="funcionalidad" id="funcionalidad" value="<%= locals.old &&  old.funcionalidad ? old.funcionalidad : producto.funcionalidades%>">
+             <% if(locals && locals.errors && errors.funcionalidad){ %>
+              <p class="textosAlerta">
+               <%= errors.funcionalidad.msg %></p>
+            <% } %>
           </div>
           <div>
             <label for="image">Imagen Actual</label>
             <br>
-            <img class="imagenProductoListado" src="../../images/<%=producto.imagen%>">
-            <input type="file" name="image" id="image">
+            <img class="imagenProductoListado" src="../../images/<%= locals.old &&  old.image ? old.image : producto.imagen%>">
+            <input type="file" name="image" id="image" src="../../images/<%= locals.old &&  old.image ? old.image : producto.imagen%>">
+            <% if(locals && locals.errors && errors.image){ %>
+              <p class="textosAlerta">
+               <%= errors.image.msg %></p>
+            <% } %>
           </div>
           <div>
             <label for="categoria" name="categoria">Categoria</label>
             <br>
-            <input type="text" name="categoria" id="categoria" value="<%=producto.categoria%>">
+            <input type="text" name="categoria" id="categoria" value="<%= locals.old &&  old.categoria ? old.categoria : producto.categoria%>">
+            <% if(locals && locals.errors && errors.categoria){ %>
+              <p class="textosAlerta">
+               <%= errors.categoria.msg %></p>
+            <% } %>
           </div>
           <div>
             <label for="peso">Peso</label>
             <br>
-            <input type="text" name="peso" id="peso" value="<%=producto.peso%>">
+            <input type="text" name="peso" id="peso" value="<%= locals.old &&  old.peso ? old.peso : producto.peso%>">
+            <% if(locals && locals.errors && errors.peso){ %>
+              <p class="textosAlerta">
+               <%= errors.peso.msg %></p>
+            <% } %>
           </div>
           <div>
             <label for="calificacion">Calificación</label>
             <br>
-            <input type="text" name="calificacion" id="calificacion" value="<%=producto.calificacion%>">
+            <input type="text" name="calificacion" id="calificacion" value="<%= locals.old &&  old.calificacion ? old.calificacion: producto.calificacion%>">
+            <% if(locals && locals.errors && errors.calificacion){ %>
+              <p class="textosAlerta">
+               <%= errors.calificacion.msg %></p>
+            <% } %>
          </div>
          <div>
             <label for="price">Precio</label>
             <br>
-            <input type="text" name="precio" id="price" value="<%=producto.precio%>">
+            <input type="text" name="precio" id="price" value="<%= locals.old &&  old.precio ? old.precio : producto.precio%>">
+            <% if(locals && locals.errors && errors.precio){ %>
+              <p class="textosAlerta">
+               <%= errors.precio.msg %></p>
+            <% } %>
         </div>
         <div>
             <label for="quantity">Cantidad</label>
             <br>
-            <input type="text" name="cantidad" id="quantity" value="<%=producto.unidadesDisp%>">
+            <input type="text" name="cantidad" id="quantity" value="<%= locals.old &&  old.cantidad ? old.cantidad : producto.unidadesDisp%>">
+            <% if(locals && locals.errors && errors.cantidad){ %>
+              <p class="textosAlerta">
+               <%= errors.cantidad.msg %></p>
+            <% } %>
         </div>
         <div>
             <button class="botonCargar"> Editar Producto</button>

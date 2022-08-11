@@ -32,7 +32,12 @@ const userController = {
 
                 if(pwdOK){
                     delete userToLog.password;
-                    request.session.usuarioConectado = userToLog;
+                    request.session.usuarioConectado = userToLog
+
+                    if(request.body.recordarme != undefined){
+
+                        response.cookie("recordarme", request.body.correo, {maxAge: 60000});
+                    }
                     // console.log(userToLog);
                     // console.log("verifica: " + pwdOK);
                     response.render("perfil", {userToLog});
