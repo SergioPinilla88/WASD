@@ -40,7 +40,7 @@ const userController = {
                     }
                     // console.log(userToLog);
                     // console.log("verifica: " + pwdOK);
-                    response.render("perfil", {userToLog});
+                    response.redirect("perfil");
                 }else{
                     response.render('newLogin', {
                         errors: {
