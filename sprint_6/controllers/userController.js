@@ -9,7 +9,28 @@ const userController = {
 
         perfil: (request, response) => { 
             let userToLog = request.session.usuarioConectado;
-            response.render("perfil", {userToLog});
+
+            db.Usuario.findByPk(userToLog.id,
+
+            {
+                include: [
+
+                    {association:"usuarioResenas", include:"resenasProducto"}                    
+                             
+                ]
+            
+             }).then(function(usuario){
+
+                
+                //console.log(usuario.dataValues.usuarioResenas[0].dataValues);
+
+                return response.render("perfil", {userToLog:usuario, resenas: usuario.dataValues.usuarioResenas});
+
+
+
+            });
+
+            
         },
 
         login: (request, response) => { 
@@ -73,6 +94,8 @@ const userController = {
         },
 
         logOut: (request, response) => {
+          
+            response.clearCookie("recordarme");
             request.session.destroy();
            response.redirect('/');
         },
@@ -202,6 +225,77 @@ const userController = {
                              old: request.body
                     });
             }   */           
+        },
+        adicionaResena:(request, response) =>{
+            //console.log(request.body.resenaNueva);
+            //console.log(request.body.usuarioIdResena);
+            //console.log(request.body.productoIdResena);
+
+            let nuevaResena = {
+                calificacion: request.body.calificaResena,
+                resena: request.body.resenaNueva,
+                Usuario_id: request.body.usuarioIdResena,
+                Producto_id: request.body.productoIdResena,                
+               } 
+               
+               
+           db.Resena.create(nuevaResena);
+        
+           return response.redirect("/producto/" + request.body.productoIdResena);
+
+
+            //return response.send("Reseña: " + request.body.resenaNueva + " Usuario: " + request.body.usuarioIdResena + " Producto: " + request.body.productoIdResena + " Calificación: " + request.body.calificaResena );
+
+        },
+
+        editaResena:(request,response)=>{
+            
+            console.log(request.body.resenaEdit);
+            console.log(request.body.usuarioIdResena);
+            console.log(request.body.productoIdResena);
+            console.log(request.body.idResena);
+            console.log(request.body.calificaResena);
+
+            let nuevaResena = {
+                calificacion: request.body.calificaResena,
+                resena: request.body.resenaEdit,
+                Usuario_id: request.body.usuarioIdResena,
+                Producto_id: request.body.productoIdResena,                
+            };
+
+            db.Resena.update(
+
+                {
+                    calificacion: request.body.calificaResena,
+                    resena: request.body.resenaEdit,
+                    Usuario_id: request.body.usuarioIdResena,
+                    Producto_id: request.body.productoIdResena,    
+                   
+
+                },
+                {
+
+                    where: {id: request.body.idResena}
+                
+                });
+            
+                response.redirect("/usuario/perfil");
+            
+
+        },
+
+        eliminaResena: (request, response) => {
+
+            db.Resena.destroy(
+                {
+
+                    where: {id: request.params.id}
+
+                }
+            );
+
+            response.redirect("/usuario/perfil");
+
         }
 };
 module.exports = userController;

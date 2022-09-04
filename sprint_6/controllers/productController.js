@@ -4,6 +4,7 @@ const fs = require('fs');
 const path = require("path");
 const db = require('../database/models');
 const { Op } = require("sequelize");
+const Usuario = require('../database/models/Usuario');
 
 
 const pathData = path.resolve(__dirname, "../data/productos.json");
@@ -29,11 +30,14 @@ let productController = {
                     {association: "fabricantes"},
                     {association: "paises"},
                     {association: "categorias"},
-                    {association:"productosRelacionados"}
+                    {association:"productosRelacionados"},
+                    {association:"productoResenas", include: "resenasUsuario"}
 
                
                 ]}).then(function(producto){
 
+
+                    //console.log(producto.dataValues.productoResenas[0].dataValues);
                     codigosRelacionados = [];
                 
                     if(producto){
@@ -52,24 +56,11 @@ let productController = {
                     
                         }).then(function(relacionados){        
                             
-                            db.Resena.findAll({
+                                                       
+                                
+                                response.render('productDetail', {product: producto, relacionado: relacionados, resena: producto.dataValues.productoResenas});
 
-                                where:{Producto_id: request.params.id}
-
-                            },{
-                                include: [
-                
-                                    {association: "resenasUsuario"},
-                                    {association: "resenasProducto"}
-                               
-                                ]}).then(function(resenas){
-
-
-                            
-                                console.log(relacionados);
-                                response.render('productDetail', {product: producto, relacionado: relacionados, resena: resenas});
-
-                            });    
+                           
 
                         });
                 

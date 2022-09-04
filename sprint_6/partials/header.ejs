@@ -17,10 +17,21 @@
             <a href="/usuario/registro" class="nav_items">Registro</a>
 
             <% }else { %> 
-                <a href="/admin/products" class="nav_items">Administrar productos</a>
-                <a href="/usuario/perfil" class="nav_items"><img src="/images/avatars/<%= locals.usuarioConectado.avatar %>" class="imagenPerfilNav"></a>  
+
+            
+                <% if (locals.usuarioConectado.esAdmin == 1){%> 
+            
+            
+                    <a href="/admin/products" class="nav_items">Administrar productos</a>
+                   
                
-           <% } %>
+                <% } %>
+
+                <a href="/usuario/perfil" class="nav_items"><img src="/images/avatars/<%= locals.usuarioConectado.avatar %>" class="imagenPerfilNav"></a>  
+
+            <% } %>
+
+
             
         </div>
     </div>

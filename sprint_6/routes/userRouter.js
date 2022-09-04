@@ -13,6 +13,10 @@ router.get('/registro', guestMiddleware, userController.registroView);
 router.get('/perfil', toLoginMiddleware, userController.perfil);
 router.get('/logout', userController.logOut);
 router.post('/registro', upload.single('avatar'),validacionesRegistro,userController.registro);
+router.post('/resena', userController.adicionaResena);
+router.put('/editaResena/:idResena', userController.editaResena);
+router.delete('/deleteResena/:id', userController.eliminaResena);
+
 
 
 module.exports = router;

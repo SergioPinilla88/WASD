@@ -135,6 +135,61 @@
         <% } %>
 
         <h2 class="tituloSec">Reseñas de este producto</h2>
+        <section class="seccionAddResena">
+        <% if (locals.isLogged){%> 
+        <div class="AdicionarResena">
+                      
+            <form action="/usuario/resena" method="POST">
+
+                <div>
+                    <textarea id="resenaNueva" name="resenaNueva" rows="3" cols="50">
+                        <%= locals.old &&  old.resena ? old.resena : ''%>
+                    </textarea>
+                </div>
+                
+                <div class="ocultoAddResena">
+                    <input type="text" name="usuarioIdResena" id="usuarioIdResena" required  value="<%= locals.old &&  old.usuarioIdResena ? old.usuarioIdResena : locals.usuarioConectado.id%>" readonly>
+                    <input type="text" name="productoIdResena" id="productoIdResena" required  value="<%= locals.old &&  old.productoIdResena ? old.productoidResena:locals.product.id%>" readonly>
+                </div> 
+                
+                <div class="calificaBotonResena">
+                    <label class = "labelCalificaResena" for="calificaResena">Tu calificación</label>
+                    <select class = "textCalificaResena" name  = "calificaResena" id  = "calificaResena">
+                
+            
+                        <option value = "1">1</option>
+                        <option value = "2">2</option>
+                        <option value = "3">3</option>
+                        <option value = "4">4</option>
+                        <option value = "5">5</option>
+                      
+                     
+                    </select>
+                    <div class="divButtonAddResena">
+                    <button class = "buttonAddResena" type="submit">+</button>
+                    </div>
+            
+                </div>
+
+                           
+
+
+            </form>
+
+        </div>
+    </section>
+
+        <% } %>
+   
+
+
+        
+            
+            
+            
+        <div class="listadoProductos">
+
+        
 
 
        
@@ -150,9 +205,9 @@
             <div class="encabezadoResenas">
 
                 <div class="logoUSer">
-                     <i class="far fa-user"></i>
+                    <img src="/images/avatars/<%= resenas.resenasUsuario.avatar %>" class="imagenPerfilResena">
                 </div>
-                <h3 class="subtituloMain"> <%= resenas.Usuario_id %></h3>
+                <h3 class="subtituloMain"> <%= resenas.resenasUsuario.nombre %></h3>
                 <div class="calificacion">
 
                     <% for(i= 0; i < resenas.calificacion; i++){ %>
@@ -199,7 +254,7 @@
 
                  
                 
-                <a href="/producto/<%=relacionados.id%>"><img class="imagenProducto" src="/images/<%=relacionados.imagen%>"></a>
+                <a href="/producto/<%=relacionados.id%>" class="frameImagenProducto"><img class="imagenProducto" src="/images/<%=relacionados.imagen%>"></a>
                 
 
                 <h4 class="nombreProdSec"><%=relacionados.nombre%></h4>                
