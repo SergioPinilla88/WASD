@@ -253,21 +253,8 @@ const userController = {
         
             }).then(function(usuarios){   
                 
-                let existeCorreo = false;
-
-                if(usuarios.length > 0){
-
-                    existeCorreo = true;
-
-                    errors = {
-                        ...errors,
-                        correo: {
-                             msg: "Este correo ya esta registrado"
-                        }
-                    };
-
-                }  
-                if(!resultValidation.isEmpty() || existeCorreo){
+                
+                if(!resultValidation.isEmpty()){
                     db.Usuario.findByPk(req.params.id).then(function(usuarios){
                         return res.render('editPerfil', {
                             errors: errors, 

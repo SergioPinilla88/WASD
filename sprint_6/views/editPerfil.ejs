@@ -55,6 +55,7 @@
                 <input type="email" 
                 name="correo"
                 id="correo" 
+                readonly
                 value="<%= locals.old &&  old.correo ? old.correo : usuario.email%>">
                 <% if(locals && locals.errors && errors.correo){ %>
                     <p class="textosAlerta"><%= errors.correo.msg %></p>
