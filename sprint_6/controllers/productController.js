@@ -187,7 +187,7 @@ let productController = {
         editaProductoView: (request, response) => {
 
             db.Categoria.findAll().then(categorias => {
-            
+           
                 db.Fabricante.findAll().then(fabricantes => {
 
                     db.Pais.findAll().then(paises => {

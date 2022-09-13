@@ -367,7 +367,7 @@ video {
     align-content:center;
     margin-left: 2%;
     margin-right: 2%;
-    height: 9cm;
+    height: 10cm;
     width: 60vw;
 
     border-style: dotted;
@@ -881,10 +881,12 @@ video {
 }
 
 .seccionInferiorUsuario{
-
+   
+    
     width: 50%;
     min-width: 300px;
     text-align: center;
+    
 }
 
 .botonEliminar {
@@ -901,7 +903,7 @@ video {
     padding-bottom: 2px;
     padding-left: 2px;
     padding-right: 2px;
-
+    
     background-color: #570AB8;
     color: white;
     justify-content: center;

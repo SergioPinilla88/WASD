@@ -17,7 +17,7 @@
         <h2 class="tituloSec"> Hola:  <%= locals.userToLog && userToLog.email ? userToLog.email : '' %></h2>
 
         <div class="todoUsuario">
-
+            
             <div class="encabezadoUsuario">
 
                 
@@ -25,8 +25,12 @@
                 <img class="imagenPerfil" src="../images/avatars/<%= locals.userToLog && userToLog.avatar ? userToLog.avatar : '' %>">
                 
                 <div class="seccionInferiorUsuario">
-                <a href="/usuario/logout/"><button class="botonEliminar"><i class="fas fa-sign-out-alt"></i></button></a>    
-                </div>                          
+                <a href="/usuario/editPerfil/<%= userToLog.id%>"><button class="botonEliminar"><i class="fa-solid fa-pen-to-square"></i></button></a>    
+                </div><br>
+                <div class="seccionInferiorUsuario">
+                    <a href="/usuario/logout/"><button class="botonEliminar"><i class="fas fa-sign-out-alt"></i></button></a>
+                    
+                    </div>                            
                 
             </div>
 
@@ -59,7 +63,7 @@
                     </span>    
                 </div>
 
-                              
+                      
         </div>
 
         

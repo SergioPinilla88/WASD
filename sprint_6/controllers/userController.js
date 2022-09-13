@@ -4,6 +4,7 @@ const path = require("path");
 const userModel = require("../models/User");
 const { validationResult } = require('express-validator');
 const db = require("../database/models");
+const Usuario = require('../database/models/Usuario');
 
 const userController = {
 
@@ -226,10 +227,83 @@ const userController = {
                     });
             }   */           
         },
+        editPerfilView:(req, res)=>{
+           
+            db.Usuario.findByPk(req.params.id).then(function(usuarios){
+                res.render('editPerfil', {usuario:usuarios})
+            });
+        },
+        editPerfil:(req, res)=>{
+            let resultValidation = validationResult(req);
+            let errors = resultValidation.mapped();
+            console.log(errors);
+
+            if(req.body.pwd != req.body.pwdConf){       
+                errors = {
+                    ...errors,
+                    pwdConf: {
+                         msg: "Las contraseñas deben ser iguales"
+                    }
+                }  
+             }
+
+            db.Usuario.findAll({
+
+                where:{email: req.body.correo}
+        
+            }).then(function(usuarios){   
+                
+                let existeCorreo = false;
+
+                if(usuarios.length > 0){
+
+                    existeCorreo = true;
+
+                    errors = {
+                        ...errors,
+                        correo: {
+                             msg: "Este correo ya esta registrado"
+                        }
+                    };
+
+                }  
+                if(!resultValidation.isEmpty() || existeCorreo){
+                    db.Usuario.findByPk(req.params.id).then(function(usuarios){
+                        return res.render('editPerfil', {
+                            errors: errors, 
+                            old: req.body,
+                            usuario: usuarios
+                         });
+
+                    });
+                    
+                     }
+                     else{
+                        let usuarioActualizado = {
+
+                        nombre: req.body.nombre,
+                        apellido: req.body.apellido,
+                        email: req.body.correo,
+                        password : bcryptjs.hashSync(req.body.pwd, 10),
+                        avatar: 'default_avatar.jpg'
+                }
+                    if(req.file){
+                        usuarioActualizado.avatar = req.file.filename;
+                }
+                        db.Usuario.update(usuarioActualizado,  
+                {
+                        where: {id: req.body.id}
+                }
+                );
+               
+                
+                res.redirect('/usuario/perfil');
+                }
+            }); 
+            
+        },
+
         adicionaResena:(request, response) =>{
-            //console.log(request.body.resenaNueva);
-            //console.log(request.body.usuarioIdResena);
-            //console.log(request.body.productoIdResena);
 
             let nuevaResena = {
                 calificacion: request.body.calificaResena,
