@@ -9,7 +9,17 @@
         <div class="nav_menu">
             <a href="/compra/carrito_de_compras" class="nav_items">Tienda<i class="fas fa-shopping-cart"></i></a>
             <a href="/listadoProductos" class="nav_items">Productos</a>
-            <a href="buscar" class="nav_items"><i class="fas fa-search"></i></a>
+            <div class="wrapper">
+                <div class="search-input">
+                    <a href="" target="_blank" hidden></a>
+                    <input type="text" placeholder="Buscar...">
+                    <div class="autocom-box">
+                    </div>
+                    <div class="icon"><i class="fas fa-search"></i></div>
+                </div>
+            </div>
+            <script src="/js/buscador.js"></script>
+            <script src="/js/suggestions.js"></script>
            
             <% if (!locals.isLogged){%> 
            
