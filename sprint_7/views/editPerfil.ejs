@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('../partials/head.ejs') %>
+<body>
+    <header>
+        <%- include('../partials/header.ejs') %>
+    </header>   
+    <% if(locals.usuario){ %>
+
+        <form class="formRegistro" 
+        action="/usuario/editPerfil/<%= usuario.id %>?_method=PUT" 
+        method="POST" 
+        enctype="multipart/form-data"> 
+        
+        <div>
+            <label for="id" hidden>Id</label>
+            <br>
+            <input type="text" name="id" id="id" value="<%=usuario.id%>" readonly hidden>  
+          </div>  
+            <br>
+        <legend><h2 class = "textosTitulo">Edita tu cuenta: <%=usuario.nombre%></h2></legend>
+            <br>
+
+        <% if(locals && locals.errors){ %>              
+                <p class="contenido textosAlerta"> Se encontraron errores</p>
+                
+        <% } %>
+
+        <div class="contenido">
+            <label class="textos" for="nombre">
+                Nombre:
+                <input type="text" 
+                name="nombre" 
+                id="nombre" 
+                 value="<%= locals.old &&  old.nombre ? old.nombre : usuario.nombre%>">
+                <% if( locals.errors && errors.nombre){ %>
+                    <p class="textosAlerta"><%= errors.nombre.msg %></p>
+                <% } %>              
+                 
+            </label>
+            <br>
+            <label class="textos" for="apellido">
+                Apellido:
+                <input type="text"
+                name="apellido" 
+                id="apellido" 
+                value="<%= locals.old &&  old.apellido ? old.apellido : usuario.apellido%>">
+                <% if(locals && locals.errors && errors.apellido){ %>
+                    <p class="textosAlerta"><%= errors.apellido.msg %></p>
+                <% } %>
+            </label>
+            <br>
+            <label class="textos" for="correo">
+                e-mail:
+                <input type="email" 
+                name="correo"
+                id="correo" 
+                readonly
+                value="<%= locals.old &&  old.correo ? old.correo : usuario.email%>">
+                <% if(locals && locals.errors && errors.correo){ %>
+                    <p class="textosAlerta"><%= errors.correo.msg %></p>
+                <% } %>              
+            </label>
+            <br>
+            <label  class="textos"for="pwd">
+                Contraseña:
+                <input type="password" 
+                name="pwd" id="pwd" 
+                value="<%= locals.old &&  old.pwd ? old.pwd : ''%>">
+                <% if(locals && locals.errors && errors.pwd){ %>
+                    <p class="textosAlerta"><%= errors.pwd.msg %></p>
+                <% } %>    
+            </label>
+            <br>
+
+            <label  class="textos"for="pwdConf">
+                Confirma Contraseña:
+                <input type="password" 
+                name="pwdConf" 
+                id="pwdConf" 
+                value="<%= locals.old &&  old.pwdConf ? old.pwdConf : ''%>">
+                <% if(locals && locals.errors && errors.pwdConf){ %>
+                    <p class="textosAlerta"><%= errors.pwdConf.msg %></p>
+                <% } %>     
+            </label>
+        
+            <br>
+            <div>
+            <label for="image">Imagen Actual</label>
+            <br>
+            <img class="imagenPerfil" src="../../images/avatars/<%= locals.userToLog && userToLog.avatar ? userToLog.avatar : usuario.avatar %>">
+            <input type="file" name="image" id="image" src="../../images/<%= locals.old &&  old.image ? old.image : ''%>">
+            <% if(locals && locals.errors && errors.image){ %>
+              <p class="textosAlerta">
+               <%= errors.image.msg %></p>
+            <% } %>
+          </div>
+            <br>
+
+            
+               
+
+
+                        
+        
+
+            <button id="botonesLogin" type="submit">Enviar</button>
+           
+        </form>
+        <% } %>
+    <br>
+    
+    <footer>
+        <%- include('../partials/footer.ejs') %>
+    </footer>
+</body>
+</html>
+
+
+
+               
+        
+       
+       

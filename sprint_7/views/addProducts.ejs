@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('../partials/head.ejs') %>
+<body >
+    <header>
+        <%- include('../partials/header.ejs') %>
+    </header>
+    <div class="addProducts">
+    <h1 class="tituloFproductos">Formulario para agregar Productos</h1>
+    <% if(locals && locals.errors){ %>              
+      <p class="contenido textosAlerta"> Se encontraron errores</p>
+      
+    <% } %>
+    <form action="/admin/addProduct" method="post" enctype="multipart/form-data">
+
+    <div>
+      <label for="name">Nombre</label>
+      <br>
+      <input type="text"
+       name="nombre" 
+       id="name"
+        value="<%= locals.old &&  old.nombre ? old.nombre : ''%>">
+       <% if(locals && locals.errors && errors.nombre){ %>
+           <p class="textosAlerta">
+            <%= errors.nombre.msg %></p>
+       <% } %>
+    </div>
+
+    <div>
+      <label for="descripcion">Descripcion</label>
+      <br>
+      <input type="text" 
+      name="descripcion" 
+      id="descripcion"
+       value="<%= locals.old &&  old.descripcion ? old.descripcion : ''%>">
+      <% if(locals && locals.errors && errors.descripcion){ %>
+          <p class="textosAlerta"><%= errors.descripcion.msg %></p>
+      <% } %>
+    </div>
+
+    <div>
+    <label for="fabricante">Fabricante</label>
+    <select name  = "fabricante" id  = "fabricante" value = "<%= locals.old &&  old.fabricante ? old.fabricante : 1%>">
+    <% if(locals && locals.fabricante){ %>
+
+        <% fabricante.forEach(fabricantes => { %>
+
+          <option value = "<%= fabricantes.id %>"><%= fabricantes.nombre %></option>
+          
+          <% }) %>
+    <% } %>
+    </select>
+
+  </div>
+
+  <div>
+    <label for="paisOrigen">Pais de Origen</label>
+    <select name  = "paisOrigen" id  = "paisOrigen" value = "<%= locals.old &&  old.paisOrigen ? old.paisOrigen : 1%>">
+    <% if(locals && locals.pais){ %>
+
+        <% pais.forEach(paises => { %>
+
+          <option value = "<%= paises.id %>"><%= paises.nombre %></option>
+          
+          <% }) %>
+    <% } %>
+    </select>
+
+  </div>
+  
+    
+
+
+
+   
+
+    <div>
+      <label for="modelo">Modelo</label>
+      <br>
+      <input type="text" 
+      name="modelo" 
+      id="modelo"
+       value="<%= locals.old &&  old.modelo ? old.modelo : ''%>">
+      <% if(locals && locals.errors && errors.modelo){ %>
+          <p class="textosAlerta"><%= errors.modelo.msg %></p>
+      <% } %>
+    </div>
+
+    <div>
+      <label for="funcionalidad">Funcionalidad</label>
+      <br>
+      <input type="text" 
+      name="funcionalidad" 
+      id="funcionalidad" 
+       value="<%= locals.old &&  old.funcionalidad ? old.funcionalidad : ''%>">
+      <% if(locals && locals.errors && errors.funcionalidad){ %>
+          <p class="textosAlerta"><%= errors.funcionalidad.msg %></p>
+      <% } %>
+    </div>
+
+    <div>
+      <label for="image">Imagen</label>
+      <br>
+      <input type="file" 
+      name="image" 
+      id="image"
+        value="<%= locals.old &&  old.image ? old.image : ''%>">
+      <% if(locals && locals.errors && errors.image){ %>
+          <p class="textosAlerta"><%= errors.image.msg %></p>
+      <% } %>
+    </div>
+
+
+    <div>
+      <label for="categoria">Categoria</label>
+      <select name  = "categoria" id  = "categoria" value = "<%= locals.old &&  old.categoria ? old.categoria : 1%>">
+      <% if(locals && locals.categoria){ %>
+  
+          <% categoria.forEach(categorias => { %>
+  
+            <option value = "<%= categorias.id %>"><%= categorias.nombre %></option>
+            
+            <% }) %>
+      <% } %>
+      </select>
+  
+    </div>
+   
+     <div>
+      <label for="peso">Peso en gramos</label>
+      <br>
+      <input type="text" 
+      name="peso" 
+      id="peso"
+       value="<%= locals.old &&  old.peso ? old.peso : ''%>">
+      <% if(locals && locals.errors && errors.peso){ %>
+          <p class="textosAlerta"><%= errors.peso.msg %></p>
+      <% } %>
+    </div>
+    <div>
+      <label for="calificacion">Calificación</label>
+      <br>
+      <input type="text" 
+      name="calificacion" 
+      id="calificacion"
+       value="<%= locals.old &&  old.calificacion ? old.calificacion : ''%>">
+      <% if(locals && locals.errors && errors.calificacion){ %>
+          <p class="textosAlerta"><%= errors.calificacion.msg %></p>
+      <% } %>
+    </div>
+
+    <div>
+      <label for="price">Precio en Dolares</label>
+      <br>
+      <input type="text" 
+      name="precio" 
+      placeholder="U$S"
+      id="price"
+        value="<%= locals.old &&  old.precio ? old.precio : ''%>">
+      <% if(locals && locals.errors && errors.precio){ %>
+          <p class="textosAlerta"><%= errors.precio.msg %></p>
+      <% } %>
+    </div>
+
+    <div>
+      <label for="quantity">Cantidad (numeros)</label>
+      <br>
+      <input type="text" 
+      name="cantidad" 
+      id="quantity"
+     value="<%= locals.old &&  old.cantidad ? old.cantidad : ''%>">
+      <% if(locals && locals.errors && errors.cantidad){ %>
+          <p class="textosAlerta"><%= errors.cantidad.msg %></p>
+      <% } %>
+    </div>
+    <div>
+      <button class="botonCargar"> Cargar Producto</button>
+    </div>
+    </form>
+    <br>
+</div>
+    <footer>
+        <%- include('../partials/footer.ejs') %>
+    </footer>
+</body>
+</html>

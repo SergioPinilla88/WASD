@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('../partials/head.ejs') %>
+<body>
+    <header>
+        <%- include('../partials/header.ejs') %>
+    </header>
+
+    <main>
+
+        <a href="/listadoProductos/"><button class="botonEliminar"><i class="fas fa-angle-double-left"></i></button></a>
+        <h2 class="tituloSec">Detalle del producto</h2>
+
+        <% if(locals.product){ %>
+
+        <div class="todoProducto">
+
+            <div class="encabezadoProducto">
+             
+                <img class="imagenProducto" src="/images/<%= product.imagen %>">              
+                <ul class="carruselImg">
+                    <li><a href="url">1</a></li>
+                    <li><a href="url">2</a></li>
+                    <li><a href="url">3</a></li>
+                    <li><a href="url">4</a></li>
+
+                </ul>
+                
+                <div class="comboCarritoPrecio">    
+                    
+                    <i class="fas fa-shopping-cart botonCarrito"></i>
+                   
+                    <h3 class="precioProducto"><%= product.precio %></h3>
+                    
+                </div>
+
+            </div>
+
+           
+            <div class = "variablesProductos">
+                    <div>
+                    <span class=" subtitulo">
+                        Calificación:
+                    </span>
+                    <span class="calificacion">
+                    
+                        <% for(i= 0; i < product.calificacion; i++){ %>
+
+                                <i class="fas fa-star"></i>
+
+                        <% } %>
+                        
+                    </span>    
+                    </div>
+
+                    <div>
+                        <span class=" subtitulo">
+                            Nombre del producto:
+                        </span>
+                        <span class="infoDetalle">
+                            <%= product.nombre %>
+                        </span>    
+                    </div>
+
+                    <div>
+                        <span class=" subtitulo">
+                            Categoria:
+                        </span>
+                        <span class="infoDetalle">
+                            <%= product.categorias.nombre %>
+                        </span>    
+                    </div>
+
+                    <div>
+                        <span class=" subtitulo">
+                            Unidades disponibles:
+                        </span>
+                        <span class="infoDetalle">
+                            <%= product.unidadesDisponibles %>
+                        </span>    
+                    </div>
+
+                    <div>
+                        <span class=" subtitulo">
+                            Fabricante:
+                        </span>
+                        <span class="infoDetalle">
+                            <%= product.fabricantes.nombre %>
+                        </span>    
+                    </div>
+
+                    <div>
+                        <span class=" subtitulo">
+                            Pais de origen:
+                        </span>
+                        <span class="infoDetalle">
+                            <%= product.paises.nombre %>
+                        </span>    
+                    </div>
+
+                    <div>
+                        <span class=" subtitulo">
+                            Peso:
+                        </span>
+                        <span class="infoDetalle">
+                            <%= product.peso %>
+                        </span>    
+                    </div>
+
+                    <div>
+                        <span class=" subtitulo">
+                            Modelo:
+                        </span>
+                        <span class="infoDetalle">
+                            <%= product.modelo %>
+                        </span>    
+                    </div>
+                        
+
+
+                    
+                
+            </div>
+
+            <div class="descripcion">
+                <h3 class="subtituloMain">Descripcion</h3>
+                <ul class="listaDesc"> 
+                <li><p class="infoDetalle"><%= product.descripcion %></p></li>               
+               
+                </ul>
+            </div>
+
+        </div>
+
+        <% } %>
+
+        <h2 class="tituloSec">Reseñas de este producto</h2>
+        <section class="seccionAddResena">
+        <% if (locals.isLogged){%> 
+        <div class="AdicionarResena">
+                      
+            <form action="/usuario/resena" method="POST">
+
+                <div>
+                    <textarea id="resenaNueva" name="resenaNueva" rows="3" cols="50">
+                        <%= locals.old &&  old.resena ? old.resena : ''%>
+                    </textarea>
+                </div>
+                
+                <div class="ocultoAddResena">
+                    <input type="text" name="usuarioIdResena" id="usuarioIdResena" required  value="<%= locals.old &&  old.usuarioIdResena ? old.usuarioIdResena : locals.usuarioConectado.id%>" readonly>
+                    <input type="text" name="productoIdResena" id="productoIdResena" required  value="<%= locals.old &&  old.productoIdResena ? old.productoidResena:locals.product.id%>" readonly>
+                </div> 
+                
+                <div class="calificaBotonResena">
+                    <label class = "labelCalificaResena" for="calificaResena">Tu calificación</label>
+                    <select class = "textCalificaResena" name  = "calificaResena" id  = "calificaResena">
+                
+            
+                        <option value = "1">1</option>
+                        <option value = "2">2</option>
+                        <option value = "3">3</option>
+                        <option value = "4">4</option>
+                        <option value = "5">5</option>
+                      
+                     
+                    </select>
+                    <div class="divButtonAddResena">
+                    <button class = "buttonAddResena" type="submit">+</button>
+                    </div>
+            
+                </div>
+
+                           
+
+
+            </form>
+
+        </div>
+    </section>
+
+        <% } %>
+   
+
+
+        
+            
+            
+            
+        <div class="listadoProductos">
+
+        
+
+
+       
+
+
+        <div class="resenas">
+
+
+            <% if(locals.resena){ %>
+                <% resena.forEach(resenas => { %>
+
+            
+            <div class="encabezadoResenas">
+
+                <div class="logoUSer">
+                    <img src="/images/avatars/<%= resenas.resenasUsuario.avatar %>" class="imagenPerfilResena">
+                </div>
+                <h3 class="subtituloMain"> <%= resenas.resenasUsuario.nombre %></h3>
+                <div class="calificacion">
+
+                    <% for(i= 0; i < resenas.calificacion; i++){ %>
+
+                        <i class="fas fa-star"></i>
+
+                    <% } %>
+
+                        
+                 </div>
+                 <div>
+                 <p class="infoDetalle"><%= resenas.resena %></p>
+                </div>
+ 
+ 
+             </div>
+
+             <%})%>
+             <%}%>
+            
+
+           
+ 
+ 
+             
+ 
+ 
+             </div>
+
+      
+
+        </div>
+
+        <h2 class="tituloSec">Productos relacionados</h2>
+
+        <div class = "productosRelacionados">
+
+            
+     <% if(locals.relacionado){ %>
+            <% relacionado.forEach(relacionados => { %>
+
+
+            <div class="encabezadoProductoSec">
+
+                 
+                
+                <a href="/producto/<%=relacionados.id%>" class="frameImagenProducto"><img class="imagenProducto" src="/images/<%=relacionados.imagen%>"></a>
+                
+
+                <h4 class="nombreProdSec"><%=relacionados.nombre%></h4>                
+                               
+                <div class="comboCarritoPrecioSec">    
+                    
+                    <i class="fas fa-shopping-cart botonCarritoSec"></i>
+                    
+                    <h4 class="precioProductoSec"><%=relacionados.precio%></h4>
+                </div>
+            </div>
+
+                <%})%>
+            <%}%>
+            
+
+
+
+        </div>
+
+        
+       
+    
+    </main>
+    <footer>
+        <%- include('../partials/footer.ejs') %>
+    </footer>
+</body>
+</html>
