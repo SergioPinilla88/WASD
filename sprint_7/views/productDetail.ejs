@@ -27,8 +27,19 @@
                 </ul>
                 
                 <div class="comboCarritoPrecio">    
+
+
+                    <form action="/compra/adicionarProducto/<%=product.id%>" method="post">             
+                                    
+                                                         
+                                        
+                        <button class="botonEliminar"><i class="fas fa-shopping-cart"></i></button>
                     
-                    <i class="fas fa-shopping-cart botonCarrito"></i>
+                                               
+                    </form>
+
+                    
+                    
                    
                     <h3 class="precioProducto"><%= product.precio %></h3>
                     

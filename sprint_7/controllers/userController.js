@@ -4,7 +4,6 @@ const path = require("path");
 const userModel = require("../models/User");
 const { validationResult } = require('express-validator');
 const db = require("../database/models");
-const Usuario = require('../database/models/Usuario');
 
 const userController = {
 
@@ -22,17 +21,69 @@ const userController = {
             
              }).then(function(usuario){
 
+
+
+
+                db.Compra.findAll({where: [
+                                     
+                    {estadoCompra: "0"},
+                    {Usuario_id: userToLog.id}
+                
+
+             ], include: [
+                    
+                    {association: "comprasUsuario"},
+                    {association: "comprasDetalles", include: "detallesCompraProducto"}
+                
+                ]}).then(compras =>{
+
+                    if(compras.length > 0){
+                        //console.log(compras[0].dataValues.comprasDetalles[0]);
+                        //response.send(compras);
+                        let totalesCompras = [];
+                       
+                       for(j = 0; j < compras.length; j++){
+
+
+                            let cantidadProductos = compras[j].dataValues.comprasDetalles.length;
+                            let costoTotal = 0;
+                            let pesoTotal = 0;
+
+                            for(i = 0; i < compras[j].dataValues.comprasDetalles.length; i++){
+
+                                costoTotal = costoTotal + Number(compras[j].dataValues.comprasDetalles[i].detallesCompraProducto.precio);
+                                pesoTotal = pesoTotal + Number(compras[j].dataValues.comprasDetalles[i].detallesCompraProducto.peso);
+
+                            }                        
+
+                            let totalizadoCarrito = {
+
+                                id: compras[j].dataValues.id,
+                                fechaCierreCompra: compras[j].dataValues.momentoCompra,
+                                cantidadProductos: cantidadProductos,
+                                costoTotal: costoTotal,
+                                pesoTotal: pesoTotal
+
+                            };
+
+                            totalesCompras.push(totalizadoCarrito);
+
+                        }
+
                 
                 //console.log(usuario.dataValues.usuarioResenas[0].dataValues);
 
-                return response.render("perfil", {userToLog:usuario, resenas: usuario.dataValues.usuarioResenas});
+                    return response.render("perfil", {compras: totalesCompras, userToLog:usuario, resenas: usuario.dataValues.usuarioResenas});
 
 
+
+                }
 
             });
 
+        });
             
-        },
+    },
 
         login: (request, response) => { 
             response.render('newLogin');    
@@ -227,6 +278,8 @@ const userController = {
                     });
             }   */           
         },
+
+
         editPerfilView:(req, res)=>{
            
             db.Usuario.findByPk(req.params.id).then(function(usuarios){
@@ -290,7 +343,11 @@ const userController = {
             
         },
 
+
         adicionaResena:(request, response) =>{
+            //console.log(request.body.resenaNueva);
+            //console.log(request.body.usuarioIdResena);
+            //console.log(request.body.productoIdResena);
 
             let nuevaResena = {
                 calificacion: request.body.calificaResena,

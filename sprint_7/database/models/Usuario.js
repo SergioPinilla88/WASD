@@ -33,10 +33,10 @@ module.exports =(sequelize, DataTypes)=>{
     };
 const Usuario = sequelize.define(alias,cols, config);
     Usuario.associate = function(models){
-       /* Usuario.hasMany(models.Compra,{
+       Usuario.hasMany(models.Compra,{
             as: "compras",
             foreignKey: "Usuario_id"
-        });*/
+        });
         Usuario.hasMany(models.Resena,{
             as: "usuarioResenas",
             foreignKey: "Usuario_id"
