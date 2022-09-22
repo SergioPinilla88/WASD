@@ -6,6 +6,7 @@ const router = express.Router();
 
 router.get('/', principalController.home);
 router.get('/listadoProductos', productController.listaProductosUser);
+router.get('/buscarProductos/:busqueda', productController.buscarProductos);
 
 
 module.exports = router;
