@@ -10,7 +10,7 @@ inputBox.onkeyup =(e)=>{
     let emptyArray = [];
     if(userData){
         icon.onclick = () => {
-            webLink = `https://www.google.es/search?q=${userData}`;
+            webLink = `http://localhost:3000/buscarProductos/${userData}`;
             linkTag.setAttribute("href",webLink);
             linkTag.click();
         }
@@ -43,7 +43,7 @@ function select(element){
     let selectData = element.textContent;
     inputBox.value = selectData;
     icon.onclick = ()=>{
-        webLink = `https://www.google.es/search?q=${selectData}`;
+        webLink = `http://localhost:3000/API/productos/buscarProducto/${selectData}`;
         linkTag.setAttribute("href",webLink);
         linkTag.click();
     }

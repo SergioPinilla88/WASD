@@ -1,6 +1,16 @@
-let suggestions = [
-    "Far Cry 6 PS5",
-    "Control PS5",
-    
 
-];
+const fetch = require("node-fetch");
+let suggestions = [];
+
+
+
+
+    fetch("http://localhost:3000/API/productos")
+    .then(response => response.json())
+    .then(productos =>{ 
+
+        this.suggestions.push(productos.map((producto) =>  producto.nombre))
+        return this.suggestions;
+    })
+
+

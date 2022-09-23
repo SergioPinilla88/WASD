@@ -17,7 +17,7 @@
         <h2 class="tituloSec"> Hola:  <%= locals.userToLog && userToLog.email ? userToLog.email : '' %></h2>
 
         <div class="todoUsuario">
-            
+
             <div class="encabezadoUsuario">
 
                 
@@ -27,11 +27,11 @@
                 <div class="seccionInferiorUsuario">
                 <a href="/usuario/editPerfil/<%= userToLog.id%>"><button class="botonEliminar"><i class="fa-solid fa-pen-to-square"></i></button></a>    
                 </div><br>
-                <div class="seccionInferiorUsuario">
-                    <a href="/usuario/logout/"><button class="botonEliminar"><i class="fas fa-sign-out-alt"></i></button></a>
-                </div><br>                            
                 
-                    
+                <div class="seccionInferiorUsuario">
+                <a href="/usuario/logout/"><button class="botonEliminar"><i class="fas fa-sign-out-alt"></i></button></a>    
+                </div><br>                           
+                
             </div>
 
            
@@ -63,7 +63,7 @@
                     </span>    
                 </div>
 
-                      
+                              
         </div>
 
         
@@ -147,6 +147,78 @@
                         </div> 
 
 
+        <%})%>
+        <%}%>
+
+
+        <h2 class="tituloSec"> Tu historial de compras</h2>
+
+        
+
+        <% if(locals.compras){ %>
+            <% compras.forEach(compra => { %>
+
+                <div class="detalleComprasListado">
+
+                    <div class="variableProdCompras">
+                        <span class="subtituloListado">
+                            Código Compra:
+                        </span>
+                        <span class="subtituloListado">
+                            <%= compra.id %>
+                        </span>    
+                    </div>   
+                    
+                    <div class="variableProdCompras">
+                        <span class="subtituloListado">
+                            Fecha compra:
+                        </span>
+                        <span class="subtituloListado">
+                            <%= compra.fechaCierreCompra %>
+                        </span>    
+                    </div>   
+
+                    <div class="variableProdCompras">
+                        <span class="subtituloListado">
+                            Cantidad Productos:
+                        </span>
+                        <span class="subtituloListado">
+                            <%= compra.cantidadProductos %>
+                        </span>    
+                    </div> 
+
+                    <div class="variableProdCompras">
+                        <span class="subtituloListado">
+                            Costo total:
+                        </span>
+                        <span class="subtituloListado">
+                            <%= compra.costoTotal %>
+                        </span>    
+                    </div> 
+
+                    <div class="variableProdCompras">
+                        <span class="subtituloListado">
+                            Peso total:
+                        </span>
+                        <span class="subtituloListado">
+                            <%= compra.pesoTotal %>
+                        </span>    
+                    </div> 
+
+                    <form class ="botonEliminarResena" action="/compra/getDetalleCompra/<%=compra.id%>" method="get">
+                                    
+                                                         
+                                        
+                        <button class="botonEliminarRes"><i class="fas fa-money-check"></i></button>
+                    
+                                               
+                     </form>
+
+                </div>
+        
+               
+                
+               
         <%})%>
         <%}%>
 

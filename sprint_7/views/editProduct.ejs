@@ -159,7 +159,7 @@
          <div>
             <label for="price">Precio</label>
             <br>
-            <input type="text" name="precio" id="price" placeholder="U$S" value="<%= locals.old &&  old.precio ? old.precio : producto.precio%>">
+            <input type="text" name="precio" id="price" value="<%= locals.old &&  old.precio ? old.precio : producto.precio%>">
             <% if(locals && locals.errors && errors.precio){ %>
               <p class="textosAlerta">
                <%= errors.precio.msg %></p>

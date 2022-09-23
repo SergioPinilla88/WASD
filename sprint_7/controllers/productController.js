@@ -184,10 +184,39 @@ let productController = {
          
         },
 
+
+        buscarProductos: (request, response) => {
+
+            db.Producto.findAll({
+
+                where: { 
+                    nombre: {[Op.like]: '%' + request.params.busqueda + '%'}
+                },
+
+                include: [
+                    
+                    {association: "fabricantes"},
+                    {association: "paises"},
+                    {association: "categorias"}
+                ]
+               
+            }).then(function(prod){
+
+                console.log(prod.productosRelacionados);
+                response.render("productListUser", {productos: prod});
+
+            })
+
+         
+        },
+
+
+
+
         editaProductoView: (request, response) => {
 
             db.Categoria.findAll().then(categorias => {
-           
+            
                 db.Fabricante.findAll().then(fabricantes => {
 
                     db.Pais.findAll().then(paises => {

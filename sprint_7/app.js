@@ -8,6 +8,7 @@ let rutasProduct = require('./routes/productRouter.js');
 let rutasUser = require('./routes/userRouter.js');
 let rutasCompra = require('./routes/shopRouter.js');
 let rutasAdmin = require('./routes/adminRouter.js');
+let rutasAPIProduct = require('./routes/API/productRouter.js')
 
 
 const app = express();
@@ -42,6 +43,7 @@ app.use('/producto', rutasProduct);
 app.use('/usuario', rutasUser);
 app.use('/compra', rutasCompra);
 app.use('/admin', rutasAdmin);
+app.use('/API/productos', rutasAPIProduct);
 
 
 
