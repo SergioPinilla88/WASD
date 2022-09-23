@@ -11,7 +11,7 @@
       <p class="contenido textosAlerta"> Se encontraron errores</p>
       
     <% } %>
-    <form action="/admin/addProduct" method="post" enctype="multipart/form-data">
+    <form class="productos" action="/admin/addProduct" method="post" enctype="multipart/form-data">
 
     <div>
       <label for="name">Nombre</label>
@@ -67,13 +67,6 @@
     </select>
 
   </div>
-  
-    
-
-
-
-   
-
     <div>
       <label for="modelo">Modelo</label>
       <br>
@@ -174,7 +167,7 @@
       <% } %>
     </div>
     <div>
-      <button class="botonCargar"> Cargar Producto</button>
+      <button class="submit" type="submit"> Cargar Producto</button>
     </div>
     </form>
     <br>
