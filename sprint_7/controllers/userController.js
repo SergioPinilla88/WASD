@@ -37,10 +37,12 @@ const userController = {
                 
                 ]}).then(compras =>{
 
+                    let totalesCompras = [];
+
                     if(compras.length > 0){
                         //console.log(compras[0].dataValues.comprasDetalles[0]);
                         //response.send(compras);
-                        let totalesCompras = [];
+                        
                        
                        for(j = 0; j < compras.length; j++){
 
@@ -73,11 +75,13 @@ const userController = {
                 
                 //console.log(usuario.dataValues.usuarioResenas[0].dataValues);
 
-                    return response.render("perfil", {compras: totalesCompras, userToLog:usuario, resenas: usuario.dataValues.usuarioResenas});
+                   // return response.render("perfil", {compras: totalesCompras, userToLog:usuario, resenas: usuario.dataValues.usuarioResenas});
 
 
 
                 }
+
+                return response.render("perfil", {compras: totalesCompras, userToLog:usuario, resenas: usuario.dataValues.usuarioResenas});
 
             });
 
@@ -123,8 +127,8 @@ const userController = {
 
                         response.cookie("recordarme", request.body.correo, {maxAge: 60000});
                     }
-                    
-                    response.redirect("perfil");
+                    console.log("Encontro usuario...");
+                    response.redirect('/usuario/perfil');
                 }else{
 
 
