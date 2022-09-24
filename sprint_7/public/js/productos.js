@@ -2,11 +2,13 @@ window.addEventListener('load', function() {
     let button = document.querySelector('form.productos');
     button.addEventListener('submit', function(e) {
 
+      e.preventDefault();
+
       let nombre = document.querySelector("#name");
       if(nombre.value.length > 3 ){
         
       }else if(nombre.value.length < 3){
-        e.preventDefault();
+        alert("BASTA");
       };
 
       let descripcion = document.querySelector("#descripcion");
