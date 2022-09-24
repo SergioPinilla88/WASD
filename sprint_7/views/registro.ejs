@@ -5,20 +5,21 @@
     <header>
         <%- include('../partials/header.ejs') %>
     </header>   
-
+    
     <form class="formRegistro" 
     action="/usuario/registro" 
     method="POST" 
-    enctype="multipart/form-data">               
+    enctype="multipart/form-data"
+    id="formulario">               
         <br>
         <legend><h2 class = "textosTitulo">Crea tu cuenta</h2></legend>
         <br>
-
+        
+        <br>
         <% if(locals && locals.errors){ %>              
                 <p class="contenido textosAlerta"> Se encontraron errores</p>
-                
         <% } %>
-
+        
         <div class="contenido">
             <label class="textos" for="nombre">
                 Nombre:
@@ -27,10 +28,10 @@
                 id="nombre" 
                  value="<%= locals.old &&  old.nombre ? old.nombre : ''%>">
                 <% if( locals.errors && errors.nombre){ %>
-                    <p class="textosAlerta"><%= errors.nombre.msg %></p>
+                    <p  class="textosAlerta"><%= errors.nombre.msg %></p>
                 <% } %>              
-                 
             </label>
+            <div class="warnings" id="nombreError"></div>
         <br>
             <label class="textos" for="apellido">
                 Apellido:
@@ -39,9 +40,10 @@
                 id="apellido" 
                 value="<%= locals.old &&  old.apellido ? old.apellido : ''%>">
                 <% if(locals && locals.errors && errors.apellido){ %>
-                    <p class="textosAlerta"><%= errors.apellido.msg %></p>
+                    <p  class="textosAlerta"><%= errors.apellido.msg %></p>
                 <% } %>
             </label>
+            <div class="warnings" id="apellidoError"></div>
         <br>
             <label class="textos" for="correo">
                 e-mail:
@@ -50,9 +52,10 @@
                 id="correo" 
                 value="<%= locals.old &&  old.correo ? old.correo : ''%>">
                 <% if(locals && locals.errors && errors.correo){ %>
-                    <p class="textosAlerta"><%= errors.correo.msg %></p>
+                    <p   class="textosAlerta"><%= errors.correo.msg %></p>
                 <% } %>              
             </label>
+            <div class="warnings" id="correoError"></div>
         <br>
             <label  class="textos"for="pwd">
                 Contraseña:
@@ -60,9 +63,10 @@
                 name="pwd" id="pwd" 
                 value="<%= locals.old &&  old.pwd ? old.pwd : ''%>">
                 <% if(locals && locals.errors && errors.pwd){ %>
-                    <p class="textosAlerta"><%= errors.pwd.msg %></p>
+                    <p  class="textosAlerta"><%= errors.pwd.msg %></p>
                 <% } %>    
             </label>
+            <div class="warnings" id="passwordError"></div>
         <br>
 
             <label  class="textos"for="pwdConf">
@@ -72,10 +76,10 @@
                 id="pwdConf" 
                 value="<%= locals.old &&  old.pwdConf ? old.pwdConf : ''%>">
                 <% if(locals && locals.errors && errors.pwdConf){ %>
-                    <p class="textosAlerta"><%= errors.pwdConf.msg %></p>
+                    <p  class="textosAlerta"><%= errors.pwdConf.msg %></p>
                 <% } %>     
             </label>
-        
+            <div class="warnings" id="repasswordError"></div>
         <br>
             <label  class="textos" for="avatar">
                 Avatar:
@@ -86,9 +90,8 @@
                 <% if( locals.errors && errors.avatar){ %>
                     <p class="textosAlerta"><%= errors.avatar.msg %></p>
                 <% } %> 
-                
-                
             </label>
+            <span></span>
         <br>
 
             
@@ -106,9 +109,11 @@
          <br>
         
 
-        <button id="botonesLogin" type="submit">Enviar</button>
+        <button id="botonesLogin" type="submit" >Enviar</button>
+        
         
     </form>
+    <script type="text/javascript" src="/js/validator.js"></script>
     <br>
     <footer>
         <%- include('../partials/footer.ejs') %>
