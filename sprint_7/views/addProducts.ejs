@@ -24,8 +24,8 @@
            <p class="textosAlerta">
             <%= errors.name.msg %></p>
        <% } %>
+       <div class="warnings" id="nameError"></div>
     </div>
-    <div class="warnings" id="nameError"></div>
 
     <div>
       <label for="descripcion">Descripcion</label>
@@ -37,8 +37,8 @@
       <% if(locals && locals.errors && errors.descripcion){ %>
           <p class="textosAlerta"><%= errors.descripcion.msg %></p>
       <% } %>
+      <div class="warnings" id="descripcionError"></div>
     </div>
-    <div class="warnings" id="descripcionError"></div>
 
     <div>
     <label for="fabricante">Fabricante</label>
@@ -54,7 +54,7 @@
     </select>
 
   </div>
-  <div class="warnings" id="descripcionError"></div>
+  <div class="warnings" id="fabricanteError"></div>
 
   <div>
     <label for="paisOrigen">Pais de Origen</label>
@@ -179,7 +179,7 @@
     <div class="warnings" id="quantityError"></div>
 
     <div>
-      <button class="submit" type="submit"> Cargar Producto</button>
+      <button id="botonProducto" class="submit" type="submit"> Cargar Producto</button>
     </div>
     </form>
     <br>

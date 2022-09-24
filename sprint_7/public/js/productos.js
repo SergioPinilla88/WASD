@@ -105,6 +105,7 @@ window.addEventListener('load', function(){
       };
 
       if(Object.keys(errores).length > 0 ){
+
           e.preventDefault();
           
           nameError.innerHTML = (errores.name) ? errores.name : '';
@@ -123,6 +124,6 @@ window.addEventListener('load', function(){
         productos.submit();
       }
      
-  })
+  });
 
 });
