@@ -20,11 +20,12 @@
        name="nombre" 
        id="name"
         value="<%= locals.old &&  old.nombre ? old.nombre : ''%>">
-       <% if(locals && locals.errors && errors.nombre){ %>
+       <% if(locals && locals.errors && errors.name){ %>
            <p class="textosAlerta">
-            <%= errors.nombre.msg %></p>
+            <%= errors.name.msg %></p>
        <% } %>
     </div>
+    <div class="warnings" id="nameError"></div>
 
     <div>
       <label for="descripcion">Descripcion</label>
@@ -37,6 +38,7 @@
           <p class="textosAlerta"><%= errors.descripcion.msg %></p>
       <% } %>
     </div>
+    <div class="warnings" id="descripcionError"></div>
 
     <div>
     <label for="fabricante">Fabricante</label>
@@ -52,6 +54,7 @@
     </select>
 
   </div>
+  <div class="warnings" id="descripcionError"></div>
 
   <div>
     <label for="paisOrigen">Pais de Origen</label>
@@ -65,6 +68,7 @@
           <% }) %>
     <% } %>
     </select>
+    <div class="warnings" id="paisOrigenError"></div>
 
   </div>
     <div>
@@ -78,6 +82,7 @@
           <p class="textosAlerta"><%= errors.modelo.msg %></p>
       <% } %>
     </div>
+    <div class="warnings" id="modeloError"></div>
 
     <div>
       <label for="funcionalidad">Funcionalidad</label>
@@ -90,6 +95,7 @@
           <p class="textosAlerta"><%= errors.funcionalidad.msg %></p>
       <% } %>
     </div>
+    <div class="warnings" id="funcionalidadError"></div>
 
     <div>
       <label for="image">Imagen</label>
@@ -102,6 +108,7 @@
           <p class="textosAlerta"><%= errors.image.msg %></p>
       <% } %>
     </div>
+    <div class="warnings" id="imageError"></div>
 
 
     <div>
@@ -118,6 +125,7 @@
       </select>
   
     </div>
+    <div class="warnings" id="categoriaError"></div>
    
      <div>
       <label for="peso">Peso en gramos</label>
@@ -130,6 +138,8 @@
           <p class="textosAlerta"><%= errors.peso.msg %></p>
       <% } %>
     </div>
+    <div class="warnings" id="pesoError"></div>
+
     <div>
       <label for="calificacion">Calificación</label>
       <br>
@@ -141,6 +151,7 @@
           <p class="textosAlerta"><%= errors.calificacion.msg %></p>
       <% } %>
     </div>
+    <div class="warnings" id="calificacionError"></div>
 
     <div>
       <label for="price">Precio en Dolares</label>
@@ -153,7 +164,7 @@
           <p class="textosAlerta"><%= errors.precio.msg %></p>
       <% } %>
     </div>
-
+    <div class="warnings" id="nombreError"></div>
     <div>
       <label for="quantity">Cantidad (numeros)</label>
       <br>
@@ -165,12 +176,15 @@
           <p class="textosAlerta"><%= errors.cantidad.msg %></p>
       <% } %>
     </div>
+    <div class="warnings" id="quantityError"></div>
+
     <div>
       <button class="submit" type="submit"> Cargar Producto</button>
     </div>
     </form>
     <br>
 </div>
+    <script type="text/javascript" src="/js/productos.js"></script>
     <footer>
         <%- include('../partials/footer.ejs') %>
     </footer>
