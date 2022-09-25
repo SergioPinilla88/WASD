@@ -36,8 +36,6 @@ const validarEmail = (e) =>{
     let regexEmail = new RegExp (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/);
     if(fieldValue.trim().length > 5 && !regexEmail.test(fieldValue) ){
         errores("Por Favor Ingrese un correo valido",field);
-    }else if(fieldValue.trim().length === fieldValue.trim().length){
-        errores("Este correo ya esta en uso",field);
     }else {
         errores("",field,false);
     }
