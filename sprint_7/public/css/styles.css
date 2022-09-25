@@ -63,8 +63,6 @@ Body {
     margin: 3%;
     object-fit: contain;
 
-
-
 }
 
 .frameImagenProducto{
@@ -429,8 +427,6 @@ video {
     justify-content: space-around;
     align-content: space-around;
 
-
-
 }
 
 .encabezadoUsuario {
@@ -441,8 +437,6 @@ video {
     flex-direction: column;
     justify-content: space-around;
     align-content: space-around;
-
-
 
 }
 
@@ -464,7 +458,7 @@ video {
 
 .textAreaEditResena{
 
-  width: 80%;
+    width: 80%;
 
 }
 
