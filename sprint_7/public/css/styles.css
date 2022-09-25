@@ -164,16 +164,18 @@ video {
     padding-top: 5px;
 }
 .warnings{
-    font-size: 18px;
     color:red;
+    display: block;
+    font-size: 16px;
 }
-
+.invalid{
+    border: 1px solid red;
+    box-shadow: 0 0 10px red;
+}
 .verified{
     color: black;
 }
-.erroresActivo{
-    display: block;
-}
+
 .error{
     display: none;
 }
