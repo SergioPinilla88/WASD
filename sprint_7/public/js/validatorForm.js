@@ -43,16 +43,11 @@ const validarEmail = (e) =>{
 const validarPassword = (message,e) =>{
     const field = e.target;
     const fieldValue = e.target.value;
-    let regexPassword =  new RegExp("^(((?=.*[a-z])(?=.*[A-Z]))|((?=.*[a-z])(?=.*[0-9]))|((?=.*[A-Z])(?=.*[0-9])))(?=.{6,})");
     if(fieldValue.trim().length === 0){
         errores(message,field);
-    }else if(fieldValue.trim().length <= 8 ){
+    }else (fieldValue.trim().length < 8 );{
         errores(`El campo ${field.name} debe tener almenos 8 caracteres`,field);
-    }else if(!regexPassword.test(fieldValue)){
-        errores(`El campo ${field.name} deberá tener letras mayúsculas, minúsculas, un número y un carácter especial`,field);
-    }else {
-        errores("",field,false);
-    }
+    };
 } 
 
 nameField.addEventListener("blur",(e)=> validarCampos("El campo nombre debe estar completo",e));
