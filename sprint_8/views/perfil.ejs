@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('../partials/head.ejs') %>
+<body>
+    <header>
+        <%- include('../partials/header.ejs') %>
+    </header>
+
+    <main>
+   
+        
+        <div class="perfilBody">
+
+
+
+
+        <h2 class="tituloSec"> Hola:  <%= locals.userToLog && userToLog.email ? userToLog.email : '' %></h2>
+
+        <div class="todoUsuario">
+
+            <div class="encabezadoUsuario">
+
+                
+                
+                <img class="imagenPerfil" src="../images/avatars/<%= locals.userToLog && userToLog.avatar ? userToLog.avatar : '' %>">
+                
+                <div class="seccionInferiorUsuario">
+                <a href="/usuario/editPerfil/<%= userToLog.id%>"><button class="botonEliminar"><i class="fa-solid fa-pen-to-square"></i></button></a>    
+                </div><br>
+                
+                <div class="seccionInferiorUsuario">
+                <a href="/usuario/logout/"><button class="botonEliminar"><i class="fas fa-sign-out-alt"></i></button></a>    
+                </div><br>                           
+                
+            </div>
+
+           
+            <div class = "variablesUser">
+                <div class="campoCliente">
+                    <span class=" subtitulo">
+                        Nombre:
+                    </span>
+                    <span class="infoDetalle">
+                        <%= locals.userToLog && userToLog.nombre ? userToLog.nombre : '' %>
+                    </span>    
+                </div>
+
+                <div>
+                    <span class=" subtitulo">
+                        Apellido:
+                    </span>
+                    <span class="infoDetalle">
+                        <%= locals.userToLog && userToLog.apellido ? userToLog.apellido : '' %>
+                    </span>    
+                </div>
+
+                <div>
+                    <span class=" subtitulo">
+                        email:
+                    </span>
+                    <span class="infoDetalle">
+                        <%= locals.userToLog && userToLog.email ? userToLog.email : '' %>
+                    </span>    
+                </div>
+
+                              
+        </div>
+
+        
+
+          
+
+        </div>
+
+        <h2 class="tituloSec"> Tus reseñas</h2>
+
+        <% if(locals.resenas){ %>
+            <% resenas.forEach(res => { %>
+
+
+                <div class="detalleProdListado">
+                      
+                    <img class="imagenProductoListado" src="../images/<%=res.resenasProducto.imagen%>">
+                        
+                                               
+                              <div class="infoBaseResena">                           
+                                                     
+                                <form class="formEditaResena" action="/usuario/editaResena/:idResena?_method=PUT" method="POST">
+
+                                    <div class="calificaBotonResenaEdit">
+                                        <div class="textAreaEditResena">
+                                            <textarea id="resenaEdit" name="resenaEdit" rows="3" cols="100">
+                                             <%= locals.old &&  old.res ? old.res : res.resena%>
+                                            </textarea>
+                                         </div>
+                                    
+                                        <div class="ocultoAddResena">
+                                            <input type="text" name="idResena" id="idResena" required  value="<%= locals.old &&  old.idResena ? old.idResena : res.id%>" readonly>
+                                            <input type="text" name="usuarioIdResena" id="usuarioIdResena" required  value="<%= locals.old &&  old.usuarioIdResena ? old.usuarioIdResena : res.Usuario_id%>" readonly>
+                                            <input type="text" name="productoIdResena" id="productoIdResena" required  value="<%= locals.old &&  old.productoIdResena ? old.productoidResena: res.Producto_id%>" readonly>
+                                        </div> 
+                                    
+                                    
+                                        <label class = "labelCalificaResenaEdit" for="calificaResena">Tu calificación</label>
+                                        <select class = "textCalificaResenaEdit" name  = "calificaResena" id  = "calificaResena">
+                                    
+                                            <% for(i = 1; i <= 5; i++) { %>
+
+
+                                                <% if(i == res.calificacion) { %>
+                                                        <option value = "<%= i %>" selected><%= i %></option>
+                                                <% }else{ %>
+                                                        <option value = "<%= i %>"><%= i %></option>
+                                                <% }; %>
+                                            <% }; %>
+                                            
+                                          
+                                         
+                                        </select>
+                                        <div class="divButtonAddResenaEdit">
+                                        <button class = "buttonAddResena" type="submit"><i class="fas fa-edit"></i></button>
+                                        </div>
+                                
+                                    </div>
+
+                                        
+                                               
+                    
+                    
+                                </form>
+                                
+                                <form class ="botonEliminarResena" action="/Usuario/deleteResena/<%=res.id%>?_method=DELETE" method="post" enctype="multipart/form-data">
+                                    
+                                                         
+                                        
+                                    <button class="botonEliminarRes"><i class="fas fa-eraser"></i></button>
+                                
+                                                           
+                                 </form>
+                               
+    
+                            
+                              
+                                                      
+                            </div>
+                             
+                        </div> 
+
+
+        <%})%>
+        <%}%>
+
+
+        <h2 class="tituloSec"> Tu historial de compras</h2>
+
+        
+
+        <% if(locals.compras){ %>
+            <% compras.forEach(compra => { %>
+
+                <div class="detalleComprasListado">
+
+                    <div class="variableProdCompras">
+                        <span class="subtituloListado">
+                            Código Compra:
+                        </span>
+                        <span class="subtituloListado">
+                            <%= compra.id %>
+                        </span>    
+                    </div>   
+                    
+                    <div class="variableProdCompras">
+                        <span class="subtituloListado">
+                            Fecha compra:
+                        </span>
+                        <span class="subtituloListado">
+                            <%= compra.fechaCierreCompra %>
+                        </span>    
+                    </div>   
+
+                    <div class="variableProdCompras">
+                        <span class="subtituloListado">
+                            Cantidad Productos:
+                        </span>
+                        <span class="subtituloListado">
+                            <%= compra.cantidadProductos %>
+                        </span>    
+                    </div> 
+
+                    <div class="variableProdCompras">
+                        <span class="subtituloListado">
+                            Costo total:
+                        </span>
+                        <span class="subtituloListado">
+                            <%= compra.costoTotal %>
+                        </span>    
+                    </div> 
+
+                    <div class="variableProdCompras">
+                        <span class="subtituloListado">
+                            Peso total:
+                        </span>
+                        <span class="subtituloListado">
+                            <%= compra.pesoTotal %>
+                        </span>    
+                    </div> 
+
+                    <form class ="botonEliminarResena" action="/compra/getDetalleCompra/<%=compra.id%>" method="get">
+                                    
+                                                         
+                                        
+                        <button class="botonEliminarRes"><i class="fas fa-money-check"></i></button>
+                    
+                                               
+                     </form>
+
+                </div>
+        
+               
+                
+               
+        <%})%>
+        <%}%>
+
+        </div>
+        
+
+            
+
+
+
+               
+        
+       
+       
+    
+    </main>
+    <footer>
+        <%- include('../partials/footer.ejs') %>
+    </footer>
+</body>
+</html>
