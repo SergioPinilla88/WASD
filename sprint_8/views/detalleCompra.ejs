@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('../partials/head.ejs') %>
+<body>
+    <header>
+        <%- include('../partials/header.ejs') %>
+    </header>
+
+    <main>
+
+               
+        <% if(locals.compra){ %>
+        <div class="encabezadoCarrito">
+
+           <div class="infoEncabezadoCarrito">
+              
+
+                <span class="subtituloListado">
+                    Codigo compra:
+                </span>
+                <span class="subtituloListado">
+                    <%= compra.id %>
+                </span>         
+    
+                
+            </div>
+
+            <div class="infoEncabezadoCarrito">
+              
+
+                <span class="subtituloListado">
+                    Momento creación:
+                </span>
+                <span class="subtituloListado">
+                    <%= compra.momentoCreacion %>
+                </span>         
+    
+                
+            </div>
+
+        </div>
+
+        <% } %>
+        
+        
+        <div class="listadoProductosCarrito">
+            <h3 class="tituloSec">Detalle de tu compra</h3>
+
+            <% if(locals.detalleCompra){ %>
+                <% detalleCompra.forEach(producto => { %>
+
+                    <div class="detalleProdListadoCarrito">
+                       
+                        <a class="imagenProductoListado" href="/producto/<%=producto.detallesCompraProducto.id%>"><img class="imagenProductoListado" src="../../images/<%=producto.detallesCompraProducto.imagen%>"></a>
+                                        
+                      <div class="infoBaseProdCarrito">
+
+                            <div class="variableProdCarrito">
+                                <span class="subtituloListado">
+
+                                    <%=producto.id%>
+                                  
+                                </span>    
+                            </div>
+
+                            <div class="variableProdCarrito">
+                                <span class="subtituloListado">
+                                    Producto:
+                                </span>
+                                <span class="subtituloListado">
+                                    <%=producto.detallesCompraProducto.nombre%>
+                                </span>    
+                            </div>   
+                                                              
+    
+                            <div class="variableProdCarrito">
+                                <span class="subtituloListado">
+                                    Peso:
+                                </span>
+                                <span class="subtituloListado">
+                                    <%=producto.detallesCompraProducto.peso %>
+                                </span>    
+                            </div>
+
+                            <div class="variableProdCarrito">
+                                <span class="subtituloListado">
+                                    Precio:
+                                </span>
+                                <span class="subtituloListado">
+                                    <%=producto.detallesCompraProducto.precio %>
+                                </span>    
+                            </div>
+    
+                                                
+
+                        </div>
+                        <div>
+                      
+                        </div>
+                         
+                    </div>   
+                <% }) %>
+            <% } %>
+        </div>
+
+        <% if(locals.totales){ %>
+
+        <div class="encabezadoCarrito">
+
+            <div class="infoEncabezadoCarrito">
+               
+ 
+                 <span class="subtituloListado">
+                     Total productos:
+                 </span>
+                 <span class="subtituloListado">
+                    <%= totales.cantidadProductos %>
+                     
+                 </span>         
+     
+                 
+             </div>
+
+
+             <div class="infoEncabezadoCarrito">
+               
+ 
+                <span class="subtituloListado">
+                    Peso total:
+                </span>
+                <span class="subtituloListado">
+                   <%= totales.pesoTotal %>
+                </span>         
+    
+                
+            </div>
+ 
+             <div class="infoEncabezadoCarrito">
+               
+ 
+                 <span class="subtituloListado">
+                     Precio total:
+                 </span>
+                 <span class="subtituloListado">
+                    <%= totales.costoTotal %>
+                 </span>         
+     
+                 
+             </div>
+ 
+         </div>
+
+         <% } %>
+        
+        
+
+        <a href="/usuario/perfil"><button type="submit"> Volver</button></a>      
+         
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+      
+      
+
+
+            
+       
+    
+    </main>
+    <footer>
+        <%- include('../partials/footer.ejs') %>
+    </footer>
+</body>
+</html>
