@@ -43,18 +43,40 @@ const validarEmail = (e) =>{
 const validarPassword = (message,e) =>{
     const field = e.target;
     const fieldValue = e.target.value;
+    let regexPassword =  new RegExp("^(((?=.*[a-z])(?=.*[A-Z]))|((?=.*[a-z])(?=.*[0-9]))|((?=.*[A-Z])(?=.*[0-9])))(?=.{6,})");
     if(fieldValue.trim().length === 0){
         errores(message,field);
-    }else (fieldValue.trim().length < 8 );{
+    }else if(fieldValue.trim().length < 8 ){
         errores(`El campo ${field.name} debe tener almenos 8 caracteres`,field);
-    };
+    }else if(!regexPassword.test(fieldValue)){
+        errores(`El campo ${field.name} deberá tener letras mayúsculas, minúsculas, un número y un carácter especial`,field);
+    }else {
+        errores("",field,false);
+    }
 } 
+const validarRepassword = (message,e) =>{
+    const field = e.target;
+    const fieldValue = e.target.value;
+    if(fieldValue.trim().length === 0){
+        errores(message,field);
+    }else{
+        errores("",field,false);
+    }
+}
 
 nameField.addEventListener("blur",(e)=> validarCampos("El campo nombre debe estar completo",e));
 lastNameField.addEventListener("blur",(e)=> validarCampos("El campo apellido debe estar completo", e));
 emailField.addEventListener("blur", (e)=> validarCampos("El campo correo debe estar completo", e));
-passwordField.addEventListener("blur", (e)=> validarPassword("El campo contraseña debe estar completo", e));
-repasswordField.addEventListener("blur", (e)=> validarPassword("El campo confirmar contraseña debe estar completo", e));
+passwordField.addEventListener("blur", (e)=>validarPassword("El campo contraseña debe estar completo", e));
+repasswordField.addEventListener("blur", (e)=>{
+    const field = e.target;
+    const fieldValue = e.target.value;
+        validarRepassword("El campo confirmar contraseña debe estar completo", e)
+        if(fieldValue !== passwordField.value){
+            errores("La contraseñas deben coincidir",field);
+        }
+}); 
+
 
 emailField.addEventListener("input",  validarEmail);
 
@@ -68,3 +90,4 @@ imageField.addEventListener("change", (e)=>{
         errores("",field,false);
     }
 });
+
