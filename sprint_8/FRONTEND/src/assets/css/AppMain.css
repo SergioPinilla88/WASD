@@ -1,0 +1,26 @@
+.divPrincipal{
+
+    display: flex;
+    flex-direction: row;
+
+
+}
+
+.divContenidoPrincipal{
+
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    justify-items: center;
+    justify-content:center;
+    text-align: center;
+    
+
+
+}
+
+.UltimosRegistros{
+
+    display: flex;
+    flex-direction: row;
+}

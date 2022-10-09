@@ -1,0 +1,57 @@
+.tarjetaProducto{
+
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    min-width: 250px;
+    height: 10cm;
+    justify-items: center;
+    justify-content:center;
+    text-align: center;
+    border: #570AB8 1px solid;
+    margin: 1%;
+    box-shadow: 0 0 15px blue;
+
+}
+
+.detalleProductoMain{
+
+    font-size: 70%;
+    font-family: 'Roboto', sans-serif;
+    color: #570AB8;
+    font-weight: bold;
+    
+
+
+}
+
+.detalleProductoSec{
+
+    font-size: 50%;
+    font-family: 'Roboto', sans-serif;
+    color: #570AB8;
+    font-weight: lighter;
+    margin: 2%;
+    
+
+
+}
+
+.divisorProducto{
+
+    border: 0;
+    border-top: 2px solid blue;
+    width: 50%;
+
+
+}
+
+.imagenProducto{
+    width: 80%;
+    height: 2cm;
+    padding: 0%;
+    margin: 3%;
+    object-fit: contain;
+    text-align: center;
+
+}
