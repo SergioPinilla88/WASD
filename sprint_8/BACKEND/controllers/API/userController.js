@@ -21,6 +21,12 @@ module.exports = {
                 
             }).then(detalleUsers => {
 
+                for(i = 0; i < detalleUsers.length; i++){
+
+                        detalleUsers[i].avatar = "http://localhost:3001/images/avatars/" + detalleUsers[i].avatar;
+
+                }
+                
                 let respuestaAPIUser = {
 
                     count: contUsuarios[0].dataValues.total_usuarios,
@@ -128,7 +134,7 @@ module.exports = {
                 nombre: usuario.nombre,
                 apellido: usuario.apellido,
                 email: usuario.email,
-                avatar: "http://localhost:3001/images/avatars/" + usuario.avatar,
+                avatar: "http://localhost:3001/images/avatars/" + usuario.avatar
 
             }
 
