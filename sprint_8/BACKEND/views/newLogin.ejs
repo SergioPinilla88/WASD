@@ -1,54 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
     <%- include('../partials/head.ejs') %>
-<body>
-    <header>
-        <%- include('../partials/header.ejs') %>
-    </header>
-   
-    <div class = "bodyLogin">
-    
+    <body>
+        <header>
+            <%- include('../partials/header.ejs') %>
+        </header>
 
-    <% if(locals && locals.errors){ %>
-                   
-      <p class="contenido textosAlertaLogin"> Se encontraron errores</p>   
+        <div class = "bodyLogin">
+            <% if(locals && locals.errors){ %>
+                <p class="contenido textosAlertaLogin"> Se encontraron errores</p>   
+            <% } %>
+                <h1 class="tituloFproductos">Iniciar Sesión</h1>
+                <div class="pannelLog">
+                    <img class="imagenReg" src="/images/carrusel1.jpg">
 
-    <% } %>
-    <h1 class="tituloFproductos">Iniciar Sesión</h1>
-    <div class="pannelLog">
+                        <form class="formLogin"  action="/usuario/login" method="post">  
+                            <label for="correo">E-mail:</label> 
+                            <input type="email" name="correo" id="correo"  
+                                value="<%= locals.old &&  old.correo ? old.correo : ''%>">
+                            <p class="textosAlertaLogin"><%= locals.errors && errors.correo ? errors.correo.msg : '' %></p>
+                            <div class="warnings" id="emailError"></div>
+                            <br>
 
-    <img class="imagenReg" src="/images/carrusel1.jpg">
+                            <label for="pwd">Contraseña:</label>
+                            <input type="password" type="number" name="pwd" minlength="8" id="pwd"    
+                                value="<%= locals.old &&  old.pwd ? old.pwd : ''%>">
+                            <p class="textosAlertaLogin"><%= locals.errors && errors.pwd ? errors.pwd.msg : '' %></p>
+                            <div class="warnings" id="passwordError"></div>
+                            <br>  
 
-    <form class="formLogin"  action="/usuario/login" method="post">  
-        
-      
-        <label for="correo">E-mail:</label>
-        
-        <input type="text" name="correo" id="correo" required  value="<%= locals.old &&  old.correo ? old.correo : ''%>">
-        <p class="textosAlertaLogin"><%= locals.errors && errors.correo ? errors.correo.msg : '' %></p>
-        <br>      
-        <label for="pwd">Contraseña:</label>
-        
-        <input type="password" name="pwd" id="pwd" required  value="<%= locals.old &&  old.pwd ? old.pwd : ''%>">
-        <p class="textosAlertaLogin"><%= locals.errors && errors.pwd ? errors.pwd.msg : '' %></p>
-        <br>  
+                            <div>
+                                <label for="recordarme">Recordarme:</label> 
+                                <input type="checkbox" name="recordarme" id="recordarme">
+                            </div>
+                            <br> 
 
-        <div>
-        <label for="recordarme">Recordarme:</label> 
-        <input type="checkbox" name="recordarme" id="recordarme">
+                            <div>
+                                <button type="submit" id ="submit"> Enviar</button>       
+                            </div>    
+                        </form>
+                        <script src="/js/validacionFront.js"></script>
+                </div>
         </div>
-        <br> 
-        <div>
-        <button type="submit"> Enviar</button>       
-        </div>    
-      
-    </form>
-    
-  
-  </div>
- </div>
-    <footer>
-        <%- include('../partials/footer.ejs') %>
-    </footer>
-</body>
+        <footer>
+            <%- include('../partials/footer.ejs') %>
+        </footer>
+    </body>
 </html>

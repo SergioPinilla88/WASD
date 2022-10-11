@@ -5,20 +5,21 @@
     <header>
         <%- include('../partials/header.ejs') %>
     </header>   
-
+    
     <form class="formRegistro" 
     action="/usuario/registro" 
     method="POST" 
-    enctype="multipart/form-data">               
+    enctype="multipart/form-data"
+    id="formulario">               
         <br>
         <legend><h2 class = "textosTitulo">Crea tu cuenta</h2></legend>
         <br>
-
+        
+        <br>
         <% if(locals && locals.errors){ %>              
                 <p class="contenido textosAlerta"> Se encontraron errores</p>
-                
         <% } %>
-
+        
         <div class="contenido">
             <label class="textos" for="nombre">
                 Nombre:
@@ -26,11 +27,13 @@
                 name="nombre" 
                 id="nombre" 
                  value="<%= locals.old &&  old.nombre ? old.nombre : ''%>">
+                <span></span>
                 <% if( locals.errors && errors.nombre){ %>
-                    <p class="textosAlerta"><%= errors.nombre.msg %></p>
+                    <p  class="textosAlerta"><%= errors.nombre.msg %></p>
                 <% } %>              
-                 
             </label>
+            <p id="errorNombre"></p>
+            
         <br>
             <label class="textos" for="apellido">
                 Apellido:
@@ -38,10 +41,12 @@
                 name="apellido" 
                 id="apellido" 
                 value="<%= locals.old &&  old.apellido ? old.apellido : ''%>">
+                <span></span>
                 <% if(locals && locals.errors && errors.apellido){ %>
-                    <p class="textosAlerta"><%= errors.apellido.msg %></p>
+                    <p  class="textosAlerta"><%= errors.apellido.msg %></p>
                 <% } %>
             </label>
+            
         <br>
             <label class="textos" for="correo">
                 e-mail:
@@ -49,20 +54,24 @@
                 name="correo"
                 id="correo" 
                 value="<%= locals.old &&  old.correo ? old.correo : ''%>">
+                <span></span>
                 <% if(locals && locals.errors && errors.correo){ %>
-                    <p class="textosAlerta"><%= errors.correo.msg %></p>
+                    <p   class="textosAlerta"><%= errors.correo.msg %></p>
                 <% } %>              
             </label>
+            <div class="warnings" id="correoError"></div>
         <br>
             <label  class="textos"for="pwd">
                 Contraseña:
                 <input type="password" 
                 name="pwd" id="pwd" 
                 value="<%= locals.old &&  old.pwd ? old.pwd : ''%>">
+                <span></span>
                 <% if(locals && locals.errors && errors.pwd){ %>
-                    <p class="textosAlerta"><%= errors.pwd.msg %></p>
+                    <p  class="textosAlerta"><%= errors.pwd.msg %></p>
                 <% } %>    
             </label>
+            
         <br>
 
             <label  class="textos"for="pwdConf">
@@ -71,11 +80,12 @@
                 name="pwdConf" 
                 id="pwdConf" 
                 value="<%= locals.old &&  old.pwdConf ? old.pwdConf : ''%>">
+                <span></span>
                 <% if(locals && locals.errors && errors.pwdConf){ %>
-                    <p class="textosAlerta"><%= errors.pwdConf.msg %></p>
+                    <p  class="textosAlerta"><%= errors.pwdConf.msg %></p>
                 <% } %>     
             </label>
-        
+            
         <br>
             <label  class="textos" for="avatar">
                 Avatar:
@@ -83,11 +93,10 @@
                 name="avatar" 
                 id="avatar"
                 value="<%= locals.old &&  old.avatar ? old.avatar : ''%>">
+                <span></span>
                 <% if( locals.errors && errors.avatar){ %>
                     <p class="textosAlerta"><%= errors.avatar.msg %></p>
                 <% } %> 
-                
-                
             </label>
         <br>
 
@@ -106,9 +115,13 @@
          <br>
         
 
-        <button id="botonesLogin" type="submit">Enviar</button>
+        <button id="botonesLogin" type="submit" >Enviar</button>
+        
         
     </form>
+    
+    
+    <script type="text/javascript" src="/js/validatorForm.js"></script>
     <br>
     <footer>
         <%- include('../partials/footer.ejs') %>
