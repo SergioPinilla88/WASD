@@ -1,12 +1,4 @@
-.divPrincipal{
-
-    display: flex;
-    flex-direction: row;
-
-
-}
-
-.divContenidoPrincipal{
+.divContenidoPrincipalConglomerado{
 
     display: flex;
     flex-direction: column;
@@ -19,14 +11,9 @@
 
 }
 
-.principalConSidebar{
 
-    display:flex;
-    flex-direction: row;
 
-}
-
-.UltimosRegistros{
+.UltimosRegistrosConglomerado{
 
     display: flex;
     flex-direction: row;

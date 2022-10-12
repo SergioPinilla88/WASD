@@ -1,0 +1,51 @@
+.bloquePrincipalSideBar{
+
+    display: flex;
+    flex-direction: column;
+    background-color:#570AB8;
+    font-family: 'Roboto', sans-serif;
+    width: 30%;
+    list-style: none;
+
+}
+
+.titulosMenuSideBar{
+
+    text-align: center;
+    color: white;
+    font-size: 100%;
+    list-style: none;
+    
+
+}
+
+.imagenLogoSideBar{
+    width: 80%;
+    height: 4cm;
+    padding-left: 10%;
+    margin: 4%;
+    justify-items: center;
+    object-fit: contain;
+    text-align: center;
+  
+}
+
+.divisorSideBar{
+
+    border: 0;
+    border-top: 2px solid white;
+    width: 50%;
+    text-align: center;
+
+
+}
+
+.divisorSideBarWide{
+
+    border: 0;
+    border-top: 4px solid white;
+    width: 70%;
+    text-align: center;
+
+
+}

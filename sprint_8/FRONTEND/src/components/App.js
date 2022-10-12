@@ -1,6 +1,4 @@
 import React from 'react';
-import SideBar from './SideBar';
-import TopBar from './TopBar';
 import ContentWrapper from './ContentWrapper';
 import {Route, Routes} from 'react-router-dom';
 import Home from './Home';
@@ -17,27 +15,51 @@ import TotalizadoCategoriasDB from './TotalizadoCategoriasDB/TotalizadoCategoria
 import TodosProdXCat from './TodosProdXCat/TodosProdXCat';
 import ProductoDetallado from './ProductoDetallado/ProductoDetallado';
 import UsuarioDetallado from './UsuarioDetallado/UsuarioDetallado';
-
+import SideBar from './SideBar/SideBar';
+import ConglomeradoMain from './ConglomeradoMain/ConglomeradoMain';
+import NuevosReg from './NuevosReg/NuevosReg';
 
 
 
 function App() {
   return (
+
+        <div className="principalConSidebar">
+
+          <SideBar />
+
+
+          <Routes>
+              
+              <Route path="/" element={<ConglomeradoMain />} />
+              <Route path="/TotalMainEntidades" element={<TotalEntidadesDB/>} />
+              <Route path="/UltimoRegistro" element={<NuevosReg />} />
+              <Route path="/TotalCategorias" element={<TotalizadoCategoriasDB />} />
+              <Route path="/TodosProductos" element={<TodosProdXCat />} />
+              <Route path="*" element={<NotFound />} />
+              
+            </Routes>
+
+
+
+
+          
     
-      	<div className="divContenidoPrincipal">
+    {/*
+      	  <div className="divContenidoPrincipal">
           
-          <TotalEntidadesDB/>
-          <TotalizadoCategoriasDB />
+            <TotalEntidadesDB/>
+            <TotalizadoCategoriasDB />
 
-          <div className = "UltimosRegistros">
+            <div className = "UltimosRegistros">
 
-          <ProductoDetallado />
-          <UsuarioDetallado />
-          </div>
-          <TodosProdXCat />
-
+            <ProductoDetallado />
+            <UsuarioDetallado />
+            </div>
+            <TodosProdXCat />
+          </div> 
           
-          
+  */}  
           {/* <TodasCategorias/> */}
           
 
