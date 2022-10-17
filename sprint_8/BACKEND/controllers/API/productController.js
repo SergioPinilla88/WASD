@@ -1,9 +1,31 @@
 const db = require('../../database/models');
 const { Op } = require("sequelize");
 const Sequelize = require("sequelize");
-const { response } = require('express');
+const { response, request } = require('express');
 
 module.exports = {
+
+    ventas: (request, response) => {
+
+        // response.send("Esta es la ruta del API de ventas");
+
+        db.DetalleCompra.findAll({
+
+            include:[
+
+                {association: "detallesCompraProducto"},
+
+
+        ]}).then(resultados => {
+            // response.send(resultados);
+                return response.status(200).json({
+                    total: 1,
+                    data: resultados,
+                    status: 200
+        });
+
+    })
+    },
 
     producto: (request, response) => {
 

@@ -10,7 +10,7 @@ inputBox.onkeyup =(e)=>{
     let emptyArray = [];
     if(userData){
         icon.onclick = () => {
-            webLink = `http://localhost:3000/buscarProductos/${userData}`;
+            webLink = `http://localhost:3001/buscarProductos/${userData}`;
             linkTag.setAttribute("href",webLink);
             linkTag.click();
         }
